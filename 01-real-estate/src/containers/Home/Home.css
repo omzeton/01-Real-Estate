@@ -1,0 +1,42 @@
+.Home {
+	position: relative;
+	width:100%;
+	height: 35em;
+}
+
+.Home__ImgArea {
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+
+.Home__ImgArea--Img {
+	position: relative;
+	width:100%;
+	height: 100%;
+	background-image:url('http://localhost:3000/./assets/home-img/02.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.Home__ImgArea--Img:after {
+	content:'';
+	position: absolute;
+	width:100%;
+	height: 100%;
+	background-color:#000;
+	opacity: 0.3;
+	mix-blend-mode: multiply;
+}
+
+.Home__ImgArea--Img h2 {
+	font-family: 'Chivo', sans-serif;
+	color:#fff;
+	font-size: 4em;
+	z-index: 999;
+}
