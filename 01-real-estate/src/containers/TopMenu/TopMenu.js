@@ -9,13 +9,13 @@ class TopMenu extends Component {
 					<div className="TopMenu__Bottom--Logo"></div>
 
 					<div className="TopMenu__Bottom__BtnContainer">
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">Home</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">For sale</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">To rent</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">Bond Calculator</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">About us</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">Contact</a></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="#">List Your Property</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">Home</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">For sale</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">To rent</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">Bond Calculator</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">About us</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">Contact</a></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><a href="localhost:3000">List Your Property</a></div>
 					</div>
 
 					<div className="TopMenu__Bottom--Phone">+48 98 765 43 21</div>

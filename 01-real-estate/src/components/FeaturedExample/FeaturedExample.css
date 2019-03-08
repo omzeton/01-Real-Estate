@@ -1,0 +1,120 @@
+.FeaturedExample {
+	width:18em;
+	height:100%;
+	background-color:#b6b6b6;
+	display: grid;
+	grid-template-rows: 60% 40%;
+	grid-template-columns: 1fr;
+	margin:0 0.5em;
+	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.5);
+}
+.Featured__Example--Img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image:url('http://localhost:3000/./assets/properties/01.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.Featured__Example--Img:after {
+	content:'';
+	position: absolute;
+	width:100%;
+	height: 100%;
+	background-color:#000;
+	opacity: 1;
+	mix-blend-mode: color;
+	transition:.7s linear;
+}
+
+.FeaturedExample:hover .Featured__Example--Img:after {
+	opacity: 0;
+}
+
+.Featured__Example__Info {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:70% 30%;
+}
+
+.Featured__Example__Info .Info--Top {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:1fr 1fr;
+}
+
+.Featured__Example__Info .Info--Top .Header {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows:1fr;
+}
+
+.Featured__Example__Info .Info--Top .Header div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.Featured__Example__Info .Info--Top .Header h2 {
+	font-size: 1.5em;
+	line-height: 0em;
+	margin-left: 0.5em;
+	color:#000;
+	white-space: nowrap;
+	font-family: 'Asul', sans-serif;
+}
+.Featured__Example__Info .Info--Top .Header p {
+	font-size: 0.8em;
+	line-height: 0em;
+	color:#fff;
+	font-family: 'Chivo', sans-serif;
+}
+
+.Featured__Example__Info .Info--Top .Info p {
+	font-size: 1.1em;
+	line-height: 0em;
+	margin-left: 1em;
+	color:#000;
+	font-family: 'Asul', sans-serif;
+}
+
+.Featured__Example__Info .Info--Bottom {
+	background-color:#676767;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows:1fr;
+}
+
+.Featured__Example__Info .Info--Bottom .City {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.Featured__Example__Info .Info--Bottom .City h4 {
+	font-size: 0.6em;
+	line-height: 0em;
+	color:#000;
+	font-family: 'Asul', sans-serif;
+}
+.Featured__Example__Info .Info--Bottom .Link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.Featured__Example__Info .Info--Bottom .Link h4 {
+	font-size: 0.6em;
+	line-height: 0em;
+	color:#000;
+	font-family: 'Asul', sans-serif;
+	transition:0.3s linear;
+	cursor: pointer;
+}
+
+.Featured__Example__Info .Info--Bottom .Link h4:hover {
+	color:#fff;
+}

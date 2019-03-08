@@ -6,7 +6,7 @@ function SearchBar(props) {
 		<div className="SearchBar">
 			<div className="SearchBar__FormContainer">
 					<div className="SearchBar__FormContainer--header">
-						<h2>Start browsing at once!</h2>
+						<h2>Start browsing</h2>
 					</div>
 
 					<div className="SearchBar__FormContainer--form">
@@ -65,7 +65,7 @@ function SearchBar(props) {
 
 						  <div>
 							  <h3>Suburb</h3>
-							  <input type="text" name="suburb" value="Suburb"/>
+							  <input type="text" name="suburb" />
 						 </div>
 
 						 <div>

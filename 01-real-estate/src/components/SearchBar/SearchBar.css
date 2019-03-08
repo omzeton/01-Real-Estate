@@ -3,7 +3,7 @@
 	left:50%;
 	transform:translateX(-50%);
 	width:100%;
-	height:20em;
+	height:25em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,7 +16,8 @@
 	grid-template-rows: 20% 80%;
 	padding:1.5em;
 	background-color:#b6b6b6;
-	border: 2px solid #565656;
+	border: 2px solid #fff;
+	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
 }
 .SearchBar__FormContainer--header {
 	display: flex;
@@ -25,10 +26,10 @@
 }
 .SearchBar__FormContainer--header h2 {
 	line-height: 0em;
-	font-size: 1.5em;
+	font-size: 2em;
 	color:#fff;
 	font-family: 'Chivo', sans-serif;
-	font-weight: 400;
+	font-weight: 900;
 }
 .SearchBar__FormContainer--form {
 	position: relative;
@@ -38,16 +39,44 @@
 }
 .SearchBar__FormContainer--form h3 {
 	text-decoration: none;
-	font-size: 1em;
+	font-size: 0.6em;
 	line-height: 0em;
-	color:#fff;
+	color:#000;
 	font-family: 'Asul', sans-serif;
+	text-transform: uppercase;
+	margin-top:2em;
 }
 .SearchBar__FormContainer--form div select {
 	width: 100%;
+	line-height: 0em;
+	color:#000;
+	font-family: 'Asul', sans-serif;
+	height: 3em;
+}
+
+.SearchBar__FormContainer--form div {
+	margin: 0 1.5em;
 }
 
 .SearchBar__FormContainer--form div input {
+	line-height: 0em;
+	color:#000;
+	font-family: 'Asul', sans-serif;
+}
+
+.SearchBar__FormContainer--form div input:nth-child(2) {
 	width:100%;
-	height: 100%;
+	height: 2em;
+}
+
+.SearchBar__FormContainer--form div:nth-child(6) {
+	grid-column: 2;
+	grid-row: 3;
+	padding-top:1.6em;
+}
+
+.SearchBar__FormContainer--form div:nth-child(6) input {
+	width:10em;
+	height:3em;
+	background-color:#fff;
 }
