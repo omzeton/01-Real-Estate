@@ -2,37 +2,59 @@ import React, { Component } from 'react';
 import SearchBar from '../../containers/SearchBar/SearchBar';
 import Result from '../../components/Result/Result';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './Properties.css';
 
 class Properties extends Component {
 	state = {
-		instance: [
-			{id: 1260, price: "$ 650 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1260"},
-			{id: 1261, price: "$ 950 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1261"},
-			{id: 1262, price: "$ 150 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1262"},
-			{id: 1263, price: "$ 70 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1263"},
-			{id: 1264, price: "$ 10 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1264"},
-			{id: 1265, price: "$ 1 250 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1265"},
-			{id: 1266, price: "$ 350 000", name: "Duplex for Sale",	info: "info", size: "60m2", ref: "#1266"},
-		]
+		samples : null,
+		limit: 5
 	}
-	
-	sortResults = () => {
-		let totalAmount = this.state.instance.length;
-		let sorted;
-		if(totalAmount >= 10) {
-			sorted = 10;
-		} else {
-			sorted = totalAmount;
-		}
-		return sorted;
+
+	componentDidMount () {
+		axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json')
+			.then(response => {
+				this.setState({samples: response.data});
+			});
 	}
 
 	render() {
 
-		const results = this.state.instance.map(result => {
-			return <Result key={result.id} price={result.price} name={result.name} info={result.info} size={result.size} ref={result.ref}/>  
-		});
+		let results = null;
+		let maxAmount = null;
+		let split = null;
+		let status = null;
+
+		if (this.state.samples) {
+			results = this.state.samples.slice(0, this.state.limit).map(result => {
+				if (result.forSale) {
+					status = "For Sale";
+				} else {
+					status = "To Rent";
+				}
+
+				return <Result 
+					key={result.id}
+					img={result.img} 
+					name={result.name}
+					price={result.price} 
+					town={result.town}
+					beds={result.beds}
+					type={result.type}
+					id={result.id}
+					status={status}
+					/>
+			});
+
+			maxAmount = this.state.samples.length;
+			if(maxAmount >= this.state.limit) {
+				split = this.state.limit;
+			} else {
+				split = maxAmount;
+			}
+		}
+
+		console.log(this.state);
 
 		return (
 			<div className="Properties">
@@ -41,22 +63,20 @@ class Properties extends Component {
 				<div className="Sort">
 					<div className="Sort__Container">
 						<div className="Sort__Container--Header">
-							<h2>All Properties (1 - {this.sortResults()} of {this.state.totalAmount} Properties: <Link to="/">previous</Link> | <Link to="/">next</Link>)</h2>
+							<h2>All Properties (1 - {split} of {maxAmount} Properties: <Link to="/">previous</Link> | <Link to="/">next</Link>)</h2>
 						</div>
 						<div></div>
 						<div className="Sort__Container--Filter">
 							<h2>Sort by: </h2>
 							  <select name="filter">
-								    <option value="new">Newest first</option>
-								    <option value="old">Oldest first</option>
 								    <option value="priceLow">Price: lowest to highest</option>
 								    <option value="priceHigh">Price: highest to lowest</option>
+								    <option value="bedsLow">Beds: least to most</option>
+								    <option value="bedsHigh">Beds: most to last</option>
 							  </select>
 						</div>
 					</div>
-				</div>		
-
-				{/* Generate 7 examples */}
+				</div>
 				{results}
 			</div>
 		);

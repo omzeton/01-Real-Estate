@@ -4,7 +4,7 @@ import './FeaturedExample.css';
 function FeaturedExample(props) {
 
 	const divStyle = {
-		backgroundImage: "url('http://localhost:3000/./assets/properties/0" + props.img + ".jpg')"
+		backgroundImage: 'url(' + props.img + ')'
 	};
 
 	return (
