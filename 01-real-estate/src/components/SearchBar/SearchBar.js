@@ -1,7 +1,24 @@
 import React from 'react';
+
+import { Route } from 'react-router-dom'
+
 import './SearchBar.css';
 
 function SearchBar(props) {
+
+	const ButtonToNavigate = ({ title, history }) => (
+	  <button
+	    type="button"
+	    onClick={() => history.push('/properties')}
+	  >
+	    {title}
+	  </button>
+	);
+
+	const Button = () => (
+	  <Route path="/" render={(props) => <ButtonToNavigate {...props} title="Submit" />} />
+	)    
+
 	return (
 		<div className="SearchBar">
 			<div className="SearchBar__FormContainer">
@@ -69,7 +86,7 @@ function SearchBar(props) {
 						 </div>
 
 						 <div>
-						 	  <input type="submit" value="SEARCH"/>
+						 	  <Button/>
 						 </div>
 					</div>
 			</div>

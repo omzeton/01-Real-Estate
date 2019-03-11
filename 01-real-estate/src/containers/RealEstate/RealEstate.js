@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TopMenu from '../TopMenu/TopMenu';
 import Home from '../Home/Home';
-import Contact from '../Contact/Contact';
+import Properties from '../Properties/Properties';
 import About from '../About/About';
 import ListYourProperty from '../ListYourProperty/ListYourProperty';
 import ForSale from '../ForSale/ForSale';
@@ -20,11 +20,11 @@ class RealEstate extends Component {
 
 				{/* Outputted dynamically */}
 				<Route path="/" exact component={Home}/>
+				<Route path="/properties" exact component={Properties}/>
 				<Route path="/for-sale" component={ForSale}/>
 				<Route path="/to-rent" component={ToRent}/>
 				<Route path="/bond-calculator" exact component={Bond}/>
 				<Route path="/about-us" exact component={About}/>
-				<Route path="/contact" exact component={Contact}/>
 				<Route path="/list-your-property" exact component={ListYourProperty}/>
 
 				{/* Footer stays on bottom no matter what */}

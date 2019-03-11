@@ -15,7 +15,7 @@ function FeaturedExample(props) {
 					<div className="Header">
 						<div><h2>{props.price}</h2></div>
 						<div></div>
-						<div><p>Featured</p></div>
+						<div><p>Featured!</p></div>
 					</div>
 					<div className="Info">
 						<p>{props.info}</p>

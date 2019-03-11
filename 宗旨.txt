@@ -4,7 +4,7 @@ Strona otwiera siê na stronie startowej na której s¹ wyszukiwarka a pod spodem i
 
 U¿ytkownik wprowadza dane do wyszukiwarki. Wprowadza House, dwa ³ó¿ka, od 200,000$ do 500,000$ i wpisuje okolice które go interesuj¹. Gdy naciœnie przycisk wyszukiwania przenosi go to do strony wyników.
 
-Na stronie wyników oprócz fiszek z nieruchomoœciami pasuj¹cymi do jego zapytañ s¹ te¿ filtry w postaci, wyœwietl od najmniejszej ceny do najwy¿szej, od najwczeœniejszego og³oszenia do najpóŸniejszego i od najwiêkszego do najmniejszego mieszkanka. Jest te¿ ta sama wyszukiwarka tylko mniejsza gdyby u¿ytkownik chcia³ szukaæ dalej. Gdy u¿ytkownik kliknie przycisk "VIEW DETAILS" przeniesie go to do strony og³oszenia.
+Na stronie wyników oprócz fiszek z nieruchomoœciami pasuj¹cymi do jego zapytañ s¹ te¿ filtry w postaci, wyœwietl od najmniejszej ceny do najwy¿szej i od najwczeœniejszego og³oszenia do najpóŸniejszego. Jest te¿ ta sama wyszukiwarka tylko mniejsza gdyby u¿ytkownik chcia³ szukaæ dalej. Gdy u¿ytkownik kliknie przycisk "VIEW DETAILS" przeniesie go to do strony og³oszenia.
 
 Strona og³oszenia to przede wszystkim pokaz slajdów ze zdjêciami nieruchomoœci. S¹ te¿ informacje na temat nieruchomoœci, te same co na fiszce tylko d³u¿sze. S¹ te¿ ikonki pokazuj¹ce iloœæ sypialni, ³azienek, gara¿, ogród i basen. Pod informacjami jest formula¿ zg³oszeniowy przez który u¿ytkownik mo¿e wys³aæ wiadomoœæ do osoby która wystawi³a og³oszenie. Koniec!
 

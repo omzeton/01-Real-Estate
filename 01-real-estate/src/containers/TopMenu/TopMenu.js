@@ -11,11 +11,11 @@ class TopMenu extends Component {
 
 					<div className="TopMenu__Bottom__BtnContainer">
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/">Home</Link></div>
+						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/properties">Properties</Link></div>
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/for-sale">For sale</Link></div>
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/to-rent">To rent</Link></div>
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/bond-calculator">Bond Calculator</Link></div>
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/about-us">About us</Link></div>
-						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/contact">Contact</Link></div>
 						<div className="TopMenu__Bottom__BtnContainer--Btn"><Link to="/list-your-property">List Your Property</Link></div>
 					</div>
 

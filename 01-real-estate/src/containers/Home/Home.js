@@ -22,9 +22,6 @@ class Home extends Component {
 					<p>Dorion Estates is an established and fully independent Estate Agency based in Loremus. The Company was formed in 2002 and is currently headed by the Managing Director Dolor sit Amet, whose experience spans for over four decades of experience working in the property market.</p>
 				</div>
 
-				{/* Three examples of properties, any properties
-					Use www.promaqproperties.co.za as an example
-				 */}
 				<Featured />
 
 			</div>
