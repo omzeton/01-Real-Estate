@@ -7,7 +7,7 @@ function Result(props) {
 			<div className="Result__Img" style={{backgroundImage: 'url(' + props.img + ')'}}></div>
 			<div className="Result__Info">
 				<h2>{props.name}</h2>
-				<h3>>$ {props.price}</h3>
+				<h3>$ {props.price}</h3>
 				<p><span>Town:</span> {props.town}</p>
 				<p><span>Beds:</span> {props.beds}</p>
 				<p><span>Category:</span> {props.type}</p>
@@ -16,7 +16,6 @@ function Result(props) {
 				<div><h2>ref# <span>{props.id}</span></h2></div>
 				<div></div>
 				<div><h3>{props.status}!</h3></div>
-				
 			</div>
 		</div>
 	);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SearchBar from '../../containers/SearchBar/SearchBar';
 import Result from '../../components/Result/Result';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,6 @@ import './Properties.css';
 class Properties extends Component {
 	state = {
 		samples : null,
-		limit: 5
 	}
 
 	componentDidMount () {
@@ -26,7 +26,7 @@ class Properties extends Component {
 		let status = null;
 
 		if (this.state.samples) {
-			results = this.state.samples.slice(0, this.state.limit).map(result => {
+			results = this.state.samples.slice(0, this.props.ctr).map(result => {
 				if (result.forSale) {
 					status = "For Sale";
 				} else {
@@ -47,14 +47,12 @@ class Properties extends Component {
 			});
 
 			maxAmount = this.state.samples.length;
-			if(maxAmount >= this.state.limit) {
-				split = this.state.limit;
+			if(maxAmount >= this.props.ctr) {
+				split = this.props.ctr;
 			} else {
 				split = maxAmount;
 			}
 		}
-
-		console.log(this.state);
 
 		return (
 			<div className="Properties">
@@ -83,4 +81,16 @@ class Properties extends Component {
 	}
 };
 
-export default Properties;
+const mapStateToProps = state => {
+	return {
+		ctr: state.limit
+	};
+};
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onIncrementLimit: () => dispatch({type: 'INCREMENT'})
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Properties);

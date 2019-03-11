@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TopMenu from '../TopMenu/TopMenu';
+import TopMenu from '../../components/TopMenu/TopMenu';
 import Home from '../Home/Home';
 import Properties from '../Properties/Properties';
-import About from '../About/About';
+import About from '../../components/About/About';
 import ListYourProperty from '../ListYourProperty/ListYourProperty';
 import ForSale from '../ForSale/ForSale';
-import Bond from '../Bond/Bond';
+import Bond from '../../components/Bond/Bond';
 import ToRent from '../ToRent/ToRent';
 import Footer from '../../components/Footer/Footer';
 

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './TopMenu.css';
 
-class TopMenu extends Component {
-	render() {
+function TopMenu(props) {
 		return (
 			<div className="TopMenu">
 					<div></div>
@@ -23,7 +22,6 @@ class TopMenu extends Component {
 					<div></div>
 			</div>
 		);
-	}
 };
 
 export default TopMenu;

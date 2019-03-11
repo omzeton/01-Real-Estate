@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './About.css';
 
-class About extends Component {
-	render() {
+function About(props) {
 		return (
 			<div className="About">
 				<div className="About__Container">
@@ -22,7 +21,6 @@ class About extends Component {
 				</div>
 			</div>
 		);
-	}
 };
 
 export default About;

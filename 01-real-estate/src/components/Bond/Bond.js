@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Bond.css';
 
-class Bond extends Component {
-	render() {
+function Bond(props) {
 		return (
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
@@ -26,7 +25,6 @@ class Bond extends Component {
 				</ul>
 			</div>
 		);
-	}
 };
 
 export default Bond;
