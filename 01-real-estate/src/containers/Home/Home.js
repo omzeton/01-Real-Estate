@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchBar from '../../containers/SearchBar/SearchBar';
 import Featured from '../../components/Featured/Featured';
 import './Home.css';
 
 class Home extends Component {
+
+	state = {
+		imgClass: "Home__ImgArea--Img"
+	}
+
+	componentDidMount () {
+		this.img1.style.opacity = 1;
+	}
+
 	render() {
+
 		return (
 			<div className="Home">
 
 				<div className="Home__ImgArea">
-					{/* Populate this area with 3 imgs and create a slideshow, each with different h2 tag */}
-					<div className="Home__ImgArea--Img">
+					<div className={this.state.imgClass} ref={(div) => {this.img1 = div}}>
 						<h2>Meet your new <span>home</span>.</h2>
+					</div>
+
+					<div className={this.state.imgClass} ref={(div) => {this.img2 = div}}>
+						<h2>Let's find a new <span>house</span>.</h2>
+					</div>
+
+					<div className={this.state.imgClass} ref={(div) => {this.img3 = div}}>
+						<h2>The search is <span>over</span>.</h2>
 					</div>
 				</div>
 

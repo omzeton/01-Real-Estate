@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchBar from '../../containers/SearchBar/SearchBar';
 
 class ToRent extends Component {
 	render() {
