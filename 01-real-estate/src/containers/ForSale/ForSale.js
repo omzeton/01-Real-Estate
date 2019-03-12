@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from '../../containers/SearchBar/SearchBar';
+import Sort from '../../components/Sort/Sort';
 import './ForSale.css';
 
 class ForSale extends Component {
@@ -8,8 +8,7 @@ class ForSale extends Component {
 
 		return (
 			<div className="ForSale">
-				<SearchBar/>
-				<h2>For Sale</h2>
+				<Sort />
 			</div>
 		);
 	}

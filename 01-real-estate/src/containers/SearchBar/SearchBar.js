@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './SearchBar.css';
 
@@ -80,7 +81,7 @@ class SearchBar extends Component {
 							 </div>
 
 							 <div>
-							 	  <input type="submit" value="Submit" onClick={this.onClick}/>
+							 	  <Link to="/properties"><input type="submit" value="Submit" onClick={this.onClick}/></Link>
 							 </div>
 						</div>
 				</div>
