@@ -1,48 +1,35 @@
-import { applyMiddleware, createStore } from 'redux';
-import axios from 'axios';
-import thunk from 'redux-thunk';
+import * as actionTypes from './actions/actions';
 
-const initalState = {
-	// this is the global store
-	fetching: false,
-	fetched: false,
-	samples: null,
-	limit: 5
+const initialState = {
+	number: 0,
+	results: []
 }
 
-const reducer = (state = initalState, action) => {
+const reducer = (state = initialState, action) => {
 	switch (action.type) {
-		case "FETCH_SAMPLES_START": {
-			return {...state, fetching: true}
-			break;
-		}
-		case "FETCH_SAMPLES_ERROR": {
-			return {...state, fetching: false, error: action.payload}
-			break;
-		}
-		case "RECEIVE_SAMPLES": {
-			return {...state,
-				fetcing:false,
-				fetched: true,
-				samples: action.payload
+			case actionTypes.INCREMENT: {
+				return {...state, number: state.number + action.val}
 			}
+			case actionTypes.SUBTRACT: {
+				return {...state, number: state.number - 1}
+			}
+			case actionTypes.STORE_RESULT: {
+				return {...state, results: state.results.concat({id: Math.random(), value: state.number})}
+			}
+			case actionTypes.DELETE_RESULT: {
+				// const i = 2;
+				// const newArray = [...state.results]
+				// newArray.splice(id, 1);
+				const updatedArray = state.results.filter((result, index) => result.id !== action.resultElId);
+				return {
+					...state,
+					results: updatedArray
+				}
+			}
+		default: {
+			return state;
 		}
 	}
-	return state;
 }
-
-const middleware = applyMiddleware(thunk);
-const store = createStore(reducer, middleware);
-
-store.dispatch((dispatch) => {
-	dispatch({type: "FETCH_SAMPLES_START"})
-	axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json')
-		.then(response => {
-			dispatch({type: "RECEIVE_SAMPLES", payload: response.data})
-		})
-		.catch((err) => {
-			dispatch({type: "FETCH_SAMPLES_ERROR", payload: err})
-		})
-});	
 
 export default reducer;
