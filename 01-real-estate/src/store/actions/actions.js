@@ -1,30 +1,28 @@
-export const INCREMENT = 'INCREMENT';
-export const SUBTRACT = 'SUBTRACT';
-export const STORE_RESULT = 'STORE_RESULT';
-export const DELETE_RESULT = 'DELETE_RESULT';
+import axios from 'axios';
+export const SET_SAMPLES = 'SET_SAMPLES';
+export const FETCH_SAMPLES_FAILED = 'FETCH_SAMPLES_FAILED';
 
-export const increment = () => {
+export const setSamples = (samples) => {
 	return {
-		type: INCREMENT,
-		val: 15
+		type: SET_SAMPLES,
+		samples: samples
+	}
+}
+
+export const fetchSamplesFailed = () => {
+	return {
+		type: FETCH_SAMPLES_FAILED
 	};
 };
 
-export const subtract = () => {
-	return {
-		type: SUBTRACT
-	};
-};
-
-export const storeResult = () => {
-	return {
-		type: STORE_RESULT
-	};
-};
-
-export const deleteResult = (id) => {
-	return {
-		type: DELETE_RESULT,
-		resultElId: id
+export const fetchSamples = () => {
+	return dispatch => {
+		axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json')
+			.then(response => {
+				dispatch(setSamples(response.data));
+			})
+			.catch(error => {
+				dispatch(fetchSamplesFailed());
+			});
 	};
 };

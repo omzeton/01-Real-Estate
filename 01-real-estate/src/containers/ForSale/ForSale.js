@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import Sort from '../../components/Sort/Sort';
-import axios from 'axios';
 import Result from '../../components/Result/Result';
-import './ForSale.css';
+import { connect } from 'react-redux';
+import Sort from '../../components/Sort/Sort';
+import * as actionCreators from '../../store/actions/actions';
 
 class ForSale extends Component {
 	state = {
-		samples : null,
+		purchasing: false
 	}
-
 
 	componentDidMount () {
-		axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json')
-			.then(response => {
-				this.setState({samples: response.data});
-			});
+		this.props.onFetchSamples();
 	}
-	
+
 	render() {
 
-		let results = null;
-		let maxAmount = null;
-		let split = null;
+		let results = this.props.error ? <p>Properties can't be loaded</p> : <p>Loading...</p>;
+		let status = "";
 
-		if (this.state.samples) {
-			results = this.state.samples.map(result => {
-				if (result.forSale) {
+		if ( this.props.samples ) {
+			results = this.props.samples.map(result => {
+				if(result.forSale) {
+
+					status = "For Sale"
 					return <Result 
 						key={result.id}
 						img={result.img} 
@@ -35,28 +32,36 @@ class ForSale extends Component {
 						beds={result.beds}
 						type={result.type}
 						id={result.id}
-						status={"For Sale"}
+						status={status}
 						/>
+
 				} else {
-					return null
+					return null;
 				}
 			});
-
-			maxAmount = this.state.samples.includes({"forSale": true}).length;
-			if(maxAmount >= this.props.ctr) {
-				split = this.props.ctr;
-			} else {
-				split = maxAmount;
-			}
 		}
+
 
 		return (
 			<div className="ForSale">
-				<Sort split={split} maxAmount={maxAmount}/>
+				<Sort />
 				{ results }
 			</div>
 		);
 	}
 };
 
-export default ForSale;
+const mapStateToProps = state => {
+	return {
+		samples: state.samples,
+		error: state.error
+	};
+};
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onFetchSamples: () => dispatch(actionCreators.fetchSamples())
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForSale);
