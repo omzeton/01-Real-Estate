@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Result from '../../components/Result/Result';
+import Loader from '../../components/Loader/Loader';
 import { connect } from 'react-redux';
 import Sort from '../../components/Sort/Sort';
 import * as actionCreators from '../../store/actions/actions';
 
 class ForSale extends Component {
 	state = {
-		purchasing: false
+		samples : null,
 	}
 
 	componentDidMount () {
@@ -15,13 +16,37 @@ class ForSale extends Component {
 
 	render() {
 
-		let results = this.props.error ? <p>Properties can't be loaded</p> : <p>Loading...</p>;
+		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />;
 		let status = "";
+		let maxAmount = 0;
+		let split = 0;
 
 		if ( this.props.samples ) {
-			results = this.props.samples.map(result => {
-				if(result.forSale) {
 
+			let newArr = [];
+
+			if ( this.props.filtering === 'priceHigh' ) {
+				newArr = this.props.samples.sort(function(a, b) {
+					return parseFloat(a.price) - parseFloat(b.price);
+				}).reverse();
+			} else if ( this.props.filtering === 'priceLow' ) {
+				newArr = this.props.samples.sort(function(a, b) {
+					return parseFloat(a.price) - parseFloat(b.price);
+				});
+			} else if ( this.props.filtering === 'bedsLow' ) {
+				newArr = this.props.samples.sort(function(a, b) {
+					return parseFloat(a.beds) - parseFloat(b.beds);
+				});
+			} else if ( this.props.filtering === 'bedsHigh' ) {
+				newArr = this.props.samples.sort(function(a, b) {
+					return parseFloat(a.beds) - parseFloat(b.beds);
+				}).reverse();
+			}
+
+			results = newArr.map(result => {
+				if(result.forSale) {
+					maxAmount++;
+					while (split < 5) { split++; }
 					status = "For Sale"
 					return <Result 
 						key={result.id}
@@ -44,7 +69,10 @@ class ForSale extends Component {
 
 		return (
 			<div className="ForSale">
-				<Sort />
+				<Sort 
+					split={split}
+					maxAmount={maxAmount}
+				/>
 				{ results }
 			</div>
 		);
@@ -54,7 +82,8 @@ class ForSale extends Component {
 const mapStateToProps = state => {
 	return {
 		samples: state.samples,
-		error: state.error
+		error: state.error,
+		filtering: state.filtering
 	};
 };
 

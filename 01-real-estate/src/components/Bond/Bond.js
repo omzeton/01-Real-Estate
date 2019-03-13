@@ -13,7 +13,7 @@ function Bond(props) {
 					<li>Show results - reference them by their ids and display which ones meet the limitations.</li>
 					<li>Routing c.d.n. - display via link the full page of a result. Example localhost:3000/property?id=1260.</li>
 					<li>Routing security - if user inputs something in the browser show 404 page.</li>
-					<li>Filters - display results with appropriate filtering.</li>
+					<li className="finished">Filters - display results with appropriate filtering.</li>
 					<li className="finished">For Sale - Display every result with 'for sale' category on true.</li>
 					<li className="finished">To Rent - Display every result with 'to rent' category on true.</li>
 					<li>List your property - push origin database with any inputted data! *also image!*</li>

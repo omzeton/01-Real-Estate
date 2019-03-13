@@ -1,13 +1,14 @@
 import axios from 'axios';
 export const SET_SAMPLES = 'SET_SAMPLES';
 export const FETCH_SAMPLES_FAILED = 'FETCH_SAMPLES_FAILED';
+export const APPLY_FILTERING = 'APPLY_FILTERING';
 
 export const setSamples = (samples) => {
 	return {
 		type: SET_SAMPLES,
 		samples: samples
-	}
-}
+	};
+};
 
 export const fetchSamplesFailed = () => {
 	return {
@@ -26,3 +27,10 @@ export const fetchSamples = () => {
 			});
 	};
 };
+
+export const applyFiltering = (myValue) => {
+	return {
+		type: APPLY_FILTERING,
+		payLoad: myValue
+	}
+}

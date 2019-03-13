@@ -3,6 +3,7 @@ import * as actionTypes from './actions/actions';
 const initialState = {
 	samples: null,
 	error: false,
+	filtering: 'priceHigh'
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				error: true
+			};
+		}
+		case actionTypes.APPLY_FILTERING: {
+			return {
+				...state,
+				filtering: action.payLoad
 			};
 		}
 		default: {
