@@ -1,9 +1,17 @@
 import * as actionTypes from './actions/actions';
+import { LOCATION_CHANGE } from 'react-router-redux';
 
 const initialState = {
 	samples: null,
 	error: false,
-	filtering: 'priceHigh'
+	filtering: 'priceHigh',
+	search: {
+		type: "false",
+		beds: "false",
+		minPrice: "nomin",
+		maxPrice: "nomax",
+		town: ""
+	}
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,6 +32,30 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				filtering: action.payLoad
+			};
+		}
+		case actionTypes.SEARCH: {
+			return {
+				...state,
+				search: {
+					type: action.payLoad[0],
+					beds: action.payLoad[1],
+					minPrice: action.payLoad[2],
+					maxPrice: action.payLoad[3],
+					town: action.payLoad[4],
+				}
+			}
+		}
+		case LOCATION_CHANGE: {
+			return {
+				...state,
+				search: {
+					type: "false",
+					beds: "false",
+					minPrice: "nomin",
+					maxPrice: "nomax",
+					town: ""
+				}
 			};
 		}
 		default: {

@@ -46,3 +46,20 @@
 .Sort .Sort__Container a:hover {
 	color:#fff;
 }
+
+.noMatches {
+	width:100%;
+	height: 15em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.noMatches__Text {
+	position: relative;
+	font-family: 'Asul', sans-serif;
+	font-weight: 900;
+	white-space: nowrap;
+	margin:3em 0em;
+}

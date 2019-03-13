@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Result from '../../components/Result/Result';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader/Loader'
-import Sort from '../../components/Sort/Sort';
+import Sort from '../Sort/Sort';
 import * as actionCreators from '../../store/actions/actions';
 
 class ToRent extends Component {

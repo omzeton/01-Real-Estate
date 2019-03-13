@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Result from '../../components/Result/Result';
 import Loader from '../../components/Loader/Loader';
 import { connect } from 'react-redux';
-import Sort from '../../components/Sort/Sort';
+import { Link } from 'react-router-dom';
+import Sort from '../Sort/Sort';
 import * as actionCreators from '../../store/actions/actions';
 
 class ForSale extends Component {
@@ -12,6 +13,7 @@ class ForSale extends Component {
 
 	componentDidMount () {
 		this.props.onFetchSamples();
+		console.log(this.props);
 	}
 
 	render() {
@@ -48,8 +50,7 @@ class ForSale extends Component {
 					maxAmount++;
 					while (split < 5) { split++; }
 					status = "For Sale"
-					return <Result 
-						key={result.id}
+					return (<Link to={'/property/' + result.id} key={result.id}><Result 
 						img={result.img} 
 						name={result.name}
 						price={result.price} 
@@ -58,7 +59,7 @@ class ForSale extends Component {
 						type={result.type}
 						id={result.id}
 						status={status}
-						/>
+						/></Link>);
 
 				} else {
 					return null;
