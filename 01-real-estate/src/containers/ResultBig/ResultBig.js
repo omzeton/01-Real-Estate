@@ -19,7 +19,6 @@ class ResultBig extends Component {
 
 		let fullResult = this.props.error ? <p>Property can't be loaded!</p> : <Loader />;
 		let status = "";
-		console.log(this.props);
 
 		if ( this.props.samples ) {
 			fullResult = this.props.samples.map(result => {
@@ -31,16 +30,25 @@ class ResultBig extends Component {
 					}
 						return (
 							<div className="Full__Container" key={result.id}>
-								<div className="Full--Img"  style={{backgroundImage: 'url(' + result.img + ')'}}></div>
-								<div className="Full--Info">
-									<h2>Id. { result.id }</h2>
-									<h2>Name: {result.name}</h2>
-									<h2>Price: {result.price}</h2>
-									<h2>Town: {result.town}</h2>
-									<h2>Beds: {result.beds}</h2>
-									<h2>Info: {result.info}</h2>
-									<h2>Category: {result.type}</h2>
-									<h2>Status: {status}</h2>
+								<div className="Full__Container__Row--Up">
+									<div className="Full__Column--Left">
+										<div className="Full--Info">
+											<h2>{result.name}</h2>
+											<h2><span>Id.</span> { result.id }</h2>
+											<h2><span>Price:</span> {result.price}</h2>
+											<h2><span>Town:</span> {result.town}</h2>
+											<h2><span>Beds:</span> {result.beds}</h2>
+											<h2><span>Category:</span> {result.type}</h2>
+											<h2><span>Status:</span> {status}</h2>
+										</div>
+									</div>
+									<div className="Full__Column--Right">
+										<div className="Full--Img"  style={{backgroundImage: 'url(' + result.img + ')'}}></div>
+									</div>
+								</div>
+
+								<div className="Full__Container__Row--Down">
+									<p><span>Details:</span> {result.info}</p>
 								</div>
 							</div>
 						)

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Sort from '../Sort/Sort';
 import Loader from '../../components/Loader/Loader';
 import SearchBar from '../../containers/SearchBar/SearchBar';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Result from '../../components/Result/Result';
 import * as actionCreators from '../../store/actions/actions';
 import './Properties.css';
@@ -12,6 +12,7 @@ class Properties extends Component {
 
 	componentDidMount () {
 		this.props.onFetchSamples();
+		console.log(this.props);
 	}
 
 	render() {
@@ -19,7 +20,8 @@ class Properties extends Component {
 		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />,
 			status = "",
 			maxAmount = 0,
-			split = 0,
+			pages = 1,
+			currentPage = 0,
 			noResults = false;
 
 		if ( this.props.samples ) {
@@ -32,10 +34,9 @@ class Properties extends Component {
 				maxPriceAny = true,
 				townAny = true;
 
-			// Jeżeli jest coś tam zamiast 'false'. Czyli jak są tam jakieś słowa.
+			// Check if type attribute holds any data
 			if (this.props.search.type !== "false") {
-				// Then it's NOT anything
-				typeAny = false;
+				typeAny = false; // If not it's set on 'anything' 
 			}
 			if (this.props.search.beds !== "false") {
 				bedsAny = false;
@@ -50,19 +51,23 @@ class Properties extends Component {
 				townAny = false;
 			}
 
+			// Map samples from Firebase
 			this.props.samples.map(selected => {
 
+				// Check if the samples meet the criteria set in form of the search bar
 				let typePass = false;
 				let bedsPass = false;
 				let minPricePass = false;
 				let maxPricePass = false;
 				let townPass = false;
 
+				// If it's not anything check for the type
 				if ( !typeAny ) {
 					if ( selected.type === this.props.search.type ) {
+						// See if the value from search bar is the same as the sample's value
 						typePass = true;
 					}
-				} else {
+				} else { // If it is it doesn't matter. It fits.
 					typePass = true;
 				}
 
@@ -98,22 +103,24 @@ class Properties extends Component {
 					townPass = true;
 				}
 
+				// If a sample passes all tests it's the right result.
 				if (typePass && bedsPass && minPricePass && maxPricePass && townPass) {
 					searched.push(selected);
-					matches++;
+					matches++; // This is how many matches there will be in total
 				}
 
 				});
 
-					if( matches === 0 ) {
+					if( matches === 0 ) { // If there were no matches display noResults message
 						noResults = true;
+						results = <div className="noMatches"><h2 className="noMatches__Text">No matches.</h2></div>
 					}
 
 					if( noResults === false ) {
 
 						// If there are some results proceed
 
-						// Filtering from selection under search bar
+						// Sort the right results according to form under the search bar
 						if ( this.props.filtering === 'priceHigh' ) {
 							searched.sort(function(a, b) {
 								return parseFloat(a.price) - parseFloat(b.price);
@@ -132,12 +139,29 @@ class Properties extends Component {
 							}).reverse();
 						}
 
+						//
+						// THIS IS WHERE IT SPLITS INTO PAGES
+						//
+
+						maxAmount = searched.length;
+						pages = Math.floor(maxAmount / 5);
+						let sliced = [];
+
+						if (maxAmount > 5) {
+							for (let i = 0; i <= maxAmount; i += 5) {
+								currentPage += 5;
+								sliced = searched.slice(i, i += 5);
+							}
+							for (let i = 0; i <= pages; i++) {
+
+							}
+						}
+
+						// Set the right results equal to elements
+						// And pass the data as props
 						results = searched.map(result => {
-							// Set results to results that matched searchbar values
 								if(result.forSale) {
-									// If it's for sale set status to a readable string and add to the total amount of results
-									maxAmount++;
-									while (split < 5) { split++; }
+									// If it's for sale set status to a more readable string
 									status = "For Sale"
 									return <Link to={'/properties/' + result.id} key={result.id}><Result 
 										key={result.id}
@@ -152,8 +176,6 @@ class Properties extends Component {
 										/></Link>
 
 								} else if (result.toRent) {
-									maxAmount++;
-									while (split < 5) { split++; }
 									status = "To Rent"
 									return <Link to={'/properties/' + result.id} key={result.id}><Result 
 										key={result.id}
@@ -168,17 +190,14 @@ class Properties extends Component {
 										/></Link>
 								}
 							});
-							} else if( noResults === true ) {
-								// If noResults is equal to true display message.
-								results = <div className="noMatches"><h2 className="noMatches__Text">No matches.</h2></div>
-							}
+						}
 		}
 
 		return (
 			<div className="Properties">
 				<SearchBar/>
 
-				<Sort split={split}
+				<Sort split={currentPage}
 					maxAmount={maxAmount}
 					/>
 				
@@ -203,4 +222,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Properties);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Properties));

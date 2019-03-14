@@ -17,13 +17,10 @@ import * as actionCreators from '../../store/actions/actions';
 
 class RealEstate extends Component {
 
-	componentDidUpdate() {
-		// this.onRouteChanged();
-		console.log(this.props);
-	}
-
-	onRouteChanged() {
-	    this.props.onRouteChange();
+	componentWillReceiveProps(nextProps) {
+	    if (nextProps.location.pathname !== this.props.location.pathname) {
+	      this.props.onRouteChange();
+	    }
 	  }
 
 	render() {

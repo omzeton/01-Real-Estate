@@ -2,3 +2,10 @@
 	opacity: 0.7;
 	text-decoration: line-through;
 }
+.bug {
+	color:salmon;
+}
+.gold {
+	color: gold;
+	font-weight: bold;
+}

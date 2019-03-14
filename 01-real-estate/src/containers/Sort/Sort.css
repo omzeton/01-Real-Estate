@@ -47,3 +47,9 @@
 .Sort .Sort__Container h2 span:hover {
 	color:#fff;
 }
+
+.disabled {
+	pointer-events: none;
+	color:#777;
+	opacity: 0.3;
+}

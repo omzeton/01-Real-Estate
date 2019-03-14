@@ -11,7 +11,8 @@ const initialState = {
 		maxPrice: "nomax",
 		town: ""
 	},
-	pages: 1
+	pages: 1,
+	currentPage: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -56,6 +57,18 @@ const reducer = (state = initialState, action) => {
 					maxPrice: "nomax",
 					town: ""
 				}
+			}
+		}
+		case actionTypes.PREV_PAGE: {
+			return {
+				...state,
+				currentPage: state.currentPage - 1
+			}
+		}
+		case actionTypes.NEXT_PAGE: {
+			return {
+				...state,
+				currentPage: state.currentPage + 1
 			}
 		}
 		default: {

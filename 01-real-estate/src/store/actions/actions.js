@@ -4,7 +4,9 @@ export const FETCH_SAMPLES_FAILED = 'FETCH_SAMPLES_FAILED';
 export const APPLY_FILTERING = 'APPLY_FILTERING';
 export const SEARCH = 'SEARCH';
 export const FETCH_SEARCH_DATA = 'FETCH_SEARCH_DATA';
-export const ROUTE_CHANGE = 'ROUTE_CHANGE'
+export const ROUTE_CHANGE = 'ROUTE_CHANGE';
+export const PREV_PAGE = 'PREV_PAGE';
+export const NEXT_PAGE = 'NEXT_PAGE';
 
 export const setSamples = (samples) => {
 	return {
@@ -56,3 +58,14 @@ export const routeChange = () => {
 		type: ROUTE_CHANGE
 	};
 };
+
+export const onPrevPage = () => {
+	return {
+		type: PREV_PAGE
+	}
+}
+export const onNextPage = () => {
+	return {
+		type: NEXT_PAGE
+	}
+}

@@ -6,15 +6,16 @@ function Bond(props) {
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
-					<li>Set state of search to deafult on every Route Change.</li>
+					<li className="gold">Display 5 properties per page</li>
+					<li>/ to /properties resets state</li>
 					<li>The prices are too high for search filters! Change in json file.</li>
 					<hr />
-					<li>Routing security - if user inputs something in the browser show 404 page.</li>
-					<li>Style the shit out of BigResult container - maybe turn it into a component instead.</li>
-					<li>Add 'featured' data to samples and display 3 random properties with that attribute set to true.</li>
+					<li>Style the BigResult container + add more details to json file</li>
+					<li>Add more info to json file like rates, levies, province, bathrooms, contact : name, phone, surname, mail,</li>
 					<hr />
 					<li>List your property - push origin database with any inputted data! *also image!*</li>
-					<li>Featured container has wrong height</li>
+					<li>Dive deep into Firebase functions.</li>
+					<li className="bug">Wrong height on featured container</li>
 					<li>Check if the inputted data shows in search results.</li>
 					<li>Create bond calculator.</li>
 					<li>Better naming / Better folder structure / Code improvements / Check if some containers are still in components folder</li>

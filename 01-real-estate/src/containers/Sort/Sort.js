@@ -6,27 +6,24 @@ import './Sort.css';
 
 class Sort extends Component {
 
-	previousPageHanlder = (index) => {
-		index--;
-		this.props.history.push(this.props.match.url + '/page' + index)
-	};
-
-	nextPageHanlder = (index) => {
-		index++;
-		this.props.history.push(this.props.match.url + '/page' + index)
-	};
-
 	render() {
 
 		// let index = 1;
+		let buttons = null;
 
-
+		if ( !this.props.disableForward && !this.props.disableBackward ) {
+			buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
+		} else if ( this.props.disableBackward ) {
+			buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span className="disabled" onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
+		} else if ( this.props.disableForward ) {
+			buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span className="disabled" onClick={this.props.onNextPage}>next</span>)</h2>
+		}
 
 		return(
 			<div className="Sort">
 				<div className="Sort__Container">
 					<div className="Sort__Container--Header">
-						<h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={() => this.previousPageHanlder(this.props.index)}>previous</span> | <span onClick={() => this.nextPageHanlder(this.props.index)}>next</span>)</h2>
+						{ buttons }
 					</div>
 					<div></div>
 					<div className="Sort__Container--Filter">
@@ -53,7 +50,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onApplyFiltering: (myValue) => dispatch(actionProviders.applyFiltering(myValue))
+		onApplyFiltering: (myValue) => dispatch(actionProviders.applyFiltering(myValue)),
+		onPrevPage: () => dispatch(actionProviders.onPrevPage()),
+		onNextPage: () => dispatch(actionProviders.onNextPage())
 	};
 };
 
