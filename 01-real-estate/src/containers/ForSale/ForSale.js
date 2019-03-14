@@ -50,7 +50,7 @@ class ForSale extends Component {
 					maxAmount++;
 					while (split < 5) { split++; }
 					status = "For Sale"
-					return (<Link to={'/property/' + result.id} key={result.id}><Result 
+					return (<Link to={'/for-sale/' + result.id} key={result.id}><Result 
 						img={result.img} 
 						name={result.name}
 						price={result.price} 
@@ -60,7 +60,6 @@ class ForSale extends Component {
 						id={result.id}
 						status={status}
 						/></Link>);
-
 				} else {
 					return null;
 				}

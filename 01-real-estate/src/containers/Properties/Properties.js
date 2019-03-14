@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Sort from '../Sort/Sort';
 import Loader from '../../components/Loader/Loader';
 import SearchBar from '../../containers/SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
 import Result from '../../components/Result/Result';
 import * as actionCreators from '../../store/actions/actions';
 import './Properties.css';
@@ -66,219 +67,36 @@ class Properties extends Component {
 				searched.push(selected);
 				matches++;
 
-				if ( 
-					selected.type === this.props.search.type && 
-					selected.beds === this.props.search.beds && 
-					selected.town === this.props.search.town && 
-					selected.price < this.props.search.maxPrice && 
-					selected.price > this.props.search.minPrice 
-					) {
-					// If yes, push it to searched array.
-					searched.push(selected);
-					matches++;
+				if ( !typeAny ) {
+					if ( selected.type === this.props.search.type ) {
+
+					}
 				}
 
-				// if (bullshit code) {
-				// 	if ( typeAny ) {
-				// 		if ( 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+				if ( !bedsAny ) {
+					if ( selected.beds === this.props.search.beds ) {
 
-				// 	if ( typeAny && bedsAny ) {
-				// 		if ( 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+					}
+				}
 
-				// 	if ( typeAny && minPriceAny ) {
-				// 		if ( 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+				if ( !minPriceAny ) {
+					if ( selected.price < this.props.search.maxPrice ) {
 
-				// 	if ( typeAny && maxPriceAny ) {
-				// 		if ( 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price < this.props.search.maxPrice
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+					}
+				}
 
-				// 	if ( typeAny && townAny ) {
-				// 		if ( 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+				if ( !maxPriceAny ) {
+					if ( selected.price > this.props.search.minPrice ) {
 
-				// 	if ( bedsAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+					}
+				}
 
-				// 	if ( bedsAny && minPriceAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+				if ( !townAny ) {
+					if ( selected.town === this.props.search.town ) {
 
-				// 	if ( bedsAny && maxPriceAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.town === this.props.search.town && 
-				// 			selected.price < this.props.search.maxPrice
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
+					}
+				}
 
-				// 	if ( bedsAny && townAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type &&
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice 
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( minPriceAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price > this.props.search.minPrice &&
-				// 			selected.town === this.props.search.town
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( minPriceAny && townAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price > this.props.search.minPrice
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( minPriceAny && maxPriceAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds &&
-				// 			selected.town === this.props.search.town
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( maxPriceAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.town === this.props.search.town
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( maxPriceAny && townAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price < this.props.search.maxPrice &&
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-				// 	if ( townAny ) {
-				// 		if ( 
-				// 			selected.type === this.props.search.type && 
-				// 			selected.beds === this.props.search.beds && 
-				// 			selected.price < this.props.search.maxPrice && 
-				// 			selected.price > this.props.search.minPrice
-				// 			) {
-				// 			// If yes, push it to searched array.
-				// 			searched.push(selected);
-				// 			matches++;
-				// 		}
-				// 	}
-
-
-
-				// 	// Check if all properties match the criteria from search bar.
-				// 	if ( 
-				// 		selected.type === this.props.search.type && 
-				// 		selected.beds === this.props.search.beds && 
-				// 		selected.town === this.props.search.town && 
-				// 		selected.price < this.props.search.maxPrice && 
-				// 		selected.price > this.props.search.minPrice 
-				// 		) {
-				// 		// If yes, push it to searched array.
-				// 		searched.push(selected);
-				// 		matches++;
-				// 	}
-				// }
 			});
 
 			if( matches === 0 ) {
@@ -315,7 +133,7 @@ class Properties extends Component {
 							maxAmount++;
 							while (split < 5) { split++; }
 							status = "For Sale"
-							return <Result 
+							return <Link to={'/properties/' + result.id} key={result.id}><Result 
 								key={result.id}
 								img={result.img} 
 								name={result.name}
@@ -325,13 +143,13 @@ class Properties extends Component {
 								type={result.type}
 								id={result.id}
 								status={status}
-								/>
+								/></Link>
 
 						} else if (result.toRent) {
 							maxAmount++;
 							while (split < 5) { split++; }
 							status = "To Rent"
-							return <Result 
+							return <Link to={'/properties/' + result.id} key={result.id}><Result 
 								key={result.id}
 								img={result.img} 
 								name={result.name}
@@ -341,7 +159,7 @@ class Properties extends Component {
 								type={result.type}
 								id={result.id}
 								status={status}
-								/>
+								/></Link>
 						}
 				});
 			} else if( noResults === true ) {

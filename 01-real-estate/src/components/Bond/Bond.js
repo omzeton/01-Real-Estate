@@ -6,13 +6,11 @@ function Bond(props) {
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
-					<li className="finished">Searchbar - compare value of input between what is inside database.</li>
-					<li className="finished">Show results - reference them by their ids and display which ones meet the limitations.</li>
-					<li>Clean up State on Route Change.</li>
+					<li>Set state of serach to deafult on every Route Change.</li>
 					<li className="finished">Find properties between minPrice and maxPrice</li>
 					<li>The prices are too high for search filters! Expand them in search bar or change in json file.</li>
 					<hr />
-					<li>Routing c.d.n. - display via link the full page of a result. Example localhost:3000/property?id=1260.</li>
+					<li className="finished">Routing c.d.n. - display via link the full page of a result. Example localhost:3000/property?id=1260.</li>
 					<li>Routing security - if user inputs something in the browser show 404 page.</li>
 					<li>Style the shit out of BigResult container - maybe turn it into a component instead.</li>
 					<hr />

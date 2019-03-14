@@ -8,6 +8,7 @@ import ForSale from '../ForSale/ForSale';
 import Bond from '../../components/Bond/Bond';
 import ResultBig from '../ResultBig/ResultBig';
 import ToRent from '../ToRent/ToRent';
+import Result from '../../components/Result/Result';
 import Footer from '../../components/Footer/Footer';
 
 import { Route } from 'react-router-dom';
@@ -26,9 +27,9 @@ class RealEstate extends Component {
 					<Route path="/about-us" exact component={About}/>
 					<Route path="/list-your-property" exact component={ListYourProperty}/>
 
-					<Route path="/properties:id" component={ResultBig}/>
-					<Route path="/for-sale:id" component={ResultBig}/>
-					<Route path="/to-rent:id" component={ResultBig}/>
+					<Route path="/properties/:id" component={ResultBig}/>
+					<Route path="/for-sale/:id" component={ResultBig}/>
+					<Route path="/to-rent/:id" component={ResultBig}/>
 
 				<Footer />
 

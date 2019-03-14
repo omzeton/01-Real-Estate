@@ -1,0 +1,22 @@
+.ResultBig {
+	position: relative;
+	width:100%;
+	height:70em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.Full__Container {
+	width:45em;
+	height:60em;
+	background-color: #b6b6b6;
+	border: 2px solid #565656;
+}
+
+.Full__Container h2 {
+	font-size: 0.9em;
+	font-family: 'Chivo', sans-serif;
+	font-weight: 400;
+}

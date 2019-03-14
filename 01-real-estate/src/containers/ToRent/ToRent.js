@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Result from '../../components/Result/Result';
-import { connect } from 'react-redux';
-import Loader from '../../components/Loader/Loader'
+import { Link } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 import Sort from '../Sort/Sort';
+import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/actions';
 
 class ToRent extends Component {
-	state = {
-		purchasing: false
-	}
 
 	componentDidMount () {
 		this.props.onFetchSamples();
@@ -48,7 +46,7 @@ class ToRent extends Component {
 							maxAmount++;
 							while (split < 5) { split++; }
 							status = "To Rent"
-							return <Result 
+							return <Link to={'/to-rent/' + result.id} key={result.id}><Result 
 								key={result.id}
 								img={result.img} 
 								name={result.name}
@@ -58,7 +56,7 @@ class ToRent extends Component {
 								type={result.type}
 								id={result.id}
 								status={status}
-								/>
+								/></Link>
 
 						} else {
 							return null;
