@@ -4,6 +4,7 @@ export const FETCH_SAMPLES_FAILED = 'FETCH_SAMPLES_FAILED';
 export const APPLY_FILTERING = 'APPLY_FILTERING';
 export const SEARCH = 'SEARCH';
 export const FETCH_SEARCH_DATA = 'FETCH_SEARCH_DATA';
+export const ROUTE_CHANGE = 'ROUTE_CHANGE'
 
 export const setSamples = (samples) => {
 	return {
@@ -47,5 +48,11 @@ export const search = (myValue) => {
 export const fetchSearchData = (myValue) => {
 	return dispatch => {
 		dispatch(search(myValue));
-	}
-}
+	};
+};
+
+export const routeChange = () => {
+	return {
+		type: ROUTE_CHANGE
+	};
+};

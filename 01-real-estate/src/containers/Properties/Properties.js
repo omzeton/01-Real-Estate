@@ -24,8 +24,7 @@ class Properties extends Component {
 
 		if ( this.props.samples ) {
 			
-			let newArr = [],
-				searched = [],
+			let searched = [],
 				matches = 0,
 				typeAny = true,
 				bedsAny = true,
@@ -51,7 +50,7 @@ class Properties extends Component {
 				townAny = false;
 			}
 
-			newArr = this.props.samples.map(selected => {
+			this.props.samples.map(selected => {
 
 				let typePass = false;
 				let bedsPass = false;
@@ -106,73 +105,73 @@ class Properties extends Component {
 
 				});
 
-				if( matches === 0 ) {
-					noResults = true;
-				}
-
-				if( noResults === false ) {
-
-					// If there are some results proceed
-
-					// Filtering from selection under search bar
-					if ( this.props.filtering === 'priceHigh' ) {
-						searched.sort(function(a, b) {
-							return parseFloat(a.price) - parseFloat(b.price);
-						}).reverse();
-					} else if ( this.props.filtering === 'priceLow' ) {
-						searched.sort(function(a, b) {
-							return parseFloat(a.price) - parseFloat(b.price);
-						});
-					} else if ( this.props.filtering === 'bedsLow' ) {
-						searched.sort(function(a, b) {
-							return parseFloat(a.beds) - parseFloat(b.beds);
-						});
-					} else if ( this.props.filtering === 'bedsHigh' ) {
-						searched.sort(function(a, b) {
-							return parseFloat(a.beds) - parseFloat(b.beds);
-						}).reverse();
+					if( matches === 0 ) {
+						noResults = true;
 					}
 
-					results = searched.map(result => {
-						// Set results to results that matched searchbar values
-							if(result.forSale) {
-								// If it's for sale set status to a readable string and add to the total amount of results
-								maxAmount++;
-								while (split < 5) { split++; }
-								status = "For Sale"
-								return <Link to={'/properties/' + result.id} key={result.id}><Result 
-									key={result.id}
-									img={result.img} 
-									name={result.name}
-									price={result.price} 
-									town={result.town}
-									beds={result.beds}
-									type={result.type}
-									id={result.id}
-									status={status}
-									/></Link>
+					if( noResults === false ) {
 
-							} else if (result.toRent) {
-								maxAmount++;
-								while (split < 5) { split++; }
-								status = "To Rent"
-								return <Link to={'/properties/' + result.id} key={result.id}><Result 
-									key={result.id}
-									img={result.img} 
-									name={result.name}
-									price={result.price} 
-									town={result.town}
-									beds={result.beds}
-									type={result.type}
-									id={result.id}
-									status={status}
-									/></Link>
-							}
-						});
-						} else if( noResults === true ) {
-							// If noResults is equal to true display message.
-							results = <div className="noMatches"><h2 className="noMatches__Text">No matches.</h2></div>
+						// If there are some results proceed
+
+						// Filtering from selection under search bar
+						if ( this.props.filtering === 'priceHigh' ) {
+							searched.sort(function(a, b) {
+								return parseFloat(a.price) - parseFloat(b.price);
+							}).reverse();
+						} else if ( this.props.filtering === 'priceLow' ) {
+							searched.sort(function(a, b) {
+								return parseFloat(a.price) - parseFloat(b.price);
+							});
+						} else if ( this.props.filtering === 'bedsLow' ) {
+							searched.sort(function(a, b) {
+								return parseFloat(a.beds) - parseFloat(b.beds);
+							});
+						} else if ( this.props.filtering === 'bedsHigh' ) {
+							searched.sort(function(a, b) {
+								return parseFloat(a.beds) - parseFloat(b.beds);
+							}).reverse();
 						}
+
+						results = searched.map(result => {
+							// Set results to results that matched searchbar values
+								if(result.forSale) {
+									// If it's for sale set status to a readable string and add to the total amount of results
+									maxAmount++;
+									while (split < 5) { split++; }
+									status = "For Sale"
+									return <Link to={'/properties/' + result.id} key={result.id}><Result 
+										key={result.id}
+										img={result.img} 
+										name={result.name}
+										price={result.price} 
+										town={result.town}
+										beds={result.beds}
+										type={result.type}
+										id={result.id}
+										status={status}
+										/></Link>
+
+								} else if (result.toRent) {
+									maxAmount++;
+									while (split < 5) { split++; }
+									status = "To Rent"
+									return <Link to={'/properties/' + result.id} key={result.id}><Result 
+										key={result.id}
+										img={result.img} 
+										name={result.name}
+										price={result.price} 
+										town={result.town}
+										beds={result.beds}
+										type={result.type}
+										id={result.id}
+										status={status}
+										/></Link>
+								}
+							});
+							} else if( noResults === true ) {
+								// If noResults is equal to true display message.
+								results = <div className="noMatches"><h2 className="noMatches__Text">No matches.</h2></div>
+							}
 		}
 
 		return (

@@ -6,10 +6,6 @@ import './Sort.css';
 
 class Sort extends Component {
 
-	componentDidMount () {
-		console.log(this.props);
-	};
-
 	previousPageHanlder = (index) => {
 		index--;
 		this.props.history.push(this.props.match.url + '/page' + index)

@@ -9,32 +9,52 @@ import Bond from '../../components/Bond/Bond';
 import ResultBig from '../ResultBig/ResultBig';
 import ToRent from '../ToRent/ToRent';
 import Footer from '../../components/Footer/Footer';
+import WrongRoute from '../../components/WrongRoute/WrongRoute';
 
-import { Route } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../store/actions/actions';
 
 class RealEstate extends Component {
+
+	componentDidUpdate() {
+		// this.onRouteChanged();
+		console.log(this.props);
+	}
+
+	onRouteChanged() {
+	    this.props.onRouteChange();
+	  }
+
 	render() {
 		return (
 			<div className="RealEstate">
 				<TopMenu />
+					<Switch>
+						<Route path="/properties" exact component={Properties}/>
+						<Route path="/for-sale" exact component={ForSale}/>
+						<Route path="/to-rent" exact component={ToRent}/>
+						<Route path="/bond-calculator" exact component={Bond}/>
+						<Route path="/about-us" exact component={About}/>
+						<Route path="/list-your-property" exact component={ListYourProperty}/>
 
-					<Route path="/" exact component={Home}/>
-					<Route path="/properties" exact component={Properties}/>
-					<Route path="/for-sale" exact component={ForSale}/>
-					<Route path="/to-rent" exact component={ToRent}/>
-					<Route path="/bond-calculator" exact component={Bond}/>
-					<Route path="/about-us" exact component={About}/>
-					<Route path="/list-your-property" exact component={ListYourProperty}/>
+						<Route path="/properties/:id" component={ResultBig}/>
+						<Route path="/for-sale/:id" component={ResultBig}/>
+						<Route path="/to-rent/:id" component={ResultBig}/>
 
-					<Route path="/properties/:id" component={ResultBig}/>
-					<Route path="/for-sale/:id" component={ResultBig}/>
-					<Route path="/to-rent/:id" component={ResultBig}/>
-
+						<Route path="/" exact component={Home}/>
+						<Route component={WrongRoute}/>
+					</Switch>
 				<Footer />
-
 			</div>
 		);
 	}
 };
 
-export default RealEstate;
+const mapDispatchToProps = dispatch => {
+	return {
+		onRouteChange: () => dispatch(actionCreators.routeChange())
+	};
+};
+
+export default withRouter(connect(null, mapDispatchToProps)(RealEstate));

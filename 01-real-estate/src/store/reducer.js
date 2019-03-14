@@ -1,5 +1,4 @@
 import * as actionTypes from './actions/actions';
-import { LOCATION_CHANGE } from 'react-router-redux';
 
 const initialState = {
 	samples: null,
@@ -47,7 +46,7 @@ const reducer = (state = initialState, action) => {
 				}
 			}
 		}
-		case LOCATION_CHANGE: {
+		case actionTypes.ROUTE_CHANGE: {
 			return {
 				...state,
 				search: {
@@ -57,7 +56,7 @@ const reducer = (state = initialState, action) => {
 					maxPrice: "nomax",
 					town: ""
 				}
-			};
+			}
 		}
 		default: {
 			return state;

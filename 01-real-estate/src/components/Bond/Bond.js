@@ -7,9 +7,8 @@ function Bond(props) {
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
 					<li>Set state of search to deafult on every Route Change.</li>
-					<li>The prices are too high for search filters! Expand them in search bar or change in json file.</li>
+					<li>The prices are too high for search filters! Change in json file.</li>
 					<hr />
-					<li className="finished">Routing c.d.n. - display via link the full page of a result. Example localhost:3000/property?id=1260.</li>
 					<li>Routing security - if user inputs something in the browser show 404 page.</li>
 					<li>Style the shit out of BigResult container - maybe turn it into a component instead.</li>
 					<li>Add 'featured' data to samples and display 3 random properties with that attribute set to true.</li>

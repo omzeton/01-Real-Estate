@@ -1,6 +1,7 @@
 .Footer {
-	position: absolute;
+	position:relative;
 	width:100%;
+	bottom:0;
 	height:10em;
 	background-color:#000;
 	display: flex;
