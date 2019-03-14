@@ -39,10 +39,11 @@
 	font-weight: 400;
 	white-space: nowrap;
 }
-.Sort .Sort__Container a {
+.Sort .Sort__Container h2 span {
 	text-decoration: none;
 	color:#000;
+	cursor: pointer;
 }
-.Sort .Sort__Container a:hover {
+.Sort .Sort__Container h2 span:hover {
 	color:#fff;
 }

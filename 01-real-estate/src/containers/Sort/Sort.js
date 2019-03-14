@@ -1,16 +1,36 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actionProviders from '../../store/actions/actions';
 import './Sort.css';
 
 class Sort extends Component {
+
+	componentDidMount () {
+		console.log(this.props);
+	};
+
+	previousPageHanlder = (index) => {
+		index--;
+		this.props.history.push(this.props.match.url + '/page' + index)
+	};
+
+	nextPageHanlder = (index) => {
+		index++;
+		this.props.history.push(this.props.match.url + '/page' + index)
+	};
+
 	render() {
+
+		// let index = 1;
+
+
+
 		return(
 			<div className="Sort">
 				<div className="Sort__Container">
 					<div className="Sort__Container--Header">
-						<h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <Link to="/">previous</Link> | <Link to="/">next</Link>)</h2>
+						<h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={() => this.previousPageHanlder(this.props.index)}>previous</span> | <span onClick={() => this.nextPageHanlder(this.props.index)}>next</span>)</h2>
 					</div>
 					<div></div>
 					<div className="Sort__Container--Filter">
@@ -30,7 +50,8 @@ class Sort extends Component {
 
 const mapStateToProps = state => {
 	return {
-		filtering: state.filtering
+		filtering: state.filtering,
+		index: state.pages
 	};
 };
 
@@ -40,4 +61,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Sort);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Sort));

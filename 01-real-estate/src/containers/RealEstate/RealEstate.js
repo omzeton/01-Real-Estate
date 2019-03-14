@@ -8,7 +8,6 @@ import ForSale from '../ForSale/ForSale';
 import Bond from '../../components/Bond/Bond';
 import ResultBig from '../ResultBig/ResultBig';
 import ToRent from '../ToRent/ToRent';
-import Result from '../../components/Result/Result';
 import Footer from '../../components/Footer/Footer';
 
 import { Route } from 'react-router-dom';

@@ -31,15 +31,17 @@ class ResultBig extends Component {
 					}
 						return (
 							<div className="Full__Container" key={result.id}>
-								<h2>Id. { result.id }</h2>
-								<h2>Name: {result.name}</h2>
-								<h2>Price: {result.price}</h2>
-								<h2>Town: {result.town}</h2>
-								<h2>Beds: {result.beds}</h2>
-								<h2>Info: {result.info}</h2>
-								<h2>Category: {result.type}</h2>
-								<h2>Img: {result.img}</h2>
-								<h2>Status: {status}</h2>
+								<div className="Full--Img"  style={{backgroundImage: 'url(' + result.img + ')'}}></div>
+								<div className="Full--Info">
+									<h2>Id. { result.id }</h2>
+									<h2>Name: {result.name}</h2>
+									<h2>Price: {result.price}</h2>
+									<h2>Town: {result.town}</h2>
+									<h2>Beds: {result.beds}</h2>
+									<h2>Info: {result.info}</h2>
+									<h2>Category: {result.type}</h2>
+									<h2>Status: {status}</h2>
+								</div>
 							</div>
 						)
 				} else {

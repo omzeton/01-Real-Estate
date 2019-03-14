@@ -7,13 +7,9 @@ import Sort from '../Sort/Sort';
 import * as actionCreators from '../../store/actions/actions';
 
 class ForSale extends Component {
-	state = {
-		samples : null,
-	}
 
 	componentDidMount () {
 		this.props.onFetchSamples();
-		console.log(this.props);
 	}
 
 	render() {
