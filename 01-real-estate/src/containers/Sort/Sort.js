@@ -6,43 +6,39 @@ import './Sort.css';
 
 class Sort extends Component {
 
-	state = {
-		forward: false,
-		backward: false
-	}
-
-	componentDidMount () {
-			let index = this.props.currentPage,
-				maxAmount = this.props.maxAmount;
-			if (maxAmount > 5) {
-				if ( index == 0 ) {
-					this.setState({forward:true, backward:false});
-				} else if ( index === (Math.floor(maxAmount / 5))) {
-					this.setState({forward:false, backward:true});
-				} else {
-					this.setState({forward:true, backward:true});
-				}
-			} else {
-				this.setState({forward:false, backward:false});
-			}
-			console.log(maxAmount);
-	}
-
 	render() {
 
 		let buttons = null,
-			forward = this.state.forward,
-			backward = this.state.backward;
+			forward = false,
+			backward = false,
+			index = this.props.currentPage,
+			maxAmount = this.props.maxAmount;
+
+		if (maxAmount > 5) {
+			if ( index == 0 ) {
+				forward = true;
+				backward = false;
+			} else if ( index === (Math.floor(maxAmount / 5))) {
+				forward = false;
+				backward = true;
+			} else {
+				forward = true;
+				backward = true;
+			}
+		} else {
+			forward = false;
+			backward = false;
+		}
 
 		if ( this.props.samples ) {
 			if ( forward && backward ) {
-				buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
+				buttons = <h2>All Properties ({this.props.numberFrom} - {this.props.numberTo} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
 			} else if ( !backward && forward ) {
-				buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span className="disabled" onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
+				buttons = <h2>All Properties ({this.props.numberFrom} - {this.props.numberTo} of {this.props.maxAmount} Properties: <span className="disabled" onClick={this.props.onPrevPage}>previous</span> | <span onClick={this.props.onNextPage}>next</span>)</h2>
 			} else if ( backward && !forward ) {
-				buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span className="disabled" onClick={this.props.onNextPage}>next</span>)</h2>
+				buttons = <h2>All Properties ({this.props.numberFrom} - {this.props.numberTo} of {this.props.maxAmount} Properties: <span onClick={this.props.onPrevPage}>previous</span> | <span className="disabled" onClick={this.props.onNextPage}>next</span>)</h2>
 			} else if ( !backward && !forward ) {
-				buttons = <h2>All Properties (1 - {this.props.split} of {this.props.maxAmount} Properties: <span className="disabled">previous</span> | <span className="disabled">next</span>)</h2>
+				buttons = <h2>All Properties ({this.props.numberFrom} - {this.props.numberTo} of {this.props.maxAmount} Properties: <span className="disabled">previous</span> | <span className="disabled">next</span>)</h2>
 			}
 		}
 
@@ -72,7 +68,6 @@ const mapStateToProps = state => {
 	return {
 		samples: state.samples,
 		filtering: state.filtering,
-		index: state.pages,
 		currentPage: state.currentPage
 	};
 };

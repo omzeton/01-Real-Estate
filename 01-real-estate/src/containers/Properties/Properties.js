@@ -12,7 +12,6 @@ class Properties extends Component {
 
 	componentDidMount () {
 		this.props.onFetchSamples();
-		console.log(this.props);
 	}
 
 	render() {
@@ -20,9 +19,12 @@ class Properties extends Component {
 		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />,
 			status = "",
 			maxAmount = 0,
-			pages = 1,
-			currentPage = 0,
-			noResults = false;
+			noResults = false,
+			currentPage = this.props.currentPage,
+			x = 0,
+			y = 0,
+			numberFrom = 0,
+			numberTo = 0;
 
 		if ( this.props.samples ) {
 			
@@ -109,6 +111,8 @@ class Properties extends Component {
 					matches++; // This is how many matches there will be in total
 				}
 
+				return searched;
+
 				});
 
 					if( matches === 0 ) { // If there were no matches display noResults message
@@ -116,7 +120,7 @@ class Properties extends Component {
 						results = <div className="noMatches"><h2 className="noMatches__Text">No matches.</h2></div>
 					}
 
-					if( noResults === false ) {
+					if( !noResults ) {
 
 						// If there are some results proceed
 
@@ -139,27 +143,27 @@ class Properties extends Component {
 							}).reverse();
 						}
 
-						//
-						// THIS IS WHERE IT SPLITS INTO PAGES
-						//
-
-						maxAmount = searched.length;
-						pages = Math.floor(maxAmount / 5);
 						let sliced = [];
+						maxAmount = matches;
 
+						// If there are more than 5 matches
 						if (maxAmount > 5) {
-							for (let i = 0; i <= maxAmount; i += 5) {
-								currentPage += 5;
-								sliced = searched.slice(i, i += 5);
+							x = currentPage*5;
+							y = x + 5;
+							sliced = searched.slice(x, y);
+							numberFrom = x + 1;
+							if ( y > maxAmount ) {
+								numberTo = maxAmount;
+							} else {
+								numberTo = y;
 							}
-							for (let i = 0; i <= pages; i++) {
-
-							}
+						} else {
+							sliced = searched;
 						}
 
 						// Set the right results equal to elements
 						// And pass the data as props
-						results = searched.map(result => {
+						results = sliced.map(result => {
 								if(result.forSale) {
 									// If it's for sale set status to a more readable string
 									status = "For Sale"
@@ -189,6 +193,7 @@ class Properties extends Component {
 										status={status}
 										/></Link>
 								}
+								return results;
 							});
 						}
 		}
@@ -197,9 +202,11 @@ class Properties extends Component {
 			<div className="Properties">
 				<SearchBar/>
 
-				<Sort split={currentPage}
+				<Sort 
+					numberFrom={numberFrom}
+					numberTo={numberTo}
 					maxAmount={maxAmount}
-					/>
+				/>
 				
 				{results}
 			</div>
@@ -212,7 +219,8 @@ const mapStateToProps = state => {
 		samples: state.samples,
 		error: state.error,
 		filtering: state.filtering,
-		search: state.search
+		search: state.search,
+		currentPage: state.currentPage
 	};
 };
 

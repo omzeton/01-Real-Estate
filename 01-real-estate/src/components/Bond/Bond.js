@@ -6,7 +6,7 @@ function Bond(props) {
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
-					<li className="gold">Display 5 properties per page</li>
+					<li className="finished">Display 5 properties per page</li>
 					<li>/ to /properties resets state</li>
 					<li>The prices are too high for search filters! Change in json file.</li>
 					<hr />

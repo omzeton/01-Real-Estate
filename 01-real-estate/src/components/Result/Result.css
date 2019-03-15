@@ -50,6 +50,10 @@ a {
 	opacity: 0;
 }
 
+.Result:hover {
+	background-color:#F9E784;
+}
+
 .Result__Info {
 	padding:0.8em 1.5em;
 	display: flex;

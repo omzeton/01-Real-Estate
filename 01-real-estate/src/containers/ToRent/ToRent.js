@@ -14,40 +14,66 @@ class ToRent extends Component {
 
 	render() {
 
-		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />;
-		let status = "";
-		let maxAmount = 0;
-		let split = 0;
+		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />,
+					status = "To Rent!",
+					maxAmount = 0,
+					currentPage = this.props.currentPage,
+					x = 0,
+					y = 0,
+					numberFrom = 0,
+					numberTo = 0;
 
-		if ( this.props.samples ) {
 
-					let newArr = [];
+				if ( this.props.samples ) {
 
+					let arr = [];
+					
+					this.props.samples.map(result => {
+						if(result.toRent) {
+							maxAmount++;
+							arr.push(result);
+						}
+						return arr;
+					});
+
+					// Sort every result according to form under the search bar
 					if ( this.props.filtering === 'priceHigh' ) {
-						newArr = this.props.samples.sort(function(a, b) {
+						arr.sort(function(a, b) {
 							return parseFloat(a.price) - parseFloat(b.price);
 						}).reverse();
 					} else if ( this.props.filtering === 'priceLow' ) {
-						newArr = this.props.samples.sort(function(a, b) {
+						arr.sort(function(a, b) {
 							return parseFloat(a.price) - parseFloat(b.price);
 						});
 					} else if ( this.props.filtering === 'bedsLow' ) {
-						newArr = this.props.samples.sort(function(a, b) {
+						arr.sort(function(a, b) {
 							return parseFloat(a.beds) - parseFloat(b.beds);
 						});
 					} else if ( this.props.filtering === 'bedsHigh' ) {
-						newArr = this.props.samples.sort(function(a, b) {
+						arr.sort(function(a, b) {
 							return parseFloat(a.beds) - parseFloat(b.beds);
 						}).reverse();
 					}
 
-					results = newArr.map(result => {
-						if(result.toRent) {
-							maxAmount++;
-							while (split < 5) { split++; }
-							status = "To Rent"
-							return <Link to={'/to-rent/' + result.id} key={result.id}><Result 
-								key={result.id}
+					let sliced = [];
+
+					// If there are more than 5 matches
+					if (maxAmount > 5) {
+						x = currentPage*5;
+						y = x + 5;
+						sliced = arr.slice(x, y);
+						numberFrom = x + 1;
+						if ( y > maxAmount ) {
+							numberTo = maxAmount;
+						} else {
+							numberTo = y;
+						}
+					} else {
+						sliced = arr;
+					}
+
+					results = sliced.map(result => {
+							return (<Link to={'/for-sale/' + result.id} key={result.id}><Result 
 								img={result.img} 
 								name={result.name}
 								price={result.price} 
@@ -56,11 +82,7 @@ class ToRent extends Component {
 								type={result.type}
 								id={result.id}
 								status={status}
-								/></Link>
-
-						} else {
-							return null;
-						}
+								/></Link>)
 					});
 				}
 
@@ -68,7 +90,8 @@ class ToRent extends Component {
 		return (
 			<div className="ToRent">
 				<Sort 
-					split={split}
+					numberFrom={numberFrom}
+					numberTo={numberTo}
 					maxAmount={maxAmount}
 				/>
 				{ results }
@@ -81,7 +104,8 @@ const mapStateToProps = state => {
 	return {
 		samples: state.samples,
 		error: state.error,
-		filtering: state.filtering
+		filtering: state.filtering,
+		currentPage: state.currentPage
 	};
 };
 
