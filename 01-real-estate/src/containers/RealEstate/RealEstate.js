@@ -18,10 +18,17 @@ import * as actionCreators from '../../store/actions/actions';
 class RealEstate extends Component {
 
 	componentWillReceiveProps(nextProps) {
-	    if (nextProps.location.pathname !== this.props.location.pathname) {
+		// Reset state after each route change
+		// Except when going from "/" to "/properties" to display the search result
+		if ( this.props.location.pathname == "/" ) {
+			return null;
+		} else if (nextProps.location.pathname !== this.props.location.pathname) {
 	      this.props.onRouteChange();
 	    }
 	  }
+	componentDidMount() {
+
+	}
 
 	render() {
 		return (

@@ -63,7 +63,6 @@ class ForSale extends Component {
 				x = currentPage*5;
 				y = x + 5;
 				sliced = arr.slice(x, y);
-				console.log(`x = ${x}||| y = ${y}`);
 				numberFrom = x + 1;
 				if ( y > maxAmount ) {
 					numberTo = maxAmount;
