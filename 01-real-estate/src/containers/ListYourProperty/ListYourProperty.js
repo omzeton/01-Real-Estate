@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './ListYourProperty.css';
 
 class ListYourProperty extends Component {

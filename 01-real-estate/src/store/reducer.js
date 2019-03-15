@@ -11,8 +11,8 @@ const initialState = {
 		maxPrice: "nomax",
 		town: ""
 	},
-	pages: 1,
-	currentPage: 0
+	currentPage: 0,
+	loading: false
 }
 
 const reducer = (state = initialState, action) => {
