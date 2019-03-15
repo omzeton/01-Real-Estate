@@ -20,6 +20,7 @@ class RealEstate extends Component {
 	componentWillReceiveProps(nextProps) {
 		// Reset state after each route change
 		// Except when going from "/" to "/properties" to display the search result
+		// eslint-disable-next-line
 		if ( this.props.location.pathname == "/" ) {
 			return null;
 		} else if (nextProps.location.pathname !== this.props.location.pathname) {

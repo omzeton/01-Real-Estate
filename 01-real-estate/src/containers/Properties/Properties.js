@@ -16,7 +16,7 @@ class Properties extends Component {
 
 	render() {
 
-		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />,
+		let results = this.props.error ? <div className="noMatches"><h2 className="noMatches__Text">Properties can't be loaded<br/>due to server miscommunication.</h2></div> : <Loader />,
 			status = "",
 			maxAmount = 0,
 			noResults = false,

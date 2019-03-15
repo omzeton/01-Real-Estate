@@ -55,7 +55,8 @@ const reducer = (state = initialState, action) => {
 					minPrice: "nomin",
 					maxPrice: "nomax",
 					town: ""
-				}
+				},
+				currentPage: 0
 			}
 		}
 		case actionTypes.PREV_PAGE: {

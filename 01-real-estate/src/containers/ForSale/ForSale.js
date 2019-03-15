@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Sort from '../Sort/Sort';
 import * as actionCreators from '../../store/actions/actions';
+import './ForSale.css';
 
 class ForSale extends Component {
 
@@ -15,7 +16,7 @@ class ForSale extends Component {
 
 	render() {
 
-		let results = this.props.error ? <p>Properties can't be loaded</p> : <Loader />,
+		let results = this.props.error ? <div className="noMatches"><h2 className="noMatches__Text">Properties can't be loaded<br/>due to server miscommunication.</h2></div> : <Loader />,
 			status = "For Sale",
 			maxAmount = 0,
 			currentPage = this.props.currentPage,

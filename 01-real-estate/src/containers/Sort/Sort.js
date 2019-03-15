@@ -15,6 +15,7 @@ class Sort extends Component {
 			maxAmount = this.props.maxAmount;
 
 		if (maxAmount > 5) {
+			// eslint-disable-next-line
 			if ( index == 0 ) {
 				forward = true;
 				backward = false;

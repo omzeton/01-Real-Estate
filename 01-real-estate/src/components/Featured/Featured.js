@@ -14,7 +14,7 @@ class Featured extends Component {
 
 	render() {
 
-		let results = this.props.error ? <p>Featured properties could not be loaded</p> : <Loader/>;
+		let results = this.props.error ? <div className="noMatches"><h2 className="noMatches__Text">Featured properties could not be loaded<br/>due to server miscommunication.</h2></div> : <Loader/>;
 
 		if (this.props.samples) {
 			results = this.props.samples.slice(0, 3).map(featured => {

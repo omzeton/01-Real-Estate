@@ -6,16 +6,16 @@ function Bond(props) {
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
-					<li>/ to /properties resets state</li>
-					<li>The prices are too high for search filters! Change in json file.</li>
-					<hr />
-					<li>Style the BigResult container + add more details to json file</li>
-					<li>Add more info to json file like rates, levies, province, bathrooms, contact : name, phone, surname, mail,</li>
-					<hr />
-					<li>List your property - push origin database with any inputted data! *also image!*</li>
-					<li>Dive deep into Firebase functions.</li>
-					<li className="bug">Wrong height on featured container</li>
+					<li>Get to know Firebase functions.</li>
+					<li>List your property - push origin database with any inputted data + Image</li>
 					<li>Check if the inputted data shows in search results.</li>
+					<hr />
+					<li>Add more info to json file like rates, levies, province, bathrooms, contact : name, phone, surname, mail,</li>
+					<li>The prices are too high for search filters! Change in json file.</li>
+					<li>Style the BigResult container with new data.</li>
+					<hr />
+					<li>Media Queries - App has to look good on smaller devices.</li>
+					<li className="bug">Wrong height on featured container</li>
 					<li>Create bond calculator.</li>
 					<li>Better naming / Better folder structure / Code improvements / Check if some containers are still in components folder</li>
 					<hr />
