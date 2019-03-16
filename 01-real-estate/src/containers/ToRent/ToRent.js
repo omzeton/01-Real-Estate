@@ -89,6 +89,11 @@ class ToRent extends Component {
 
 		return (
 			<div className="ToRent">
+				<div className="Header__Title">
+					<div className="Header__Img">
+						<h2>To Rent</h2>
+					</div>
+				</div>
 				<Sort 
 					numberFrom={numberFrom}
 					numberTo={numberTo}

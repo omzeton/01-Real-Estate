@@ -21,12 +21,15 @@ class ListYourProperty extends Component {
 		return (
 			<div className="ListYourProperty">
 
-					<div className="Form__FormContainer">
-						<div className="Form__FormContainer--header">
-							<h2>Fill in information about your property.</h2>
+					<div className="List__FormContainer">
+						<div className="Form__FormContainer--img">
 						</div>
 
-						<div className="Form__FormContainer--form">
+						<div className="List__FormContainer--form">
+
+							<div className="List__FormContainer--title">
+								<h2>List your property</h2>
+							</div>
 
 							<div>
 								<h3>Title of property</h3>

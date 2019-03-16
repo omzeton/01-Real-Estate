@@ -22,7 +22,7 @@
 
 .About__Container--Img {
 	width: 100%;
-	background-image:url('http://localhost:3000/./assets/home-img/05.jpg');
+	background-image:url('http://localhost:3000/./assets/header-bg/03.jpg');
 	background-size: cover;
 	background-position: center;
 }

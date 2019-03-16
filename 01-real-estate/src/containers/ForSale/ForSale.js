@@ -90,6 +90,11 @@ class ForSale extends Component {
 
 		return (
 			<div className="ForSale">
+				<div className="Header__Title">
+					<div className="Header__Img">
+						<h2>For Sale</h2>
+					</div>
+				</div>
 				<Sort 
 					numberFrom={numberFrom}
 					numberTo={numberTo}

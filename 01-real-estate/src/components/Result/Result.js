@@ -17,7 +17,7 @@ function Result(props) {
 				<div className="Result__Id">
 					<div><h2>ref# <span>{props.id}</span></h2></div>
 					<div></div>
-					<div><h3>{props.status}!</h3></div>
+					<div><h3>{props.status}</h3></div>
 				</div>
 			</div>
 	);

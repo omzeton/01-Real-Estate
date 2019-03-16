@@ -33,19 +33,19 @@
 }
 
 .Home__ImgArea--Img:nth-child(1) {
-	background-image:url('http://localhost:3000/./assets/home-img/02.jpg');
+	background-image:url('http://localhost:3000/./assets/home-img/01.jpg');
 	opacity: 0;
 }
 
 .Home__ImgArea--Img:nth-child(2) {
-	background-image:url('http://localhost:3000/./assets/home-img/03.jpg');
+	background-image:url('http://localhost:3000/./assets/home-img/02.jpg');
 	position: absolute;
 	top:0;
 	opacity: 0;
 }
 
 .Home__ImgArea--Img:nth-child(3) {
-	background-image:url('http://localhost:3000/./assets/home-img/06.jpg');
+	background-image:url('http://localhost:3000/./assets/home-img/03.jpg');
 	position: absolute;
 	top:0;
 	opacity: 0;
