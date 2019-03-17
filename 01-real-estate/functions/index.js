@@ -23,21 +23,6 @@ const storage = new Storage({
   projectId: projectId,
 });
 
-exports.changeFileName = functions.storage.object().onFinalize( object => {
-	const bucket = object.bucket;
-	const contentType = object.contentType;
-	const filePath = object.name;
-
-	console.log(storage);
-
-	const cloudBucket = storage.bucket;
-	const file = bucket.file;
-
-	console.log(cloudBucket);
-	console.log(file);
-	return;
-});
-
 exports.onFileChange= functions.storage.object().onFinalize(object => {
     const bucket = object.bucket;
     const contentType = object.contentType;
@@ -67,4 +52,17 @@ exports.onFileChange= functions.storage.object().onFinalize(object => {
             metadata: metadata
         })
     });
+});
+
+exports.getURLPath = functions.storage.object().onFinalize(object => {
+	const bucket = object.bucket;
+	const fileName = object.name;
+	const destBucket = storage.bucket(bucket);
+	const file = destBucket.file(fileName);
+	return file.getSignedUrl({
+		action: 'read',
+		expires: '03-09-2491'
+	}).then(signedUrls => {
+		console.log(signedUrls[0]);
+	});
 });
