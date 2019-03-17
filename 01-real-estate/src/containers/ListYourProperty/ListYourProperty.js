@@ -42,7 +42,6 @@ class ListYourProperty extends Component {
 	}
 	priceHandler = (e) => {
 		this.setState({price: e.target.value });
-		console.log("state updated");
 	}
 	saleRentHandler = (e) => {
 		this.setState({saleRent: e.target.value});
