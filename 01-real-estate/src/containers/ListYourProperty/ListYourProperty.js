@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './ListYourProperty.css';
 
 class ListYourProperty extends Component {
 
 	state = {
-		saleRent: 'forSale',
-		img: '',
-		info: '',
-		price: '',
-		id: '',
-		type: 'house',
-		town: '',
-		name: '',
-		beds: '1+',
 		object: {
-			"forSale" : undefined,
+			"forSale" : true,
 			"img" : undefined,
 			"info" : undefined,
 			"price" : undefined,
 			"id" : undefined,
-			"type" : undefined,
+			"type" : "house",
 			"town" : undefined,
-			"toRent" : undefined,
-			"beds" : undefined,
+			"toRent" : false,
+			"beds" : "1+",
 			"name" : undefined
-		}
+		},
+		selectedFile: null
 	}
 
 	getRandomInt( min, max ) {
@@ -32,65 +25,46 @@ class ListYourProperty extends Component {
 	}
 
 	nameHandler = (e) => {
-		this.setState({name: e.target.value });
+		let id = this.getRandomInt(0,99999999);
+		this.setState({object: {...this.state.object, "name": e.target.value, "id": id} });
 	}
 	townHandler = (e) => {
-		this.setState({town: e.target.value });
+		this.setState({object: {...this.state.object, "town": e.target.value} });
 	}
 	bedsHandler = (e) => {
-		this.setState({beds: e.target.value });
+		this.setState({object: {...this.state.object, "beds": e.target.value} });
 	}
 	priceHandler = (e) => {
-		this.setState({price: e.target.value });
+		this.setState({object: {...this.state.object, "price": e.target.value} });
 	}
 	saleRentHandler = (e) => {
-		this.setState({saleRent: e.target.value});
+		if ( e.target.value === "forSale" ) {
+			this.setState({object: {...this.state.object, "forSale": true, "toRent": false}});
+		} else if ( e.target.value === "toRent" ) {
+			this.setState({object: {...this.state.object, "forSale": false, "toRent": true}});
+		}
 	}
 	typeHandler = (e) => {
-		this.setState({type: e.target.value});
+		this.setState({object: {...this.state.object, "type": e.target.value} });
 	}
 	infoHandler = (e) => {
-		this.setState({info: e.target.value});
+		this.setState({object: {...this.state.object, "info": e.target.value} });
 	}
 	imgHandler = (e) => {
-		this.setState({img: e.target.files[0]});
+		// this.setState({object: {...this.state.object, "img": e.target.files[0]} });
+		this.setState({selectedFile: e.target.files[0]});
 	}
 
 
 	uploadHanlder = () => {
-		let name = this.state.name,
-			img = this.state.img,
-			info = this.state.info,
-			price = this.state.price,
-			type = this.state.type,
-			town = this.state.town,
-			saleRent = this.state.saleRent,
-			beds = this.state.beds,
-			id = this.getRandomInt(0,99999999);
-		let forSale = Boolean,
-			toRent = Boolean;
-
-		if ( saleRent === "forSale" ) {
-			forSale = true;
-			toRent = false;
-		} else if ( saleRent === 'toRent') {
-			forSale = false;
-			toRent = true;
-		}
-		this.setState({
-			object: {
-				"forSale" : forSale,
-				"img" : img,
-				"info" : info,
-				"price" : price,
-				"id" : id,
-				"type" : type,
-				"town" : town,
-				"toRent" : toRent,
-				"beds" : beds,
-				"name" : name
-			}
+		const fd = new FormData();
+		fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
+		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(res => {
+			console.log(res);
 		});
+	}
+
+	componentDidUpdate() {
 		console.log(this.state.object);
 	}
 
