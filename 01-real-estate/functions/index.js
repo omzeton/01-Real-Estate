@@ -21,8 +21,6 @@ const fs = require("fs");
 // Only onDelete and onFinalize fired.
 
 const projectId = 'real-estate-d9a1e';
-const examplesRef = firebase.database().ref('examples');
-
 const storage = new Storage({
   projectId: projectId,
 });
@@ -63,6 +61,7 @@ exports.getURLPath = functions.storage.object().onFinalize(object => {
 	const fileName = object.name;
 	const destBucket = storage.bucket(bucket);
 	const file = destBucket.file(fileName);
+  const blob = object.blob();
 	return file.getSignedUrl({
 		action: 'read',
 		expires: '03-09-2491'
@@ -71,13 +70,7 @@ exports.getURLPath = functions.storage.object().onFinalize(object => {
 	});
 });
 
-// 01. その一 Upload form その二　Upload img
-// 02. On img upload trigger storage.object().onFinalize getURLPath
-// 03. Get upload's url path and put it into that array
-// 
-// 
-//
-//
+
 
 exports.uploadFile = functions.https.onRequest((req, res) => {
   cors(req, res, () => {

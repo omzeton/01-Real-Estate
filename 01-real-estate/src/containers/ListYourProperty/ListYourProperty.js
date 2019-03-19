@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './ListYourProperty.css';
 
+import firebase from '@firebase/app';
+var config = {
+    apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
+    authDomain: "real-estate-d9a1e.firebaseapp.com",
+    databaseURL: "https://real-estate-d9a1e.firebaseio.com",
+    projectId: "real-estate-d9a1e",
+    storageBucket: "real-estate-d9a1e.appspot.com",
+    messagingSenderId: "1095628041476"
+};
+var firebaseApp = firebase.initializeApp(config);
+// var UCRef = firebaseApp.database().ref("URLPath");
+
 class ListYourProperty extends Component {
 
 	state = {
@@ -67,6 +79,8 @@ class ListYourProperty extends Component {
 			}
 		}
 
+		let imgUrl = firebase;
+
 		const newProperty = {
 			"forSale" : this.state.object.forSale,
 			"img" : this.state.object.img,
@@ -90,6 +104,7 @@ class ListYourProperty extends Component {
 		.then(() => {
 			axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json').then(response => {
 				console.log('Getting the Url');
+				console.log(imgUrl);
 				console.log('Setting the "img" value to Url');
 			})
 			.catch(error => {
@@ -108,6 +123,10 @@ class ListYourProperty extends Component {
 				});
 	}
 	render() {
+
+		console.log(firebaseApp);
+
+
 		return (
 			<div className="ListYourProperty">
 
