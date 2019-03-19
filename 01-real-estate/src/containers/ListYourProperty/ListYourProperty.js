@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './ListYourProperty.css';
-
+// import storage from '@google-cloud/storage';
 import firebase from '@firebase/app';
+// eslint-disable-next-line
+import { storage } from '@firebase/storage';
 var config = {
     apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
     authDomain: "real-estate-d9a1e.firebaseapp.com",
@@ -11,8 +13,8 @@ var config = {
     storageBucket: "real-estate-d9a1e.appspot.com",
     messagingSenderId: "1095628041476"
 };
-var firebaseApp = firebase.initializeApp(config);
-// var UCRef = firebaseApp.database().ref("URLPath");
+firebase.initializeApp(config);
+const wtf = firebase.storage().ref();
 
 class ListYourProperty extends Component {
 
@@ -29,7 +31,9 @@ class ListYourProperty extends Component {
 			"beds" : "1+",
 			"name" : undefined
 		},
-		selectedFile: null
+		loadingFinished: false,
+		selectedFile: null,
+		selectedFileName: ''
 	}
 
 	getRandomInt( min, max ) {
@@ -64,7 +68,26 @@ class ListYourProperty extends Component {
 	}
 	imgHandler = (e) => {
 		// this.setState({object: {...this.state.object, "img": e.target.files[0]} });
-		this.setState({selectedFile: e.target.files[0]});
+		this.setState({selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
+		// console.log(e.target.files[0].name);
+		const fd = new FormData();
+		fd.append('image', e.target.files[0], e.target.files[0].name);
+		const fileName = e.target.files[0].name;
+		this.setState({loadingFinished: false});
+		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then((response) => {console.log(response)}).then(() => {
+			wtf.child(`${fileName}`).getDownloadURL()
+				.then((url) => {
+						console.log(`Getting url from the img`);
+						this.setState({object: {...this.state.object, "img": url} });
+						console.log(`Putting url inside the object`);
+						console.log(this.state.object);
+						console.log(url);
+						this.setState({loadingFinished: true});
+					})
+				.catch(error => {
+					console.log('failed at stage 1');
+				})
+		});
 	}
 
 	uploadHanlder = () => {
@@ -78,8 +101,6 @@ class ListYourProperty extends Component {
 				"Access-Control-Allow-Origin": "*",
 			}
 		}
-
-		let imgUrl = firebase;
 
 		const newProperty = {
 			"forSale" : this.state.object.forSale,
@@ -95,37 +116,25 @@ class ListYourProperty extends Component {
 		};
 
 		
-		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(response => {
-			// 1 - Post image
-			console.log("Posing image");})
-			.catch(error => {
-				console.log('failed at stage 1');
-			})
-		.then(() => {
-			axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json').then(response => {
-				console.log('Getting the Url');
-				console.log(imgUrl);
-				console.log('Setting the "img" value to Url');
-			})
-			.catch(error => {
-				console.log('failed at stage 2')
-			});
-		})
-		.then(() => {
+		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(() => {
 				axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
 					.then(response => {
-						console.log('Pushing form with Url to server');
+						console.log('Below is the form to be posted');
+						console.log(newProperty);
 						console.log(response);
 					})})
-		.catch(error => {
-					console.log('failed at stage 3');
-					console.log(error);
-				});
+					.catch(error => {
+						console.log('failed at stage 2');
+						console.log(error);
+					});
 	}
 	render() {
 
-		console.log(firebaseApp);
+		let submit = <input type="submit" className="disable-submit" value="Submit" onClick={this.uploadHanlder}/>;
 
+		if (this.state.loadingFinished) {
+			submit = <input type="submit" value="Submit" onClick={this.uploadHanlder}/>
+		}
 
 		return (
 			<div className="ListYourProperty">
@@ -180,7 +189,7 @@ class ListYourProperty extends Component {
 										<h3>Image of your property</h3>
 										<input type="file" ref={(input) => {this.image = input}} onChange={this.imgHandler}/>
 
-							 	  		<input type="submit" value="Submit" onClick={this.uploadHanlder}/>
+							 	  		{submit}
 									</div>
 							</div>
 							<div></div>

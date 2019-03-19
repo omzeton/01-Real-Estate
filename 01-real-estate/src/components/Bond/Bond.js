@@ -6,7 +6,7 @@ function Bond(props) {
 			<div className="Bond">
 				<h2>Spokojnie i powoli! Dobrze Ci idzie, naprawdę! :)</h2>
 				<ul>
-					<li>List your property - push origin database with any inputted data + Image</li>
+					<li className="finished">List your property - push origin database with any inputted data + Image</li>
 					<hr />
 					<li>Add more info to json file like rates, levies, province, bathrooms, contact : name, phone, surname, mail,</li>
 					<li>Style the BigResult container with new data.</li>
