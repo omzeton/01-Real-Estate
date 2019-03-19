@@ -27,6 +27,8 @@ class Properties extends Component {
 			numberTo = 0;
 
 		if ( this.props.samples ) {
+
+			let data = Object.values(this.props.samples);
 			
 			let searched = [],
 				matches = 0,
@@ -54,7 +56,7 @@ class Properties extends Component {
 			}
 
 			// Map samples from Firebase
-			this.props.samples.map(selected => {
+			data.map(selected => {
 
 				// Check if the samples meet the criteria set in form of the search bar
 				let typePass = false;
@@ -209,6 +211,12 @@ class Properties extends Component {
 				/>
 				
 				{results}
+
+				<Sort 
+					numberFrom={numberFrom}
+					numberTo={numberTo}
+					maxAmount={maxAmount}
+				/>
 			</div>
 		);
 	}

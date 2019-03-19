@@ -21,7 +21,8 @@ class ResultBig extends Component {
 		let status = "";
 
 		if ( this.props.samples ) {
-			fullResult = this.props.samples.map(result => {
+			let data = Object.values(this.props.samples);
+			fullResult = data.map(result => {
 				// eslint-disable-next-line
 				if ( result.id == this.props.match.params.id ) {
 					if ( result.forSale ) {

@@ -27,8 +27,9 @@ class ToRent extends Component {
 				if ( this.props.samples ) {
 
 					let arr = [];
+					let data = Object.values(this.props.samples);
 					
-					this.props.samples.map(result => {
+					data.map(result => {
 						if(result.toRent) {
 							maxAmount++;
 							arr.push(result);
@@ -100,6 +101,11 @@ class ToRent extends Component {
 					maxAmount={maxAmount}
 				/>
 				{ results }
+				<Sort 
+					numberFrom={numberFrom}
+					numberTo={numberTo}
+					maxAmount={maxAmount}
+				/>
 			</div>
 		);
 	}

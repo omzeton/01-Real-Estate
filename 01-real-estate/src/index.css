@@ -27,7 +27,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url('http://localhost:3000/./assets/bg/funky-lines.png');
+  background-image:url('gs://real-estate-d9a1e.appspot.com/home-screen-slideshow/funky-lines.png');
   background-position: center;
   background-size: 16em;
   background-repeat: repeat;

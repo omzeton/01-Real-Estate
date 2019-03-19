@@ -29,8 +29,11 @@ class ForSale extends Component {
 		if ( this.props.samples ) {
 
 			let arr = [];
-			
-			this.props.samples.map(result => {
+
+
+			let data = Object.values(this.props.samples);
+
+			data.map(result => {
 				if(result.forSale) {
 					maxAmount++;
 					arr.push(result);
@@ -101,6 +104,11 @@ class ForSale extends Component {
 					maxAmount={maxAmount}
 				/>
 				{ results }
+				<Sort 
+					numberFrom={numberFrom}
+					numberTo={numberTo}
+					maxAmount={maxAmount}
+				/>
 			</div>
 		);
 	}

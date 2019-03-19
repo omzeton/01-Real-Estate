@@ -21,6 +21,7 @@ const fs = require("fs");
 // Only onDelete and onFinalize fired.
 
 const projectId = 'real-estate-d9a1e';
+const examplesRef = firebase.database().ref('examples');
 
 const storage = new Storage({
   projectId: projectId,

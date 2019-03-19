@@ -55,19 +55,58 @@ class ListYourProperty extends Component {
 		this.setState({selectedFile: e.target.files[0]});
 	}
 
-
 	uploadHanlder = () => {
+
 		const fd = new FormData();
 		fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(res => {
-			console.log(res);
-		});
-	}
 
-	componentDidUpdate() {
-		console.log(this.state.object);
-	}
+		let axiosConfig = {
+			headers: {
+				'Content-Type': 'application/json;charset=UTF-8',
+				"Access-Control-Allow-Origin": "*",
+			}
+		}
 
+		const newProperty = {
+			"forSale" : this.state.object.forSale,
+			"img" : this.state.object.img,
+			"info" : this.state.object.info,
+			"price" : this.state.object.price,
+			"id" : this.state.object.id,
+			"type" : this.state.object.type,
+			"town" : this.state.object.town,
+			"toRent" : this.state.object.toRent,
+			"beds" : this.state.object.beds,
+			"name" : this.state.object.name
+		};
+
+		
+		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(response => {
+			// 1 - Post image
+			console.log("Posing image");})
+			.catch(error => {
+				console.log('failed at stage 1');
+			})
+		.then(() => {
+			axios.get('https://real-estate-d9a1e.firebaseio.com/examples.json').then(response => {
+				console.log('Getting the Url');
+				console.log('Setting the "img" value to Url');
+			})
+			.catch(error => {
+				console.log('failed at stage 2')
+			});
+		})
+		.then(() => {
+				axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
+					.then(response => {
+						console.log('Pushing form with Url to server');
+						console.log(response);
+					})})
+		.catch(error => {
+					console.log('failed at stage 3');
+					console.log(error);
+				});
+	}
 	render() {
 		return (
 			<div className="ListYourProperty">

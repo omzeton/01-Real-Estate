@@ -17,7 +17,10 @@ class Featured extends Component {
 		let results = this.props.error ? <div className="noMatches"><h2 className="noMatches__Text">Featured properties could not be loaded<br/>due to server miscommunication.</h2></div> : <Loader/>;
 
 		if (this.props.samples) {
-			results = this.props.samples.slice(0, 3).map(featured => {
+
+			let data = Object.values(this.props.samples);
+
+			results = data.slice(0, 3).map(featured => {
 				return <Link className="Featured__Link" to={'/properties/' + featured.id} key={featured.id}><FeaturedExample
 					img={featured.img}
 					price={featured.price}
