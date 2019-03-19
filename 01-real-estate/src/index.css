@@ -1,3 +1,11 @@
+:root {
+  --1: #494949; /* Dark */
+  --2: #b6b6b6; /* Half */
+  --3: #ffffff; /* Light */
+  --w: #ffffff;
+  --b: #000000;
+};
+
 ::selection {
 	background-color:#000;
 	color:#fff;
@@ -13,10 +21,10 @@
   background:#777;
 }
 ::-webkit-scrollbar-thumb:active {
-  background:#333;
+  background:var(--1);
 }
 ::-webkit-scrollbar-track {
-  background:#fff;
+  background:var(--w);
 }
 
 body {
