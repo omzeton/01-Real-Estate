@@ -5,11 +5,11 @@ import Properties from '../Properties/Properties';
 import About from '../../components/About/About';
 import ListYourProperty from '../ListYourProperty/ListYourProperty';
 import ForSale from '../ForSale/ForSale';
-import Bond from '../../components/Bond/Bond';
 import ResultBig from '../ResultBig/ResultBig';
 import ToRent from '../ToRent/ToRent';
 import Footer from '../../components/Footer/Footer';
 import WrongRoute from '../../components/WrongRoute/WrongRoute';
+import Objectives from '../../components/Objectives/Objectives';
 
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -39,7 +39,6 @@ class RealEstate extends Component {
 						<Route path="/properties" exact component={Properties}/>
 						<Route path="/for-sale" exact component={ForSale}/>
 						<Route path="/to-rent" exact component={ToRent}/>
-						<Route path="/bond-calculator" exact component={Bond}/>
 						<Route path="/about-us" exact component={About}/>
 						<Route path="/list-your-property" exact component={ListYourProperty}/>
 
@@ -51,6 +50,7 @@ class RealEstate extends Component {
 						<Route component={WrongRoute}/>
 					</Switch>
 				<Footer />
+				<Objectives />
 			</div>
 		);
 	}

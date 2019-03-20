@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './ListYourProperty.css';
-// import storage from '@google-cloud/storage';
 import firebase from '@firebase/app';
 // eslint-disable-next-line
 import { storage } from '@firebase/storage';
@@ -14,7 +13,7 @@ var config = {
     messagingSenderId: "1095628041476"
 };
 firebase.initializeApp(config);
-const wtf = firebase.storage().ref();
+const firebaseStorage = firebase.storage().ref();
 
 class ListYourProperty extends Component {
 
@@ -67,17 +66,15 @@ class ListYourProperty extends Component {
 		this.setState({object: {...this.state.object, "info": e.target.value} });
 	}
 	imgHandler = (e) => {
-		// this.setState({object: {...this.state.object, "img": e.target.files[0]} });
 		this.setState({selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
-		// console.log(e.target.files[0].name);
 		const fd = new FormData();
 		fd.append('image', e.target.files[0], e.target.files[0].name);
 		const fileName = e.target.files[0].name;
 		this.setState({loadingFinished: false});
 		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then((response) => {console.log(response)}).then(() => {
-			wtf.child(`${fileName}`).getDownloadURL()
+			firebaseStorage.child(`${fileName}`).getDownloadURL()
 				.then((url) => {
-						console.log(`Getting url from the img`);
+						console.log(`Stage 1 : Getting url from the img`);
 						this.setState({object: {...this.state.object, "img": url} });
 						console.log(`Putting url inside the object`);
 						console.log(this.state.object);
@@ -91,9 +88,6 @@ class ListYourProperty extends Component {
 	}
 
 	uploadHanlder = () => {
-
-		const fd = new FormData();
-		fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
 
 		let axiosConfig = {
 			headers: {
@@ -116,17 +110,15 @@ class ListYourProperty extends Component {
 		};
 
 		
-		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then(() => {
-				axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
-					.then(response => {
-						console.log('Below is the form to be posted');
-						console.log(newProperty);
-						console.log(response);
-					})})
-					.catch(error => {
-						console.log('failed at stage 2');
-						console.log(error);
-					});
+		axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
+			.then(response => {
+				console.log('Stage 2 : Posting the form');
+				console.log(newProperty);
+				console.log(response);
+			}).catch(error => {
+				console.log('failed at stage 2');
+				console.log(error);
+			});
 	}
 	render() {
 
