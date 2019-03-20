@@ -23,7 +23,6 @@ class Objectives extends Component {
 							<li>Media Queries - App has to look good on smaller devices.</li>
 							<li>Better naming / Better folder structure / Code improvements / Check if some containers are still in components folder</li>
 							<hr />
-							<li>Loading screen?</li>
 							<li>润色 on styling.</li>
 						</ul>
 					</div>		

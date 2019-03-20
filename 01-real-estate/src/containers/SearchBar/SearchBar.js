@@ -19,9 +19,19 @@ class SearchBar extends Component {
 	}
 
 	render() {
+		let style = null;
+		if (this.props.location === 'home') {
+			style = {
+				marginTop: '-10em'
+			}
+		} else if (this.props.location === 'properties') {
+			style = {
+				marginTop: '0em'
+			}
+		}
 		return (
 			<div className="SearchBar">
-				<div className="SearchBar__FormContainer">
+				<div className="SearchBar__FormContainer" style={style}>
 						<div className="SearchBar__FormContainer--header">
 							<h2>Start browsing</h2>
 						</div>

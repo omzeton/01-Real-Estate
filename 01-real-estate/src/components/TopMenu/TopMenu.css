@@ -46,6 +46,7 @@
 	color:var(--1);
 	font-family: 'Asul', sans-serif;
 	white-space: nowrap;
+	transition: 0.2s linear;
 }
 
 .TopMenu__Bottom__BtnContainer--Btn a:hover {

@@ -20,6 +20,7 @@
 	border-radius: 0.3em;
 	overflow: hidden;
 	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
+	margin-top: -10em;
 }
 .SearchBar__FormContainer--header {
 	display: flex;
@@ -82,3 +83,4 @@
 	height:3em;
 	background-color:#fff;
 }
+

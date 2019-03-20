@@ -46,3 +46,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#load_screen {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color:var(--1);
+  transition:opacity 0.5s ease-out;
+}
+
+.no-scroll {
+  position: fixed;
+}

@@ -24,7 +24,8 @@ class Properties extends Component {
 			x = 0,
 			y = 0,
 			numberFrom = 0,
-			numberTo = 0;
+			numberTo = 0,
+			location = 'properties';
 
 		if ( this.props.samples ) {
 
@@ -202,7 +203,7 @@ class Properties extends Component {
 
 		return (
 			<div className="Properties">
-				<SearchBar/>
+				<SearchBar location={location}/>
 
 				<Sort 
 					numberFrom={numberFrom}
