@@ -61,7 +61,6 @@ exports.getURLPath = functions.storage.object().onFinalize(object => {
 	const fileName = object.name;
 	const destBucket = storage.bucket(bucket);
 	const file = destBucket.file(fileName);
-  const blob = object.blob();
 	return file.getSignedUrl({
 		action: 'read',
 		expires: '03-09-2491'

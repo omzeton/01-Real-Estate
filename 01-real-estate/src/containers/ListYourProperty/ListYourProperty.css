@@ -38,13 +38,25 @@
 	align-items: center;
 	justify-content: center;
 }
-.List__FormContainer--title>h2 {
+.List__FormContainer--title h2 {
 	text-align: center;
 	font-family: 'Chivo', sans-serif;
 	font-size: 2.5em;
 	font-weight: 900;
 	white-space: nowrap;
 	margin: 1em;
+}
+.List__FormContainer--title h2 span {
+	color:#fff;
+}
+.List__FormContainer--title p {
+	text-align: center;
+	font-family: 'Asul', sans-serif;
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1em;
+	margin-top:-1.5em;
+	margin-bottom: 2em;
 }
 .List__FormContainer--form h3 {
 	text-align: center;
@@ -62,8 +74,9 @@
 	grid-column-end: 3;
 }
 .List__FormContainer--input input, 
-.List__FormContainer--input select {
-	background-color:#DBDBDB;
+.List__FormContainer--input select,
+.List__FormContainer--input button {
+	background-color:#C6C6C6;
 	font-family: 'Asul', sans-serif;
 	font-size: 0.8em;
 	font-weight: 900;
@@ -71,8 +84,25 @@
 	margin-bottom: 1em;
 	border:0.1em solid #000;
 	box-sizing: border-box;
+	transition: background-color 0.2s linear;
 }
 .disable-submit {
 	opacity: 0.2 !important;
 	pointer-events: none;
+}
+.List__FormContainer--input input:hover, 
+.List__FormContainer--input select:hover,
+.List__FormContainer--input button:hover {
+	background-color:#fff;
+}
+.List__FormContainer--input input:focus, 
+.List__FormContainer--input select:focus,
+.List__FormContainer--input button:focus {
+	background-color:#fff;
+	outline:0;
+	border:0.1em solid green;
+}
+.List__FormContainer--input select,
+.List__FormContainer--input button {
+	cursor: pointer;
 }

@@ -83,7 +83,7 @@ class SearchBar extends Component {
 							 </div>
 
 							  <div>
-								  <h3>Suburb</h3>
+								  <h3>Town</h3>
 								  <input type="text" name="suburb" placeholder="Anywhere" ref={(input) => {this.suburb = input}}/>
 							 </div>
 

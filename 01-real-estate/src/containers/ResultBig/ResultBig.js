@@ -7,12 +7,13 @@ import './ResultBig.css';
 
 class ResultBig extends Component {
 
-	state = {
-		post: null
-	}
-
 	componentDidMount () {
 		this.props.onFetchSamples();
+	}
+
+	captFirstLetters(string) 
+	{
+	    return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
 	render() {
@@ -32,26 +33,22 @@ class ResultBig extends Component {
 					}
 						return (
 							<div className="Full__Container" key={result.id}>
-								<div className="Full__Container__Row--Up">
+
 									<div className="Full__Column--Left">
 										<div className="Full--Info">
 											<h2>{result.name}</h2>
-											<h2><span>Id.</span> { result.id }</h2>
-											<h2><span>Price:</span> {result.price}</h2>
+											<h2><span>Price:</span> $ {result.price}</h2>
 											<h2><span>Town:</span> {result.town}</h2>
 											<h2><span>Beds:</span> {result.beds}</h2>
-											<h2><span>Category:</span> {result.type}</h2>
+											<h2><span>Category:</span> {this.captFirstLetters(result.type)}</h2>
 											<h2><span>Status:</span> {status}</h2>
+											<p>{result.info}</p>
 										</div>
 									</div>
 									<div className="Full__Column--Right">
 										<div className="Full--Img"  style={{backgroundImage: 'url(' + result.img + ')'}}></div>
 									</div>
-								</div>
 
-								<div className="Full__Container__Row--Down">
-									<p><span>Details:</span> {result.info}</p>
-								</div>
 							</div>
 						)
 				} else {

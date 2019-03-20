@@ -19,16 +19,16 @@ class ListYourProperty extends Component {
 
 	state = {
 		object: {
-			"forSale" : true,
-			"img" : undefined,
-			"info" : undefined,
-			"price" : undefined,
-			"id" : undefined,
-			"type" : "house",
-			"town" : undefined,
+			"forSale" : false,
+			"img" : false,
+			"info" : false,
+			"price" : false,
+			"id" : false,
+			"type" : false,
+			"town" : false,
 			"toRent" : false,
-			"beds" : "1+",
-			"name" : undefined
+			"beds" : false,
+			"name" : false
 		},
 		loadingFinished: false,
 		selectedFile: null,
@@ -67,11 +67,18 @@ class ListYourProperty extends Component {
 	}
 	imgHandler = (e) => {
 		this.setState({selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
+
 		const fd = new FormData();
 		fd.append('image', e.target.files[0], e.target.files[0].name);
 		const fileName = e.target.files[0].name;
+
 		this.setState({loadingFinished: false});
-		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd).then((response) => {console.log(response)}).then(() => {
+
+		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd, {
+			onUploadProgress: progressEvent => {
+				console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
+			}
+		}).then((response) => {console.log(response)}).then(() => {
 			firebaseStorage.child(`${fileName}`).getDownloadURL()
 				.then((url) => {
 						console.log(`Stage 1 : Getting url from the img`);
@@ -122,12 +129,19 @@ class ListYourProperty extends Component {
 	}
 	render() {
 
-		let submit = <input type="submit" className="disable-submit" value="Submit" onClick={this.uploadHanlder}/>;
-
-		if (this.state.loadingFinished) {
+		let submit = null;
+		if (this.state.loadingFinished &&
+			(this.state.object.forSale || this.state.object.toRent) && 
+			this.state.object.info && 
+			this.state.object.price &&
+			this.state.object.type && 
+			this.state.object.town &&
+			this.state.object.beds && 
+			this.state.object.name) {
 			submit = <input type="submit" value="Submit" onClick={this.uploadHanlder}/>
+		} else {
+			submit = <input type="submit" className="disable-submit" value="Submit" onClick={this.uploadHanlder}/>
 		}
-
 		return (
 			<div className="ListYourProperty">
 
@@ -140,7 +154,8 @@ class ListYourProperty extends Component {
 							<div className="List__FormContainer--formContainer">
 
 									<div className="List__FormContainer--title">
-										<h2>List your property</h2>
+										<h2>List your <span>property</span></h2>
+										<p>Please fill our form to see your property on the website.</p>
 									</div>
 									<div className="List__FormContainer--input">
 
@@ -151,6 +166,7 @@ class ListYourProperty extends Component {
 
 										<h3>Number of beds</h3>
 										<select value={this.state.beds} onChange={this.bedsHandler}>
+												<option value={false}>Select amount</option>
 											    <option value="1+">1+</option>
 											    <option value="2+">2+</option>
 											    <option value="3+">3+</option>
@@ -162,12 +178,14 @@ class ListYourProperty extends Component {
 
 										<h3>For Sale / To Rent</h3>
 										<select value={this.state.saleRent} onChange={this.saleRentHandler}>
+											    <option value={false}>Select status</option>
 											    <option value="forSale">For Sale</option>
 											    <option value="toRent">To Rent</option>
 										</select>
 
 										<h3>Type of property</h3>
 										  <select value={this.state.type} onChange={this.typeHandler}>
+											    <option value={false}>Specify type</option>
 											    <option value="house">House</option>
 											    <option value="bungalow">Bungalow</option>
 											    <option value="apartment">Apartment</option>
@@ -179,8 +197,8 @@ class ListYourProperty extends Component {
 										<input type="text" value={this.state.info} placeholder="info" onChange={this.infoHandler}/>
 
 										<h3>Image of your property</h3>
-										<input type="file" ref={(input) => {this.image = input}} onChange={this.imgHandler}/>
-
+										<input type="file" style={{display: 'none'}} ref={(input) => {this.image = input}} onChange={this.imgHandler}/>
+										<button onClick={() => this.image.click()}>Pick File</button>
 							 	  		{submit}
 									</div>
 							</div>

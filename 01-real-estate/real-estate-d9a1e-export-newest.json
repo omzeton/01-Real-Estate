@@ -1,193 +1,190 @@
 {
-  "examples" :
-[
-    {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F01%2F01.jpg?alt=media&token=163688f1-e881-49db-9740-1d9039f2dd3e",
-      "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus urna felis, posuere vitae eleifend nec, interdum a nisi. In nec laoreet ipsum. Vivamus enim enim, convallis non erat at, hendrerit cursus tellus. Cras quis urna tempus, pulvinar lacus vel, dignissim libero. Donec feugiat mauris nec libero congue, sit amet scelerisque sapien accumsan.",
-      "price" : 650000,
-      "id" : 99552563,
-      "type" : "house",
-      "town" : "Ipsum",
-      "toRent" : false,
-      "beds" : "1+",
-      "name" : "House for sale in Ipsum"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F02%2F02.jpg?alt=media&token=e1bbd3c8-14bd-43ee-bd73-4be1561cdd3f",
-      "info" : "Praesent vel nisl sed nisi consequat vehicula non id nibh. Fusce posuere dolor id tellus aliquet, eu blandit arcu pharetra. Proin eget gravida sapien. Donec consectetur porta quam nec dignissim. Aliquam dictum eros non ligula imperdiet dapibus. Proin id nunc mi. Nam dui erat, tempor vitae commodo a, vestibulum vel neque. Morbi fringilla, nunc non bibendum rhoncus, risus arcu efficitur arcu, eget fermentum elit magna a massa. In facilisis urna eu nunc blandit laoreet.",
-      "price" : 1250000,
-      "id" : 82151077,
-      "type" : "apartment",
-      "town" : "Dfasf",
-      "toRent" : false,
-      "beds" : "2+",
-      "name" : "Apartment for sale in Dfasf"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F03%2F03.jpg?alt=media&token=013373ce-c386-4d07-9e98-709c40d138b0",
-      "info" : "Nulla suscipit interdum velit nec sagittis. Fusce tellus arcu, fringilla ac lacus nec, condimentum blandit erat. In posuere arcu sit amet sem pharetra, vitae ullamcorper leo rhoncus. Nulla varius placerat cursus. Nulla tempus ligula sed ipsum viverra pretium. Aenean suscipit consequat eleifend. Praesent ipsum nibh, rhoncus quis lorem porttitor, finibus ultrices mi. Suspendisse eu quam lobortis, suscipit nulla non, ornare nulla.",
-      "price" : 500000,
-      "id" : 53471108,
-      "type" : "bungalow",
-      "town" : "Consequat",
-      "toRent" : true,
-      "beds" : "3+",
-      "name" : "Bungalow to rent in Consequat"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F04%2F04.jpg?alt=media&token=baa96fb1-ed42-41a5-aecc-fb4fb9c70abb",
-      "info" : "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras libero augue, aliquet in enim vitae, tristique ultrices purus. Proin urna massa, faucibus nec lacinia vel, placerat sit amet turpis. Proin nec augue ut tortor laoreet dapibus vel fermentum massa. Cras quis dictum nulla. Etiam a ultricies leo.",
-      "price" : 475000,
-      "id" : 51533232,
-      "type" : "commercial property",
-      "town" : "Litora",
-      "toRent" : true,
-      "beds" : "4+",
-      "name" : "Facility to rent in Litora"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F05%2F05.jpg?alt=media&token=2d39cca0-75ab-4adf-b8be-347acc5ad472",
-      "info" : "Proin varius quam vel urna iaculis iaculis. Aliquam accumsan sollicitudin ante, vel vestibulum lacus iaculis eget. Duis imperdiet rutrum ullamcorper. Morbi at massa quis lorem ullamcorper aliquet id sed ex. Quisque id nulla pretium, dictum leo eu, dapibus odio. Integer purus ante, tincidunt sit amet vestibulum a, malesuada eu nunc. Curabitur interdum in nibh a mattis. Mauris lacinia congue dolor eu sollicitudin. Morbi fermentum neque ipsum.",
-      "price" : 2000000,
-      "id" : 33211032,
-      "type" : "commercial property",
-      "town" : "Iaculis",
-      "toRent" : true,
-      "beds" : "3+",
-      "name" : "Buro to rent in Iaculis"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F06%2F06.jpg?alt=media&token=f6231c12-43ee-4ee0-83b1-56f959165050",
-      "info" : "Ut consequat nisi libero, ut volutpat ligula sollicitudin a. Maecenas suscipit risus quis varius pulvinar. Pellentesque odio dolor, condimentum sit amet dui at, posuere vehicula libero. Pellentesque auctor nisl quis est accumsan, vitae ultricies justo fermentum. Nunc elementum, magna et dapibus feugiat, elit nulla finibus libero, vel pretium nunc magna a purus. Etiam condimentum lacus convallis sem vehicula condimentum.",
-      "price" : 750000,
-      "id" : 12031224,
-      "type" : "house",
-      "town" : "Libero",
-      "toRent" : true,
-      "beds" : "2+",
-      "name" : "Corner to rent in Libero"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F07%2F07.jpg?alt=media&token=d6134479-1b10-4310-a8b6-5af4efa42fc8",
-      "info" : "Quisque posuere massa eu sapien interdum posuere in id augue. Integer aliquam pretium consectetur. Integer aliquam quis magna vel accumsan. Ut volutpat sem blandit, iaculis arcu eu, convallis tortor. Sed ut eleifend dolor. Sed finibus, odio at aliquam laoreet, risus diam iaculis ante, eu pellentesque tellus metus et justo. Etiam quis tristique nisi. Etiam non neque metus. Aliquam erat volutpat. Praesent lacinia varius felis quis dictum.",
-      "price" : 820000,
-      "id" : 21522715,
-      "type" : "apartment",
-      "town" : "Sapien",
-      "toRent" : true,
-      "beds" : "3+",
-      "name" : "Rooms to rent in Sapien"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F08%2F08.jpg?alt=media&token=bcd18743-f67b-4b71-a0ad-ee3710c1072b",
-      "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum lorem a ligula bibendum, a convallis quam accumsan. Phasellus malesuada fermentum aliquet. In massa est, commodo at nulla vel, auctor blandit neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales a enim nec posuere. Sed odio felis, sollicitudin in mi vitae, gravida tempor magna. Phasellus fermentum accumsan pellentesque.",
-      "price" : 930000,
-      "id" : 31112223,
-      "type" : "bungalow",
-      "town" : "Elit",
-      "toRent" : true,
-      "beds" : "1+",
-      "name" : "Household to rent in Elit"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F09%2F09.jpg?alt=media&token=63d4a2cd-19ee-4d99-949f-5bf7b5d6f035",
-      "info" : "In arcu urna, vulputate ac magna at, commodo commodo erat. Nullam id iaculis augue, sed rhoncus nisl. Integer dignissim, urna eu commodo hendrerit, lectus odio tristique magna, ac vehicula arcu lacus eu velit. Nullam nec faucibus libero. Nunc varius rutrum laoreet. Mauris tempus metus quis metus fringilla iaculis. Praesent consequat maximus tortor, sit amet posuere arcu tristique id. Aliquam sed venenatis magna.",
-      "price" : 1050000,
-      "id" : 45348517,
-      "type" : "commercial property",
-      "town" : "Commodo",
-      "toRent" : false,
-      "beds" : "4+",
-      "name" : "Condo for sale in Commodo"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F10%2F10.jpg?alt=media&token=83c9166d-5d25-4d78-b86a-8596501379fe",
-      "info" : "In posuere suscipit enim, nec pharetra purus sodales nec. In congue urna in placerat mollis. Maecenas tellus libero, mollis a ultricies eu, vestibulum quis massa. In hac habitasse platea dictumst. Duis porttitor massa eget nisi consectetur, et cursus lorem faucibus. Nulla venenatis luctus lectus, at vulputate eros placerat quis.",
-      "price" : 340000,
-      "id" : 11251745,
-      "type" : "industrial property",
-      "town" : "Pharetra",
-      "toRent" : false,
-      "beds" : "4+",
-      "name" : "Building for sale in Pharetra"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F11%2F11.jpg?alt=media&token=101d7d40-0dac-4c63-8a5e-0d7fafe5c4bb",
-      "info" : "Sed a massa congue, sagittis leo sit amet, congue leo. Proin in erat vel massa lobortis iaculis non gravida elit. Sed in accumsan lacus. Nulla egestas tellus eu tempus tincidunt. Nulla placerat imperdiet felis eu venenatis. Duis vel magna mauris. Nullam in diam erat. Curabitur a urna at massa rhoncus dignissim et sed libero.",
-      "price" : 700000,
-      "id" : 25775331,
-      "type" : "bungalow",
-      "town" : "Sagittis",
-      "toRent" : false,
-      "beds" : "1+",
-      "name" : "Residence for sale in Sagittis"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F12%2F12.jpg?alt=media&token=b5051f43-251e-4729-9795-11b48d974a26",
-      "info" : "Aenean id placerat nisl, eu pharetra felis. Nulla at faucibus est, accumsan ornare erat. Proin pretium lectus diam, vel aliquam ligula lobortis sed. Duis facilisis, erat non consequat scelerisque, nibh quam egestas nisi, eu malesuada quam massa ut magna. Quisque vehicula laoreet urna vel varius. Nam elementum sagittis lectus, nec mattis lacus luctus vel.",
-      "price" : 850000,
-      "id" : 92791515,
-      "type" : "industrial property",
-      "town" : "Ffaucibus",
-      "toRent" : false,
-      "beds" : "2+",
-      "name" : "Abode for sale in Ffaucibus"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F13%2F13.jpg?alt=media&token=dcef6a4b-4389-4514-8c63-f3c38b7506d1",
-      "info" : "Ut eleifend lacus at nulla placerat, ac commodo leo gravida. Quisque volutpat mi in lacus fringilla, vitae consectetur est rhoncus. Nunc non commodo augue. Donec ligula libero, luctus id porttitor in, gravida ut lacus. Vivamus malesuada lobortis tellus. Donec feugiat enim id lorem hendrerit, nec venenatis enim eleifend. Integer ut consectetur justo. Mauris nec lobortis orci.",
-      "price" : 900000,
-      "id" : 72780273,
-      "type" : "commercial property",
-      "town" : "Placerat",
-      "toRent" : true,
-      "beds" : "4+",
-      "name" : "Castle to rent in Placerat"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F14%2F14.jpg?alt=media&token=ed5f03b4-3dee-4990-aa62-3026c1df5730",
-      "info" : "Mauris ac mi quis neque lacinia rhoncus. Donec in feugiat nisi, ac ultrices metus. Nullam ipsum nulla, vestibulum sed semper nec, venenatis at lacus. Quisque eu enim nisl. Donec maximus justo vitae sollicitudin dictum. Proin pulvinar magna lobortis, maximus erat eu, placerat nibh. Integer libero justo, consectetur sed nulla sed, vehicula vestibulum sem.",
-      "price" : 610000,
-      "id" : 92735572,
-      "type" : "bungalow",
-      "town" : "Rhoncus",
-      "toRent" : true,
-      "beds" : "3+",
-      "name" : "Joint to rent in Rhoncus"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F15%2F15.jpg?alt=media&token=74d74eb1-9f78-4060-9009-fc9f018e2a18",
-      "info" : "Etiam ut elit laoreet, porta enim id, mattis purus. Quisque a justo a erat aliquet consectetur at sed nunc. Suspendisse ornare elit ac urna condimentum euismod. Nulla sed tellus ut felis euismod ullamcorper semper eu dolor. Nulla id sem vel ipsum gravida consectetur eu at elit.",
-      "price" : 890000,
-      "id" : 45777775,
-      "type" : "house",
-      "town" : "Purus",
-      "toRent" : false,
-      "beds" : "3+",
-      "name" : "Commorancy for sale in Purus"
-    }, {
-      "forSale" : true,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F16%2F16.jpg?alt=media&token=097449a9-d467-4bb1-bb5c-830dd9d9d4ea",
-      "info" : "Etiam odio justo, convallis ut nisl sit amet, condimentum feugiat odio. Donec eget leo quis est dignissim semper. Sed gravida, ipsum a hendrerit faucibus, nibh ante eleifend sapien, quis tempor urna neque in nisi. In pellentesque erat elementum diam mollis, non interdum elit malesuada. Morbi nulla ligula, iaculis id neque ut, sollicitudin dictum purus. Nunc sit amet purus id purus dictum aliquam. Praesent ac sapien a lectus semper aliquet ac sed arcu.",
-      "price" : 800000,
-      "id" : 17877757,
-      "type" : "apartment",
-      "town" : "Amet",
-      "toRent" : false,
-      "beds" : "3+",
-      "name" : "Home plate for sale in Amet"
-    }, {
-      "forSale" : false,
-      "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F17%2F17.jpg?alt=media&token=627c91bb-f8f5-4bbc-9391-a808a21509bf",
-      "info" : "Sed sit amet felis molestie neque ullamcorper feugiat. Vestibulum eget cursus justo. Mauris bibendum varius est id porta. Ut rhoncus condimentum velit, quis ullamcorper diam bibendum id. Curabitur vel augue nec lacus pretium maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed felis augue, fermentum a malesuada sit amet, iaculis in libero. Donec eget neque at urna mollis molestie.",
-      "price" : 1350000,
-      "id" : 24813125,
-      "type" : "bungalow",
-      "town" : "Ullamcorper",
-      "toRent" : true,
-      "beds" : "3+",
-      "name" : "Crash pad to rent in Ullamcorper"
-    }
-]
+  "examples" : [ {
+    "beds" : "1+",
+    "forSale" : true,
+    "id" : 99552563,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F01%2F01.jpg?alt=media&token=163688f1-e881-49db-9740-1d9039f2dd3e",
+    "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus urna felis, posuere vitae eleifend nec, interdum a nisi. In nec laoreet ipsum. Vivamus enim enim, convallis non erat at, hendrerit cursus tellus. Cras quis urna tempus, pulvinar lacus vel, dignissim libero. Donec feugiat mauris nec libero congue, sit amet scelerisque sapien accumsan.",
+    "name" : "House for sale in Berlin",
+    "price" : 95000,
+    "toRent" : false,
+    "town" : "Berlin",
+    "type" : "house"
+  }, {
+    "beds" : "2+",
+    "forSale" : true,
+    "id" : 82151077,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F02%2F02.jpg?alt=media&token=e1bbd3c8-14bd-43ee-bd73-4be1561cdd3f",
+    "info" : "Praesent vel nisl sed nisi consequat vehicula non id nibh. Fusce posuere dolor id tellus aliquet, eu blandit arcu pharetra. Proin eget gravida sapien. Donec consectetur porta quam nec dignissim. Aliquam dictum eros non ligula imperdiet dapibus. Proin id nunc mi. Nam dui erat, tempor vitae commodo a, vestibulum vel neque. Morbi fringilla, nunc non bibendum rhoncus, risus arcu efficitur arcu, eget fermentum elit magna a massa. In facilisis urna eu nunc blandit laoreet.",
+    "name" : "Apartment for sale in Berlin",
+    "price" : 100000,
+    "toRent" : false,
+    "town" : "Berlin",
+    "type" : "apartment"
+  }, {
+    "beds" : "3+",
+    "forSale" : false,
+    "id" : 53471108,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F03%2F03.jpg?alt=media&token=013373ce-c386-4d07-9e98-709c40d138b0",
+    "info" : "Nulla suscipit interdum velit nec sagittis. Fusce tellus arcu, fringilla ac lacus nec, condimentum blandit erat. In posuere arcu sit amet sem pharetra, vitae ullamcorper leo rhoncus. Nulla varius placerat cursus. Nulla tempus ligula sed ipsum viverra pretium. Aenean suscipit consequat eleifend. Praesent ipsum nibh, rhoncus quis lorem porttitor, finibus ultrices mi. Suspendisse eu quam lobortis, suscipit nulla non, ornare nulla.",
+    "name" : "Bungalow to rent in Berlin",
+    "price" : 250000,
+    "toRent" : true,
+    "town" : "Berlin",
+    "type" : "bungalow"
+  }, {
+    "beds" : "4+",
+    "forSale" : false,
+    "id" : 51533232,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F04%2F04.jpg?alt=media&token=baa96fb1-ed42-41a5-aecc-fb4fb9c70abb",
+    "info" : "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras libero augue, aliquet in enim vitae, tristique ultrices purus. Proin urna massa, faucibus nec lacinia vel, placerat sit amet turpis. Proin nec augue ut tortor laoreet dapibus vel fermentum massa. Cras quis dictum nulla. Etiam a ultricies leo.",
+    "name" : "Facility to rent in Warsaw",
+    "price" : 175000,
+    "toRent" : true,
+    "town" : "Warsaw",
+    "type" : "commercial property"
+  }, {
+    "beds" : "3+",
+    "forSale" : false,
+    "id" : 33211032,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F05%2F05.jpg?alt=media&token=2d39cca0-75ab-4adf-b8be-347acc5ad472",
+    "info" : "Proin varius quam vel urna iaculis iaculis. Aliquam accumsan sollicitudin ante, vel vestibulum lacus iaculis eget. Duis imperdiet rutrum ullamcorper. Morbi at massa quis lorem ullamcorper aliquet id sed ex. Quisque id nulla pretium, dictum leo eu, dapibus odio. Integer purus ante, tincidunt sit amet vestibulum a, malesuada eu nunc. Curabitur interdum in nibh a mattis. Mauris lacinia congue dolor eu sollicitudin. Morbi fermentum neque ipsum.",
+    "name" : "Buro to rent in Warsaw",
+    "price" : 850000,
+    "toRent" : true,
+    "town" : "Warsaw",
+    "type" : "commercial property"
+  }, {
+    "beds" : "2+",
+    "forSale" : false,
+    "id" : 12031224,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F06%2F06.jpg?alt=media&token=f6231c12-43ee-4ee0-83b1-56f959165050",
+    "info" : "Ut consequat nisi libero, ut volutpat ligula sollicitudin a. Maecenas suscipit risus quis varius pulvinar. Pellentesque odio dolor, condimentum sit amet dui at, posuere vehicula libero. Pellentesque auctor nisl quis est accumsan, vitae ultricies justo fermentum. Nunc elementum, magna et dapibus feugiat, elit nulla finibus libero, vel pretium nunc magna a purus. Etiam condimentum lacus convallis sem vehicula condimentum.",
+    "name" : "Corner to rent in Warsaw",
+    "price" : 480000,
+    "toRent" : true,
+    "town" : "Warsaw",
+    "type" : "house"
+  }, {
+    "beds" : "3+",
+    "forSale" : false,
+    "id" : 21522715,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F07%2F07.jpg?alt=media&token=d6134479-1b10-4310-a8b6-5af4efa42fc8",
+    "info" : "Quisque posuere massa eu sapien interdum posuere in id augue. Integer aliquam pretium consectetur. Integer aliquam quis magna vel accumsan. Ut volutpat sem blandit, iaculis arcu eu, convallis tortor. Sed ut eleifend dolor. Sed finibus, odio at aliquam laoreet, risus diam iaculis ante, eu pellentesque tellus metus et justo. Etiam quis tristique nisi. Etiam non neque metus. Aliquam erat volutpat. Praesent lacinia varius felis quis dictum.",
+    "name" : "Rooms to rent in Warsaw",
+    "price" : 500000,
+    "toRent" : true,
+    "town" : "Warsaw",
+    "type" : "apartment"
+  }, {
+    "beds" : "1+",
+    "forSale" : false,
+    "id" : 31112223,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F08%2F08.jpg?alt=media&token=bcd18743-f67b-4b71-a0ad-ee3710c1072b",
+    "info" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum lorem a ligula bibendum, a convallis quam accumsan. Phasellus malesuada fermentum aliquet. In massa est, commodo at nulla vel, auctor blandit neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales a enim nec posuere. Sed odio felis, sollicitudin in mi vitae, gravida tempor magna. Phasellus fermentum accumsan pellentesque.",
+    "name" : "Household to rent in New York",
+    "price" : 630000,
+    "toRent" : true,
+    "town" : "New York",
+    "type" : "bungalow"
+  }, {
+    "beds" : "4+",
+    "forSale" : true,
+    "id" : 45348517,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F09%2F09.jpg?alt=media&token=63d4a2cd-19ee-4d99-949f-5bf7b5d6f035",
+    "info" : "In arcu urna, vulputate ac magna at, commodo commodo erat. Nullam id iaculis augue, sed rhoncus nisl. Integer dignissim, urna eu commodo hendrerit, lectus odio tristique magna, ac vehicula arcu lacus eu velit. Nullam nec faucibus libero. Nunc varius rutrum laoreet. Mauris tempus metus quis metus fringilla iaculis. Praesent consequat maximus tortor, sit amet posuere arcu tristique id. Aliquam sed venenatis magna.",
+    "name" : "Condo for sale in New York",
+    "price" : 800000,
+    "toRent" : false,
+    "town" : "New York",
+    "type" : "commercial property"
+  }, {
+    "beds" : "4+",
+    "forSale" : true,
+    "id" : 11251745,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F10%2F10.jpg?alt=media&token=83c9166d-5d25-4d78-b86a-8596501379fe",
+    "info" : "In posuere suscipit enim, nec pharetra purus sodales nec. In congue urna in placerat mollis. Maecenas tellus libero, mollis a ultricies eu, vestibulum quis massa. In hac habitasse platea dictumst. Duis porttitor massa eget nisi consectetur, et cursus lorem faucibus. Nulla venenatis luctus lectus, at vulputate eros placerat quis.",
+    "name" : "Building for sale in New York",
+    "price" : 340000,
+    "toRent" : false,
+    "town" : "New York",
+    "type" : "industrial property"
+  }, {
+    "beds" : "1+",
+    "forSale" : true,
+    "id" : 25775331,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F11%2F11.jpg?alt=media&token=101d7d40-0dac-4c63-8a5e-0d7fafe5c4bb",
+    "info" : "Sed a massa congue, sagittis leo sit amet, congue leo. Proin in erat vel massa lobortis iaculis non gravida elit. Sed in accumsan lacus. Nulla egestas tellus eu tempus tincidunt. Nulla placerat imperdiet felis eu venenatis. Duis vel magna mauris. Nullam in diam erat. Curabitur a urna at massa rhoncus dignissim et sed libero.",
+    "name" : "Residence for sale in Paris",
+    "price" : 700000,
+    "toRent" : false,
+    "town" : "Paris",
+    "type" : "bungalow"
+  }, {
+    "beds" : "2+",
+    "forSale" : true,
+    "id" : 92791515,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F12%2F12.jpg?alt=media&token=b5051f43-251e-4729-9795-11b48d974a26",
+    "info" : "Aenean id placerat nisl, eu pharetra felis. Nulla at faucibus est, accumsan ornare erat. Proin pretium lectus diam, vel aliquam ligula lobortis sed. Duis facilisis, erat non consequat scelerisque, nibh quam egestas nisi, eu malesuada quam massa ut magna. Quisque vehicula laoreet urna vel varius. Nam elementum sagittis lectus, nec mattis lacus luctus vel.",
+    "name" : "Abode for sale in Paris",
+    "price" : 725000,
+    "toRent" : false,
+    "town" : "Paris",
+    "type" : "industrial property"
+  }, {
+    "beds" : "4+",
+    "forSale" : false,
+    "id" : 72780273,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F13%2F13.jpg?alt=media&token=dcef6a4b-4389-4514-8c63-f3c38b7506d1",
+    "info" : "Ut eleifend lacus at nulla placerat, ac commodo leo gravida. Quisque volutpat mi in lacus fringilla, vitae consectetur est rhoncus. Nunc non commodo augue. Donec ligula libero, luctus id porttitor in, gravida ut lacus. Vivamus malesuada lobortis tellus. Donec feugiat enim id lorem hendrerit, nec venenatis enim eleifend. Integer ut consectetur justo. Mauris nec lobortis orci.",
+    "name" : "Castle to rent in Paris",
+    "price" : 725000,
+    "toRent" : true,
+    "town" : "Paris",
+    "type" : "commercial property"
+  }, {
+    "beds" : "3+",
+    "forSale" : false,
+    "id" : 92735572,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F14%2F14.jpg?alt=media&token=ed5f03b4-3dee-4990-aa62-3026c1df5730",
+    "info" : "Mauris ac mi quis neque lacinia rhoncus. Donec in feugiat nisi, ac ultrices metus. Nullam ipsum nulla, vestibulum sed semper nec, venenatis at lacus. Quisque eu enim nisl. Donec maximus justo vitae sollicitudin dictum. Proin pulvinar magna lobortis, maximus erat eu, placerat nibh. Integer libero justo, consectetur sed nulla sed, vehicula vestibulum sem.",
+    "name" : "Joint to rent in Moscow",
+    "price" : 750000,
+    "toRent" : true,
+    "town" : "Moscow",
+    "type" : "bungalow"
+  }, {
+    "beds" : "3+",
+    "forSale" : true,
+    "id" : 45777775,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F15%2F15.jpg?alt=media&token=74d74eb1-9f78-4060-9009-fc9f018e2a18",
+    "info" : "Etiam ut elit laoreet, porta enim id, mattis purus. Quisque a justo a erat aliquet consectetur at sed nunc. Suspendisse ornare elit ac urna condimentum euismod. Nulla sed tellus ut felis euismod ullamcorper semper eu dolor. Nulla id sem vel ipsum gravida consectetur eu at elit.",
+    "name" : "Commorancy for sale in Moscow",
+    "price" : 890000,
+    "toRent" : false,
+    "town" : "Moscow",
+    "type" : "house"
+  }, {
+    "beds" : "3+",
+    "forSale" : true,
+    "id" : 17877757,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F16%2F16.jpg?alt=media&token=097449a9-d467-4bb1-bb5c-830dd9d9d4ea",
+    "info" : "Etiam odio justo, convallis ut nisl sit amet, condimentum feugiat odio. Donec eget leo quis est dignissim semper. Sed gravida, ipsum a hendrerit faucibus, nibh ante eleifend sapien, quis tempor urna neque in nisi. In pellentesque erat elementum diam mollis, non interdum elit malesuada. Morbi nulla ligula, iaculis id neque ut, sollicitudin dictum purus. Nunc sit amet purus id purus dictum aliquam. Praesent ac sapien a lectus semper aliquet ac sed arcu.",
+    "name" : "Home plate for sale in Moscow",
+    "price" : 900000,
+    "toRent" : false,
+    "town" : "Moscow",
+    "type" : "apartment"
+  }, {
+    "beds" : "3+",
+    "forSale" : false,
+    "id" : 24813125,
+    "img" : "https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/images%2F17%2F17.jpg?alt=media&token=627c91bb-f8f5-4bbc-9391-a808a21509bf",
+    "info" : "Sed sit amet felis molestie neque ullamcorper feugiat. Vestibulum eget cursus justo. Mauris bibendum varius est id porta. Ut rhoncus condimentum velit, quis ullamcorper diam bibendum id. Curabitur vel augue nec lacus pretium maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed felis augue, fermentum a malesuada sit amet, iaculis in libero. Donec eget neque at urna mollis molestie.",
+    "name" : "Crash pad to rent in Moscow",
+    "price" : 900000,
+    "toRent" : true,
+    "town" : "Moscow",
+    "type" : "bungalow"
+  } ]
 }
