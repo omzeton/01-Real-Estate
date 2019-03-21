@@ -1,0 +1,32 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* COMPONENTS */
+/* ********** */
+
+/* TopMenu */
+.TopMenu {
+	background-color: red !important;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.TopMenu {
+		background-color: green !important;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.TopMenu {
+		background-color: blue !important;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.TopMenu {
+		background-color: orange !important;
+	}
+}
+
