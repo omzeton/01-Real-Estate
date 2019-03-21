@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import RealEstate from './containers/RealEstate/RealEstate';
 
 import './App.css';
+import './responsive.css';
 
 class App extends Component {
   render() {

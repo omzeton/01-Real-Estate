@@ -22,7 +22,7 @@ class SearchBar extends Component {
 		let style = null;
 		if (this.props.location === 'home') {
 			style = {
-				marginTop: '-10em'
+				marginTop: '0em'
 			}
 		} else if (this.props.location === 'properties') {
 			style = {
