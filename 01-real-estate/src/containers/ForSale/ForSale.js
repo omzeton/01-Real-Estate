@@ -31,8 +31,12 @@ class ForSale extends Component {
 			let arr = [];
 
 
-			let data = Object.values(this.props.samples);
+			let properties = this.props.samples;
 
+			let data = Object.keys(properties).map(function(key) {
+			    return properties[key];
+			});
+			
 			data.map(result => {
 				if(result.forSale) {
 					maxAmount++;

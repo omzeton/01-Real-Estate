@@ -18,7 +18,12 @@ class Featured extends Component {
 
 		if (this.props.samples) {
 
-			let data = Object.values(this.props.samples);
+			// let data = Object.values(this.props.samples);
+			let properties = this.props.samples;
+
+			let data = Object.keys(properties).map(function(key) {
+			    return properties[key];
+			});
 
 			results = data.slice(0, 3).map(featured => {
 				return <Link className="Featured__Link" to={'/properties/' + featured.id} key={featured.id}><FeaturedExample
