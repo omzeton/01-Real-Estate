@@ -3,174 +3,395 @@
 
 /* TopMenu */
 	.TopMenu {
-		position: relative;
 		background-color: red;
-		width:100%;
-		height: 4em;
+		height: 4.5em;
 	}
-/* Home */
-	.Home {
-		position: relative;
-		width: 100%;
-		overflow: hidden;
+	.TopMenu__Bottom__BtnContainer--Btn {
+		display: none;
 	}
-	.Home__ImgArea {
-		position: relative;
-		width:100%;
-		height: 75vh;
-		/*height: 20em;*/
-	}
-	.Home__ImgArea--Img {
-		position: relative;
-		width:100%;
-		height: 100%;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-		background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F01.jpg?alt=media&token=1bbceea1-0087-4337-a9ee-84c64aab9774');
-	}
-	.Home__ImgArea--Img:after {
-		content:'';
-		position: absolute;
-		top:0;
-		left:0;
-		width:100%;
-		height: 100%;
-		background-color:#000;
-		opacity: 0.2;
-	}
+/* ✓ Home */
 	.Home__ImgArea--Img h2 {
-		font-family: 'Chivo', sans-serif;
-		color:#fff;
 		font-size: 3em;
-		z-index: 9999;
-		padding:1em;
 	}
-
-	.Home__ImgArea--Img h2 span {
-		color:#000;
+	.Home__InfoArea h2 {
+		font-size: 2em;
 	}
-/* SearchBar */
-
+	.Home__InfoArea p {
+		width:80vw;
+	}
+/* ✓ About */
+	.About__Container {
+		width:75vw;
+	}
+	.About__Container--Text {
+		padding:1em 2em;
+	}
+	.About__Container--Text h2 {
+		font-size: 2em;
+	}
+	.About__Container--Text h3 {
+		font-size: 1em;
+	}
+	.About__Container--Text p {
+		font-size: 0.8em;
+		padding:2em 0;
+	}
+/* ✓ Footer */
+	.Footer {
+		height: 13em;
+	}
+	.Footer .Footer__Copyright {
+		width:60vw;
+	}
+	.Footer .Footer__Copyright h2 {
+		font-size: 0.7em;
+	}
+/* ✓ Sort */
+	.Sort {
+		height:5em;
+	}
+	.Sort .Sort__Container {
+		width:80vw;
+		display: grid;
+		grid-template-rows:2.5em 1fr 2.5em;
+		grid-template-columns:1fr;
+	}
+/* ✓ SearchBar */
+	.SearchBar__FormContainer {
+		width:80vw;
+	}
+/* ✓ Result */
+	.Result {
+		width:80vw;
+		height:12em;
+		overflow: hidden;
+		grid-template-columns: 35% 45% 10%;
+	}
+	.Result__Info h2 {
+		font-size: 0.9em;
+		line-height: 1.2em;
+	}
+	.Result__Info h3 { font-size: 1em; }
+	.Result__Info p { font-size: 0.6em; }
+	.Result__Id h2 { font-size: 0.6em; }
+	.Result__Id h3 { font-size: 1em; }
+/* ✓ ListYourProperty */
+	.List__FormContainer {
+		width:80vw;
+	}
+	.List__FormContainer--title h2 {
+		font-size: 1.9em;
+	}
+	.List__FormContainer--title p {
+		font-size: 1em;
+		width:15em;
+	}
+	.List__FormContainer--input {
+		grid-template-rows: repeat(18, 1fr);
+		grid-template-columns: 1fr;
+	}
+	.List__FormContainer--input h3:nth-child(1) {
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(2) {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(3) {
+		grid-row: 3;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(4) {
+		grid-row: 4;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(5) {
+		grid-row: 5;
+		grid-column: 1;
+	}
+	.List__FormContainer--input select:nth-child(6) {
+		grid-row: 6;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(7) {
+		grid-row: 7;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(8) {
+		grid-row: 8;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(9) {
+		grid-row: 9;
+		grid-column: 1;
+	}
+	.List__FormContainer--input select:nth-child(10) {
+		grid-row: 10;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(11) {
+		grid-row: 11;
+		grid-column: 1;
+	}
+	.List__FormContainer--input select:nth-child(12) {
+		grid-row: 12;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(13) {
+		grid-row: 13;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(14) {
+		grid-row: 14;
+		grid-column: 1;
+	}
+	.List__FormContainer--input h3:nth-child(15) {
+		grid-row: 15;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(16) {
+		grid-row: 16;
+		grid-column: 1;
+	}
+	.List__FormContainer--input button:nth-child(17) {
+		grid-row: 16;
+		grid-column: 1;
+	}
+	.List__FormContainer--input input:nth-child(18) {
+		grid-row: 17;
+		grid-column: 1;
+	}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	/* TopMenu */
-	.TopMenu {
-		background-color: green;
-	}
-	/* Home */
-	.Home__ImgArea--Img h2 {
-		font-size: 3.8em;
-	}
+		.TopMenu {
+			background-color: green;
+		}
+		.TopMenu__Bottom__BtnContainer--Btn {
+			display: block;
+			margin:0em 0.5em;
+		}
+	/* ✓ Home */
+		.Home__ImgArea--Img h2 {
+			font-size: 3.8em;
+		}
+		.Home__InfoArea h2 {
+			font-size: 2.5em;
+		}
+		.Home__InfoArea p {
+			font-size: 0.8em;
+			width: 50em;
+		}
+	/* ✓ About */
+		.About__Container {
+			width:42em;
+		}
+		.About__Container--Text {
+			padding:2em 5em;
+		}
+		.About__Container--Text h2 {
+			font-size: 2.5em;
+		}
+		.About__Container--Text h3 {
+			font-size: 1.2em;
+		}
+		.About__Container--Text p {
+			font-size: 1em;
+			padding:2em 0;
+		}
+	/* ✓ Footer */
+		.Footer {
+			height: 10em;
+		}
+		.Footer .Footer__Copyright {
+			width:35em;
+		}
+		.Footer .Footer__Copyright h2 {
+			font-size: 0.8em;
+		}
+	/* ✓ Sort */
+		.Sort {
+			height: 5em;
+		}
+		.Sort .Sort__Container {
+			width:40em;
+			grid-template-rows:1fr;
+			grid-template-columns: 22em 1fr 22em;
+		}
+	/* ✓ SearchBar */
+		.SearchBar__FormContainer {
+			width:40em;
+		}
+	/* ✓ Result */
+		.Result {
+			width:40em;
+			height:12em;
+			grid-template-columns: 35% 50% 15%;
+		}
+		.Result__Info h2 {
+			font-size: 1em;
+			line-height: 0em;
+		}
+		.Result__Info h3 { font-size: 1.2em; }
+		.Result__Info p { font-size: 0.8em; }
+		.Result__Id h2 { font-size: 0.6em; }
+		.Result__Id h3 { font-size: 1em; }
+	/* ✓ ListYourProperty */
+		.List__FormContainer {
+			width:40em;
+		}
+		.List__FormContainer--title h2 {
+			font-size: 2.5em;
+		}
+		.List__FormContainer--title p {
+			font-size: 1.1em;
+			width:auto;
+		}
+		.List__FormContainer--input {
+			grid-template-rows: repeat(10, 1fr);
+			grid-template-columns: 10em 10em;
+		}
+		.List__FormContainer--input h3:nth-child(1) {
+			grid-row: 1;
+			grid-column: 1;
+		}
+		.List__FormContainer--input input:nth-child(2) {
+			grid-row: 1;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(3) {
+			grid-row: 2;
+			grid-column: 1;
+		}
+		.List__FormContainer--input input:nth-child(4) {
+			grid-row: 2;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(5) {
+			grid-row: 3;
+			grid-column: 1;
+		}
+		.List__FormContainer--input select:nth-child(6) {
+			grid-row: 3;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(7) {
+			grid-row: 4;
+			grid-column: 1;
+		}
+		.List__FormContainer--input input:nth-child(8) {
+			grid-row: 4;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(9) {
+			grid-row: 5;
+			grid-column: 1;
+		}
+		.List__FormContainer--input select:nth-child(10) {
+			grid-row: 5;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(11) {
+			grid-row: 6;
+			grid-column: 1;
+		}
+		.List__FormContainer--input select:nth-child(12) {
+			grid-row: 6;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(13) {
+			grid-row: 7;
+			grid-column: 1;
+		}
+		.List__FormContainer--input input:nth-child(14) {
+			grid-row: 7;
+			grid-column: 2;
+		}
+		.List__FormContainer--input h3:nth-child(15) {
+			grid-row: 8;
+			grid-column: 1;
+		}
+		.List__FormContainer--input button:nth-child(17) {
+			grid-row: 8;
+			grid-column: 2;
+		}
+		.List__FormContainer--input input[type=submit] {
+			grid-row:9;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	/* TopMenu */
-	.TopMenu {
-		background-color: blue;
-	}
-	/* Home */
-	.Home__ImgArea--Img h2 {
-		font-size: 4em;
-	}
+		.TopMenu {
+			background-color: blue;
+		}
+		.TopMenu__Bottom__BtnContainer--Btn {
+			margin:0em 1em;
+		}
+	/* ✓ Home */
+		.Home__ImgArea--Img h2 {
+			font-size: 4em;
+		}
+		.Home__InfoArea h2 {
+			font-size: 3em;
+		}
+		.Home__InfoArea p {
+			font-size: 0.9em;
+		}
+	/* ✓ About */
+		.About__Container {
+			width:50em;
+		}
+	/* ✓ Footer */
+		.Footer .Footer__Copyright {
+			width:40em;
+		}
+	/* ✓ Sort */
+		.Sort .Sort__Container {
+			width:50em;
+		}
+	/* ✓ SearchBar */
+		.SearchBar__FormContainer {
+			width:50em;
+		}
+	/* ✓ Result */
+		.Result {
+			width:50em;
+			height: 13em;
+		}
+		.Result__Info h2 {
+			font-size: 1.2em;
+		}
+		.Result__Info h3 { font-size: 1.2em; }
+		.Result__Info p { font-size: 0.8em; }
+		.Result__Id h2 { font-size: 0.8em; }
+		.Result__Id h3 { font-size: 1.2em; }
+	/* ✓ ListYourProperty */
+		.List__FormContainer {
+			width:50em;
+		}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	/* TopMenu */
-	.TopMenu {
-		background-color: orange;
-	}
-	/* Home */
+		.TopMenu {
+			background-color: orange;
+		}
+		.TopMenu__Bottom__BtnContainer--Btn {
+			margin:0em 1.5em;
+		}
+	/* ✓ About */
+		.About__Container {
+			width:60em;
+		}
+	/* ✓ Footer */
+		.Footer .Footer__Copyright {
+			width:45em;
+		}
 }
-
-/*
-
-.Home__ImgArea {
-	position: relative;
-	width:100%;
-	height: 100%;
-}
-
-.Home__ImgArea--Img {
-	position: relative;
-	width:100%;
-	height:35em;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F01.jpg?alt=media&token=1bbceea1-0087-4337-a9ee-84c64aab9774');
-}
-
-.Home__ImgArea--Img:after {
-	content:'';
-	position: absolute;
-	width:100%;
-	height: 100%;
-	background-color:#000;
-	opacity: 0.2;
-}
-
-.Home__ImgArea--Img h2 {
-	font-family: 'Chivo', sans-serif;
-	color:#fff;
-	font-size: 4em;
-	z-index: 9999;
-}
-
-.Home__ImgArea--Img h2 span {
-	color:#000;
-}
-
-.Home__InfoArea {
-	width:100%;
-	height: 15em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.Home__InfoArea h2 {
-	position: relative;
-	font-family: 'Chivo', sans-serif;
-	color:#000;
-	font-size: 3em;
-	font-weight: 900;
-	line-height: 0em;
-	z-index: 999;
-	text-align: center;
-}
-
-.Home__InfoArea h2:after {
-	content: '';
-	position: absolute;
-	width:5em;
-	height: 0.05em;
-	background-color:#000;
-	left:50%;
-	transform:translateX(-50%);
-	margin-top:0.7em;
-}
-
-.Home__InfoArea p {
-	width:50em;
-	font-family: 'Asul', sans-serif;
-	font-weight: 400;
-	font-size: 0.9em;
-	line-height: 1.5em;
-	text-align: center;
-}
-}*/

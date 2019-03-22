@@ -29,7 +29,11 @@ class Properties extends Component {
 
 		if ( this.props.samples ) {
 
-			let data = Object.values(this.props.samples);
+			let properties = this.props.samples;
+
+			let data = Object.keys(properties).map(function(key) {
+			    return properties[key];
+			});
 			
 			let searched = [],
 				matches = 0,

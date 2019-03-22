@@ -22,7 +22,11 @@ class ResultBig extends Component {
 		let status = "";
 
 		if ( this.props.samples ) {
-			let data = Object.values(this.props.samples);
+			let properties = this.props.samples;
+
+			let data = Object.keys(properties).map(function(key) {
+			    return properties[key];
+			});
 			fullResult = data.map(result => {
 				// eslint-disable-next-line
 				if ( result.id == this.props.match.params.id ) {

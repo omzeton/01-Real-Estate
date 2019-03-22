@@ -15,13 +15,29 @@ class Objectives extends Component {
 				<div className="Objectives" style={modalToggle}>
 					<div className="show">
 						<div className="Objectives--toggle" onClick={this.toggleModal}></div>
-						<h2>Odwaliłeś KAWAŁ świetnej roboty. Jesteś zajebisty ziom. Ale jeszcze się nie poddawaj! :)</h2>
+						<h2>Jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
 						<ul>
 							<li>Loader in form </li>
 							<li>Cloud function - if file has the same as before rename to sth unique.</li>
 							<hr />
 							<li>CSSTransitions</li>
-							<li>Media Queries - App has to look good on smaller devices.</li>
+							<li>On Hamburger click add is-active class.</li>
+							<li>
+								Media Queries - App has to look good on smaller devices:
+								<ol>
+									<li>TopMenu</li>
+									<li>ResultBig</li>
+									<li>Featured</li>
+									<li className="finished">ListYourProperty</li>
+									<li className="finished">Result</li>
+									<li className="finished">SearchBar</li>
+									<li className="finished">Home</li>
+									<li className="finished">Filter</li>
+									<li className="finished">About</li>
+									<li className="finished">Footer</li>
+								</ol>
+							</li>
+							<li>In extreme scaling few elements break the page</li>
 							<li>润色: Better folder structure / Code improvements / Check if some containers are still in components folder</li>
 						</ul>
 						<div className="queries">
