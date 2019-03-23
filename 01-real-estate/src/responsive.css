@@ -2,16 +2,21 @@
 /* No media query since this is the default in Bootstrap */
 
 /* TopMenu */
-/*	.TopMenu {
+	.TopMenu {
 		background-color: red;
-	}*/
+	}
 /* ✓ Home */
 	.Home__ImgArea--Img h2 {
 		font-size: 3em;
 	}
 	.Home__InfoArea h2 {
+		line-height: 1em;
 		font-size: 2em;
 	}
+	.Home__InfoArea h2:after {
+		margin-top:1.6em;
+	}
+
 	.Home__InfoArea p {
 		width:80vw;
 	}
@@ -161,6 +166,16 @@
 		grid-row: 17;
 		grid-column: 1;
 	}
+/* ✓ Featured */
+	.Featured {
+		flex-direction: column;
+		height: auto;
+	}
+	.FeaturedExample {
+		width:70vw;
+		height:20em;
+		margin:1em 0;
+	}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -175,6 +190,10 @@
 		}
 		.Home__InfoArea h2 {
 			font-size: 2.5em;
+			line-height: 0em;
+		}
+		.Home__InfoArea h2:after {
+			margin-top:0.7em;
 		}
 		.Home__InfoArea p {
 			font-size: 0.8em;
@@ -321,6 +340,25 @@
 			grid-column-start: 1;
 			grid-column-end: 3;
 		}
+	/* ✓ Featured */
+		.Featured {
+			flex-direction: row;
+			height: 25em;
+		}
+		.FeaturedExample {
+			width:13em;
+			height:20em;
+			margin:0 1em;
+		}
+		.Featured__Example__Info .Info--Top .Header h2 {
+			font-size: 1.1em
+		}
+		.Featured__Example__Info .Info--Top .Info p {
+			font-size: 0.9em;
+		}
+		.Featured__Example__Info .Info--Bottom .City h4 {
+			font-size: 0.6em;
+		}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -370,6 +408,24 @@
 	/* ✓ ListYourProperty */
 		.List__FormContainer {
 			width:50em;
+		}
+	/* ✓ Featured */
+		.FeaturedExample {
+			width:18em;
+			height:25em;
+			margin:0 0.5em;
+		}
+		.Featured__Example__Info .Info--Top .Header h2 {
+			font-size: 1.5em
+		}
+		.Featured__Example__Info .Info--Top .Header p {
+			font-size: 0.8em;
+		}
+		.Featured__Example__Info .Info--Top .Info p {
+			font-size: 1.1em;
+		}
+		.Featured__Example__Info .Info--Bottom .City h4 {
+			font-size: 0.6em;
 		}
 }
 

@@ -27,7 +27,7 @@ class Objectives extends Component {
 								<ol>
 									<li>TopMenu</li>
 									<li>ResultBig</li>
-									<li>Featured</li>
+									<li className="finished">Featured</li>
 									<li className="finished">ListYourProperty</li>
 									<li className="finished">Result</li>
 									<li className="finished">SearchBar</li>
