@@ -5,7 +5,8 @@ import './TopMenu.css';
 
 class TopMenu extends Component { 
 	state = {
-		open: false
+		open: false,
+		smallDevice: true
 	}
 
 	navHanlder = () => {
@@ -19,11 +20,25 @@ class TopMenu extends Component {
 	}
 
 	render() {
+
+		window.addEventListener('resize', () => {
+			if( window.innerWidth > 768 ) {
+				if ( this.state.smallDevice ) {
+					console.log("bigger devices");
+					this.setState({smallDevice: false});
+				}
+			} else {
+				if ( !this.state.smallDevice ) {
+					console.log("smaller devices");
+					this.setState({smallDevice: true});
+				}
+			}
+		});
+
 		const style = this.state.open ? { height: '100vh' } : { height: '4em' }
 		const burgerStyle = this.state.open ? ['hamburger', 'hamburger--squeeze', 'is-active'].join(' ') : ['hamburger', 'hamburger--squeeze'].join(' ');
 
-		return (
-			<div className="TopMenu" style={style}>
+		const responsiveMenu = this.state.responsive ? <div className="TopMenu" style={style}>
 				<div className="TopMenu__Top">
 					<div className="TopMenu__Top--Logo"></div>
 					<div></div>
@@ -43,6 +58,12 @@ class TopMenu extends Component {
 						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/about-us">About us</NavLink></div>
 						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/list-your-property">List Your Property</NavLink></div>
 				</div>
+			</div> : null;
+
+
+		return (
+			<div>
+				{responsiveMenu}
 			</div>
 		);
 	}		
