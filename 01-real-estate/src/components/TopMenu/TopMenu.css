@@ -1,4 +1,4 @@
-.TopMenu {
+.Responsive-TopMenu {
 	position: absolute;
 	width: 100%;
 	height: 100vh;
@@ -9,7 +9,7 @@
 	transition:height 0.5s ease-out;
 }
 
-.TopMenu:after {
+.Responsive-TopMenu:after {
 	content:'';
 	position: absolute;
 	width: 100%;
@@ -21,14 +21,14 @@
 	opacity: 0.9;
 }
 
-.TopMenu .TopMenu__Top {
+.Responsive-TopMenu .Responsive-TopMenu__Top {
 	position: relative;
 	display: grid;
 	grid-template-columns: 5em 1fr 5em;
 	grid-template-rows: 1fr;
 }
 
-.TopMenu .TopMenu__Top .TopMenu__Top--Logo {
+.Responsive-TopMenu .Responsive-TopMenu__Top .Responsive-TopMenu__Top--Logo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,21 +39,21 @@
 	background-repeat: no-repeat;
 }
 
-.TopMenu__Bottom {
+.Responsive-TopMenu__Bottom {
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(6, 1fr);
 }
 
-.TopMenu__Bottom--Btn {
+.Responsive-TopMenu__Bottom--Btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
 }
 
-.TopMenu__Bottom--Btn a {
+.Responsive-TopMenu__Bottom--Btn a {
 	position: relative;
 	text-decoration: none;
 	font-size:3vh;
@@ -63,7 +63,7 @@
 	transition: 0.2s linear;
 }
 
-/*.TopMenu {
+.TopMenu {
 	background-color: var(--2);
 	width:100%;
 	height:80px;
@@ -131,4 +131,4 @@
 	bottom: -0.3em;
 	background-color: var(--3);
 	transform: translateX(-50%);
-}*/
+}

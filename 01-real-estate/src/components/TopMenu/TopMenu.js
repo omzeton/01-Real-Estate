@@ -38,11 +38,11 @@ class TopMenu extends Component {
 		const style = this.state.open ? { height: '100vh' } : { height: '4em' }
 		const burgerStyle = this.state.open ? ['hamburger', 'hamburger--squeeze', 'is-active'].join(' ') : ['hamburger', 'hamburger--squeeze'].join(' ');
 
-		const responsiveMenu = this.state.responsive ? <div className="TopMenu" style={style}>
-				<div className="TopMenu__Top">
-					<div className="TopMenu__Top--Logo"></div>
+		const smallMenu = <div className="Responsive-TopMenu" style={style}>
+				<div className="Responsive-TopMenu__Top">
+					<div className="Responsive-TopMenu__Top--Logo"></div>
 					<div></div>
-					<div className="TopMenu__Top--Burger" onClick={this.navHanlder}>
+					<div className="Responsive-TopMenu__Top--Burger" onClick={this.navHanlder}>
 						<button className={burgerStyle} type="button">
 						  <span className="hamburger-box">
 						    <span className="hamburger-inner"></span>
@@ -50,15 +50,33 @@ class TopMenu extends Component {
 						</button>
 					</div>
 				</div>
-				<div className="TopMenu__Bottom">
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/" exact>Home</NavLink></div>
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/properties">Properties</NavLink></div>
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/for-sale">For sale</NavLink></div>
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/to-rent">To rent</NavLink></div>
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/about-us">About us</NavLink></div>
-						<div className="TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/list-your-property">List Your Property</NavLink></div>
+				<div className="Responsive-TopMenu__Bottom">
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/" exact>Home</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/properties">Properties</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/for-sale">For sale</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/to-rent">To rent</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/about-us">About us</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/list-your-property">List Your Property</NavLink></div>
 				</div>
-			</div> : null;
+			</div>;
+		const bigMenu = <div className="TopMenu">
+							<div></div>
+							<div className="TopMenu__Bottom--Logo"></div>
+
+							<div className="TopMenu__Bottom__BtnContainer">
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/" exact>Home</NavLink></div>
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/properties">Properties</NavLink></div>
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/for-sale">For sale</NavLink></div>
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/to-rent">To rent</NavLink></div>
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/about-us">About us</NavLink></div>
+								<div className="TopMenu__Bottom__BtnContainer--Btn"><NavLink to="/list-your-property">List Your Property</NavLink></div>
+							</div>
+
+							<div className="TopMenu__Bottom--Phone">+48 98 765 43 21</div>
+							<div></div>
+					</div>;
+
+		const responsiveMenu = this.state.smallDevice ? smallMenu : bigMenu;
 
 
 		return (
