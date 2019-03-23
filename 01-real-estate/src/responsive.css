@@ -2,13 +2,9 @@
 /* No media query since this is the default in Bootstrap */
 
 /* TopMenu */
-	.TopMenu {
+/*	.TopMenu {
 		background-color: red;
-		height: 4.5em;
-	}
-	.TopMenu__Bottom__BtnContainer--Btn {
-		display: none;
-	}
+	}*/
 /* ✓ Home */
 	.Home__ImgArea--Img h2 {
 		font-size: 3em;
@@ -57,6 +53,9 @@
 		grid-template-columns:1fr;
 	}
 /* ✓ SearchBar */
+	.SearchBar {
+		padding-top:3em;
+	}
 	.SearchBar__FormContainer {
 		width:80vw;
 	}
@@ -169,10 +168,7 @@
 		.TopMenu {
 			background-color: green;
 		}
-		.TopMenu__Bottom__BtnContainer--Btn {
-			display: block;
-			margin:0em 0.5em;
-		}
+
 	/* ✓ Home */
 		.Home__ImgArea--Img h2 {
 			font-size: 3.8em;
@@ -221,6 +217,9 @@
 			grid-template-columns: 22em 1fr 22em;
 		}
 	/* ✓ SearchBar */
+		.SearchBar {
+			padding-top:0em;
+		}
 		.SearchBar__FormContainer {
 			width:40em;
 		}
@@ -330,9 +329,6 @@
 		.TopMenu {
 			background-color: blue;
 		}
-		.TopMenu__Bottom__BtnContainer--Btn {
-			margin:0em 1em;
-		}
 	/* ✓ Home */
 		.Home__ImgArea--Img h2 {
 			font-size: 4em;
@@ -382,9 +378,6 @@
 	/* TopMenu */
 		.TopMenu {
 			background-color: orange;
-		}
-		.TopMenu__Bottom__BtnContainer--Btn {
-			margin:0em 1.5em;
 		}
 	/* ✓ About */
 		.About__Container {
