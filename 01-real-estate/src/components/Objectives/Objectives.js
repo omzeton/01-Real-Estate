@@ -25,7 +25,7 @@ class Objectives extends Component {
 							<li>
 								Media Queries - App has to look good on smaller devices:
 								<ol>
-									<li>TopMenu</li>
+									<li className="finished">TopMenu</li>
 									<li>ResultBig</li>
 									<li className="finished">Featured</li>
 									<li className="finished">ListYourProperty</li>

@@ -6,6 +6,8 @@ import Sort from '../Sort/Sort';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../store/actions/actions';
 
+import './ToRent.css';
+
 class ToRent extends Component {
 
 	componentDidMount () {
