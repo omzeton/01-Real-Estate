@@ -21,12 +21,13 @@ class Objectives extends Component {
 							<li>Cloud function - if file has the same as before rename to sth unique.</li>
 							<hr />
 							<li>CSSTransitions</li>
-							<li>On Hamburger click add is-active class.</li>
-							<li>
+							<li className="finished">On Hamburger click add is-active class.</li>
+							<li className="finished">
 								Media Queries - App has to look good on smaller devices:
 								<ol>
+									<li>"For Sale" + "To Rent"</li>
 									<li className="finished">TopMenu</li>
-									<li>ResultBig</li>
+									<li className="finished">ResultBig</li>
 									<li className="finished">Featured</li>
 									<li className="finished">ListYourProperty</li>
 									<li className="finished">Result</li>
@@ -37,7 +38,14 @@ class Objectives extends Component {
 									<li className="finished">Footer</li>
 								</ol>
 							</li>
-							<li>In extreme scaling few elements break the page</li>
+							<li>In extreme scaling few elements break the page:
+								<ol>
+									<li className="finished">Text in Footer</li>
+									<li className="finished">Text in Sort</li>
+									<li className="finished">Text in About</li>
+									<li className="finished">Inputs + Text in ListYourProperty</li>
+								</ol>
+							</li>
 							<li>润色: Better folder structure / Code improvements / Check if some containers are still in components folder</li>
 						</ul>
 						<div className="queries">

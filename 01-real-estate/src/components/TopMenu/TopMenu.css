@@ -73,6 +73,7 @@
 	grid-template-rows: 1fr;
 	grid-template-columns: 2em 4em 1fr 8em 2em;
 	border-bottom: 2px solid var(--1);
+	overflow: hidden;
 }
 
 .TopMenu__Bottom--Logo {

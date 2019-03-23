@@ -3,7 +3,7 @@
 
 /* ✓ Home */
 	.Home__ImgArea--Img h2 {
-		font-size: 3em;
+		font-size: 2em;
 	}
 	.Home__InfoArea h2 {
 		line-height: 1em;
@@ -172,7 +172,7 @@
 		height:20em;
 		margin:1em 0;
 	}
-/* ResultBig */
+/* ✓ ResultBig */
 	.ResultBig {
 		height:60em;
 	}
@@ -185,6 +185,10 @@
 	.Full--Info p { font-size: 0.9em; }
 	.Full--Info h2:nth-child(1) { font-size: 1.5em; }
 	.Full--Info h2 { font-size: 0.9em; }
+/* Header__Img */
+	.Header__Img h2 {
+		font-size: 3em;
+	}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -368,7 +372,7 @@
 		.Featured__Example__Info .Info--Bottom .City h4 {
 			font-size: 0.6em;
 		}
-	/* ResultBig */
+	/* ✓ ResultBig */
 		.ResultBig {
 			height:45em;
 		}
@@ -381,6 +385,10 @@
 		.Full--Info p { font-size: 0.9em; }
 		.Full--Info h2:nth-child(1) { font-size: 1.5em; }
 		.Full--Info h2 { font-size: 0.9em; }
+	/* Header__Img */
+		.Header__Img h2 {
+			font-size: 4em;
+		}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -450,7 +458,7 @@
 		.Featured__Example__Info .Info--Bottom .City h4 {
 			font-size: 0.6em;
 		}
-	/* ResultBig */
+	/* ✓ ResultBig */
 		.ResultBig {
 			height:50em;
 		}
