@@ -129,6 +129,76 @@ class ListYourProperty extends Component {
 	}
 	render() {
 
+		const check = {
+			"forSale" : this.state.object.forSale, //
+			"img" : this.state.object.img,
+			"info" : this.state.object.info, //
+			"price" : this.state.object.price, //
+			"type" : this.state.object.type, //
+			"town" : this.state.object.town, //
+			"toRent" : this.state.object.toRent, //
+			"beds" : this.state.object.beds, //
+			"name" : this.state.object.name, //
+			"img" : this.state.loadingFinished
+		};
+
+		let styleName = ""; //
+		let styleTown = ""; //
+		let stylePrice = "";
+		let styleInfo = "";
+		let styleStatus = "";
+		let styleType = "";
+		let styleBeds = "";
+		let styleImg = "";
+
+		if(check.name.length > 4) {
+			styleName = "pass";
+		} else {
+			styleName = "nopass";
+		}
+
+		if(check.town.length > 4) {
+			styleTown = "pass";
+		} else {
+			styleTown = "nopass";
+		}
+
+		if(check.info.length > 0) {
+			styleInfo = "pass";
+		} else {
+			styleInfo = "nopass";
+		}
+
+		if(check.price.length > 0) {
+			stylePrice = "pass";
+		} else {
+			stylePrice = "nopass";
+		}
+
+		if(check.beds) {
+			styleBeds = "pass";
+		} else {
+			styleBeds = "nopass";
+		}
+
+		if(check.type) {
+			styleType = "pass";
+		} else {
+			styleType = "nopass";
+		}
+
+		if(check.forSale || check.toRent) {
+			styleStatus = "pass";
+		} else {
+			styleStatus = "nopass";
+		}
+
+		if(check.img) {
+			styleImg = "pass";
+		} else {
+			styleImg = "nopass";
+		}
+
 		let submit = null;
 		if (this.state.loadingFinished &&
 			(this.state.object.forSale || this.state.object.toRent) && 
@@ -160,12 +230,12 @@ class ListYourProperty extends Component {
 									<div className="List__FormContainer--input">
 
 										<h3>Title of property</h3>
-										<input type="text" placeholder="Name" value={this.state.name} onChange={this.nameHandler}/>
+										<input type="text" placeholder="Name" className={styleName} value={this.state.name} onChange={this.nameHandler}/>
 										<h3>Town</h3>
-										<input type="text" placeholder="Town" value={this.state.town} onChange={this.townHandler}/>
+										<input type="text" placeholder="Town" className={styleTown} value={this.state.town} onChange={this.townHandler}/>
 
 										<h3>Number of beds</h3>
-										<select value={this.state.beds} onChange={this.bedsHandler}>
+										<select value={this.state.beds} className={styleBeds} onChange={this.bedsHandler}>
 												<option value={false}>Select amount</option>
 											    <option value="1+">1+</option>
 											    <option value="2+">2+</option>
@@ -174,17 +244,17 @@ class ListYourProperty extends Component {
 										</select>
 
 										<h3>Price in dollars</h3>
-										<input type="number" value={this.state.price} placeholder="Price" onChange={this.priceHandler}/>
+										<input type="number" value={this.state.price} className={stylePrice} placeholder="Price" onChange={this.priceHandler}/>
 
 										<h3>For Sale / To Rent</h3>
-										<select value={this.state.saleRent} onChange={this.saleRentHandler}>
+										<select value={this.state.saleRent} className={styleStatus} onChange={this.saleRentHandler}>
 											    <option value={false}>Select status</option>
 											    <option value="forSale">For Sale</option>
 											    <option value="toRent">To Rent</option>
 										</select>
 
 										<h3>Type of property</h3>
-										  <select value={this.state.type} onChange={this.typeHandler}>
+										  <select value={this.state.type} className={styleType} onChange={this.typeHandler}>
 											    <option value={false}>Specify type</option>
 											    <option value="house">House</option>
 											    <option value="bungalow">Bungalow</option>
@@ -194,11 +264,11 @@ class ListYourProperty extends Component {
 										  </select>
 
 										<h3>Short description</h3>
-										<input type="text" value={this.state.info} placeholder="info" onChange={this.infoHandler}/>
+										<input type="text" value={this.state.info} className={styleInfo} placeholder="info" onChange={this.infoHandler}/>
 
 										<h3>Image of your property</h3>
 										<input type="file" style={{display: 'none'}} ref={(input) => {this.image = input}} onChange={this.imgHandler}/>
-										<button onClick={() => this.image.click()}>Pick File</button>
+										<button onClick={() => this.image.click()} className={styleImg}>Pick File</button>
 							 	  		{submit}
 									</div>
 							</div>

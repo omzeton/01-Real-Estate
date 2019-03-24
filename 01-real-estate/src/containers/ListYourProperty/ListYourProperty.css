@@ -107,3 +107,10 @@
 .List__FormContainer--input button {
 	cursor: pointer;
 }
+
+.pass {
+	border:0.1em solid green !important;
+}
+.nopass {
+	border:0.1em solid red !important;
+}
