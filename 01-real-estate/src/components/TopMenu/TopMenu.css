@@ -1,7 +1,7 @@
 .Responsive-TopMenu {
 	position: absolute;
 	width: 100%;
-	height: 100vh;
+	height: 50vh;
 	z-index: 99999;
 	display: grid;
 	overflow: hidden;
@@ -58,10 +58,19 @@
 	position: relative;
 	text-decoration: none;
 	font-size:3vh;
-	color:#fff;
+	color:var(--2);
 	font-family: 'Asul', sans-serif;
 	white-space: nowrap;
 	transition: 0.2s linear;
+}
+
+.Responsive-TopMenu__Bottom--Btn a:hover {
+	color:var(--3);
+}
+
+.Responsive-TopMenu__Bottom--Btn a.active {
+	color:var(--1);
+	pointer-events: none;
 }
 
 .TopMenu {

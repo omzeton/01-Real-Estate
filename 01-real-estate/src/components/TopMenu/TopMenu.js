@@ -49,7 +49,7 @@ class TopMenu extends Component {
 			}
 		});
 
-		const style = this.state.open ? { height: '100vh' } : { height: '4em' }
+		const style = this.state.open ? { height: '50vh' } : { height: '4em' }
 		const burgerStyle = this.state.open ? ['hamburger', 'hamburger--squeeze', 'is-active'].join(' ') : ['hamburger', 'hamburger--squeeze'].join(' ');
 
 		const smallMenu = <div className="Responsive-TopMenu" style={style}>
