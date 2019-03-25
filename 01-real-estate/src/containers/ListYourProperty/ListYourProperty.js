@@ -32,7 +32,8 @@ class ListYourProperty extends Component {
 		},
 		loadingFinished: false,
 		selectedFile: null,
-		selectedFileName: ''
+		selectedFileName: '',
+		uploaded: false
 	}
 
 	getRandomInt( min, max ) {
@@ -79,17 +80,15 @@ class ListYourProperty extends Component {
 				console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
 			}
 		}).then((response) => {console.log(response)}).then(() => {
+			console.log(firebaseStorage);
+			console.log(firebaseStorage.child(fileName));
 			firebaseStorage.child(`${fileName}`).getDownloadURL()
 				.then((url) => {
-						console.log(`Stage 1 : Getting url from the img`);
 						this.setState({object: {...this.state.object, "img": url} });
-						console.log(`Putting url inside the object`);
-						console.log(this.state.object);
-						console.log(url);
 						this.setState({loadingFinished: true});
 					})
 				.catch(error => {
-					console.log('failed at stage 1');
+					console.log(error);
 				})
 		});
 	}
@@ -119,11 +118,10 @@ class ListYourProperty extends Component {
 		
 		axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
 			.then(response => {
-				console.log('Stage 2 : Posting the form');
-				console.log(newProperty);
+				this.setState({uploaded: true});
 				console.log(response);
 			}).catch(error => {
-				console.log('failed at stage 2');
+				this.setState({uploaded: false});
 				console.log(error);
 			});
 	}
@@ -131,7 +129,6 @@ class ListYourProperty extends Component {
 
 		const check = {
 			"forSale" : this.state.object.forSale, //
-			"img" : this.state.object.img,
 			"info" : this.state.object.info, //
 			"price" : this.state.object.price, //
 			"type" : this.state.object.type, //
@@ -199,6 +196,8 @@ class ListYourProperty extends Component {
 			styleImg = "nopass";
 		}
 
+		let submitStyle = this.state.uploaded ? "uploaded" : "";
+
 		let submit = null;
 		if (this.state.loadingFinished &&
 			(this.state.object.forSale || this.state.object.toRent) && 
@@ -208,7 +207,7 @@ class ListYourProperty extends Component {
 			this.state.object.town &&
 			this.state.object.beds && 
 			this.state.object.name) {
-			submit = <input type="submit" value="Submit" onClick={this.uploadHanlder}/>
+			submit = <input type="submit" className={submitStyle} value="Submit" onClick={this.uploadHanlder}/>
 		} else {
 			submit = <input type="submit" className="disable-submit" value="Submit" onClick={this.uploadHanlder}/>
 		}

@@ -114,3 +114,6 @@
 .nopass {
 	border:0.1em solid red !important;
 }
+.uploaded {
+	background-color: green !important;
+}

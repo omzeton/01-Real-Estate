@@ -24,12 +24,10 @@ class TopMenu extends Component {
 		// Check window's inner width when Loading the page first time
 		if( window.innerWidth > 768 ) {
 			if ( this.state.smallDevice ) {
-				console.log("bigger devices");
 				this.setState({smallDevice: false});
 			}
 		} else {
 			if ( !this.state.smallDevice ) {
-				console.log("smaller devices");
 				this.setState({smallDevice: true});
 			}
 		}
@@ -38,12 +36,10 @@ class TopMenu extends Component {
 		window.addEventListener('resize', () => {
 			if( window.innerWidth > 768 ) {
 				if ( this.state.smallDevice ) {
-					console.log("bigger devices");
 					this.setState({smallDevice: false});
 				}
 			} else {
 				if ( !this.state.smallDevice ) {
-					console.log("smaller devices");
 					this.setState({smallDevice: true});
 				}
 			}

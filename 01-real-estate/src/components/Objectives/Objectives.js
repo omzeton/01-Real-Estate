@@ -18,7 +18,6 @@ class Objectives extends Component {
 						<h2>Jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
 						<ul>
 							<li>Loader in form </li>
-							<li>Cloud function - if file has the same as before rename to sth unique.</li>
 							<li>Move imgs into user-submitted folder and then getURL</li>
 							<hr />
 							<li><b>Grid</b> and <b>sudo</b> dont work on my phone</li>

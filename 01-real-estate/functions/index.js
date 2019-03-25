@@ -24,8 +24,10 @@ const projectId = 'real-estate-d9a1e';
 const storage = new Storage({
   projectId: projectId,
 });
+const uniqueId = Math.floor(Math.random(0, 999999) * 1000000);
 
 exports.onFileChange= functions.storage.object().onFinalize(object => {
+    const uniqueId = Math.floor(Math.random(0, 999999) * 1000000);
     const bucket = object.bucket;
     const contentType = object.contentType;
     const filePath = object.name;
@@ -50,26 +52,11 @@ exports.onFileChange= functions.storage.object().onFinalize(object => {
         return spawn('convert', [tmpFilePath, '-resize', '500x500', tmpFilePath]);
     }).then(() => {
         return destBucket.upload(tmpFilePath, {
-            destination: 'resized-' + path.basename(filePath),
+            destination: 'resized-id:' + uniqueId + '-' + path.basename(filePath),
             metadata: metadata
         })
     });
 });
-
-exports.getURLPath = functions.storage.object().onFinalize(object => {
-	const bucket = object.bucket;
-	const fileName = object.name;
-	const destBucket = storage.bucket(bucket);
-	const file = destBucket.file(fileName);
-	return file.getSignedUrl({
-		action: 'read',
-		expires: '03-09-2491'
-	}).then(signedUrls => {
-		console.log(signedUrls[0]);
-	});
-});
-
-
 
 exports.uploadFile = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
@@ -88,7 +75,7 @@ exports.uploadFile = functions.https.onRequest((req, res) => {
     });
 
     busboy.on("finish", () => {
-      const bucket = storage.bucket("gs://real-estate-d9a1e.appspot.com/"); // this the destination folder
+      const bucket = storage.bucket("gs://real-estate-d9a1e.appspot.com");
       bucket
         .upload(uploadData.file, {
           uploadType: "media",
