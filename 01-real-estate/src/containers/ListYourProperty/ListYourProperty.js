@@ -42,32 +42,32 @@ class ListYourProperty extends Component {
 
 	nameHandler = (e) => {
 		let id = this.getRandomInt(0,99999999);
-		this.setState({object: {...this.state.object, "name": e.target.value, "id": id} });
+		this.setState({uploaded: false, object: {...this.state.object, "name": e.target.value, "id": id} });
 	}
 	townHandler = (e) => {
-		this.setState({object: {...this.state.object, "town": e.target.value} });
+		this.setState({uploaded: false, object: {...this.state.object, "town": e.target.value} });
 	}
 	bedsHandler = (e) => {
-		this.setState({object: {...this.state.object, "beds": e.target.value} });
+		this.setState({uploaded: false, object: {...this.state.object, "beds": e.target.value} });
 	}
 	priceHandler = (e) => {
-		this.setState({object: {...this.state.object, "price": e.target.value} });
+		this.setState({uploaded: false, object: {...this.state.object, "price": e.target.value} });
 	}
 	saleRentHandler = (e) => {
 		if ( e.target.value === "forSale" ) {
-			this.setState({object: {...this.state.object, "forSale": true, "toRent": false}});
+			this.setState({uploaded: false, object: {...this.state.object, "forSale": true, "toRent": false}});
 		} else if ( e.target.value === "toRent" ) {
-			this.setState({object: {...this.state.object, "forSale": false, "toRent": true}});
+			this.setState({uploaded: false, object: {...this.state.object, "forSale": false, "toRent": true}});
 		}
 	}
 	typeHandler = (e) => {
-		this.setState({object: {...this.state.object, "type": e.target.value} });
+		this.setState({uploaded: false, object: {...this.state.object, "type": e.target.value} });
 	}
 	infoHandler = (e) => {
-		this.setState({object: {...this.state.object, "info": e.target.value} });
+		this.setState({uploaded: false, object: {...this.state.object, "info": e.target.value} });
 	}
 	imgHandler = (e) => {
-		this.setState({selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
+		this.setState({uploaded: false, selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
 
 		const fd = new FormData();
 		fd.append('image', e.target.files[0], e.target.files[0].name);
@@ -196,7 +196,7 @@ class ListYourProperty extends Component {
 			styleImg = "nopass";
 		}
 
-		let submitStyle = this.state.uploaded ? "uploaded" : "";
+		let submitStyle = this.state.uploaded ? "uploaded" : "not-uploaded";
 
 		let submit = null;
 		if (this.state.loadingFinished &&

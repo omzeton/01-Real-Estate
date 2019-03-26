@@ -51,7 +51,7 @@ class Sort extends Component {
 					</div>
 					<div></div>
 					<div className="Sort__Container--Filter">
-						<h2>Sort by: </h2>
+						<h2>Sort by:</h2>
 						  <select name="filter" onChange={ (e) => this.props.onApplyFiltering(e.target.value) }>
 							    <option value="priceHigh">Price: highest to lowest</option>
 							    <option value="priceLow">Price: lowest to highest</option>

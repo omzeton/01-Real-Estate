@@ -67,7 +67,7 @@
 }
 .List__FormContainer--input {
 	display: grid;
-	grid-template-rows: repeat(10, 1fr);
+	grid-template-rows: repeat(11, 1fr);
 	grid-template-columns: 10em 10em;
 }
 .List__FormContainer--input input[type=submit] {
@@ -116,4 +116,7 @@
 }
 .uploaded {
 	background-color: green !important;
+}
+.not-uploaded {
+	background-color:#C6C6C6 !important;
 }
