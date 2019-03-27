@@ -15,15 +15,13 @@ class Objectives extends Component {
 				<div className="Objectives" style={modalToggle}>
 					<div className="show">
 						<div className="Objectives--toggle" onClick={this.toggleModal}></div>
-						<h2>Jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
+						<h2>Możesz być z siebie dumny, ale jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
 						<ul>
-							<li className="not-important">Loader in form </li>
-							<li className="important">Move imgs into user-submitted folder and then getURL</li>
-							<hr />
-							<li className="not-important">Next in filter disappears in small widths</li>
+							<li className="not-important">Galaxy Note 3 - Next in filter disappears in small widths</li>
 							<li className="important">IE11 not rendering the page.</li>
 							<li className="important">Website looks bad on my phone.</li>
 							<li className="not-important">CSSTransitions</li>
+							<li className="not-important">Remove es-lint exceptions</li>
 							<li className="not-important">Console warnings and errors on Properties</li>
 							<li className="important">润色: Better folder structure / Code improvements / Check if some containers are still in components folder</li>
 						</ul>

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './ListYourProperty.css';
 import firebase from '@firebase/app';
 // eslint-disable-next-line
 import { storage } from '@firebase/storage';
+// eslint-disable-next-line
+import { database } from '@firebase/database';
 var config = {
     apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
     authDomain: "real-estate-d9a1e.firebaseapp.com",
@@ -13,7 +14,6 @@ var config = {
     messagingSenderId: "1095628041476"
 };
 firebase.initializeApp(config);
-const firebaseStorage = firebase.storage().ref();
 
 class ListYourProperty extends Component {
 
@@ -30,9 +30,7 @@ class ListYourProperty extends Component {
 			"beds" : false,
 			"name" : false
 		},
-		loadingFinished: false,
-		selectedFile: null,
-		selectedFileName: '',
+		selectedFile: false,
 		uploaded: false
 	}
 
@@ -41,8 +39,7 @@ class ListYourProperty extends Component {
 	}
 
 	nameHandler = (e) => {
-		let id = this.getRandomInt(0,99999999);
-		this.setState({uploaded: false, object: {...this.state.object, "name": e.target.value, "id": id} });
+		this.setState({uploaded: false, object: {...this.state.object, "name": e.target.value} });
 	}
 	townHandler = (e) => {
 		this.setState({uploaded: false, object: {...this.state.object, "town": e.target.value} });
@@ -67,47 +64,17 @@ class ListYourProperty extends Component {
 		this.setState({uploaded: false, object: {...this.state.object, "info": e.target.value} });
 	}
 	imgHandler = (e) => {
-		this.setState({uploaded: false, selectedFile: e.target.files[0], selectedFileName: e.target.files[0].name});
-
-		const fd = new FormData();
-		fd.append('image', e.target.files[0], e.target.files[0].name);
-		const fileName = e.target.files[0].name;
-
-		this.setState({loadingFinished: false});
-
-		axios.post('https://us-central1-real-estate-d9a1e.cloudfunctions.net/uploadFile', fd, {
-			onUploadProgress: progressEvent => {
-				console.log('Upload Progress: ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
-			}
-		}).then((response) => {console.log(response)}).then(() => {
-			console.log(firebaseStorage);
-			console.log(firebaseStorage.child(fileName));
-			firebaseStorage.child(`${fileName}`).getDownloadURL()
-				.then((url) => {
-						this.setState({object: {...this.state.object, "img": url} });
-						this.setState({loadingFinished: true});
-					})
-				.catch(error => {
-					console.log(error);
-				})
-		});
+		this.setState({uploaded: false, selectedFile: e.target.files[0]});
 	}
 
 	uploadHanlder = () => {
 
-		let axiosConfig = {
-			headers: {
-				'Content-Type': 'application/json;charset=UTF-8',
-				"Access-Control-Allow-Origin": "*",
-			}
-		}
-
 		const newProperty = {
 			"forSale" : this.state.object.forSale,
-			"img" : this.state.object.img,
+			"img" : this.state.selectedFile,
 			"info" : this.state.object.info,
 			"price" : this.state.object.price,
-			"id" : this.state.object.id,
+			"id" : this.getRandomInt(0,99999999),
 			"type" : this.state.object.type,
 			"town" : this.state.object.town,
 			"toRent" : this.state.object.toRent,
@@ -115,13 +82,31 @@ class ListYourProperty extends Component {
 			"name" : this.state.object.name
 		};
 
-		
-		axios.post('https://real-estate-d9a1e.firebaseio.com/examples.json', newProperty, axiosConfig)
+		let imgURL;
+		let	key;
+
+		firebase.database().ref('examples').push(newProperty)
+			.then(data => {
+				key = data.key
+				return key
+			})
+			.then(key => {
+				const filename = newProperty.img.name
+				const ext = filename.slice(filename.lastIndexOf('.'))
+				return firebase.storage().ref('user-submitted/' + key + '.' + ext).put(newProperty.img)
+			})
+			.then(fileData => {
+				imgURL = firebase.storage().ref(fileData.metadata.fullPath).getDownloadURL()
+				return imgURL
+			})
+			.then(url => {
+				return firebase.database().ref('examples').child(key).update({img: url})
+			})
 			.then(response => {
 				this.setState({uploaded: true});
-				console.log(response);
-			}).catch(error => {
-				this.setState({uploaded: false});
+				return response
+			})
+			.catch(error => {
 				console.log(error);
 			});
 	}
@@ -136,7 +121,7 @@ class ListYourProperty extends Component {
 			"toRent" : this.state.object.toRent, //
 			"beds" : this.state.object.beds, //
 			"name" : this.state.object.name, //
-			"img" : this.state.loadingFinished
+			"img" : this.state.selectedFile
 		};
 
 		let styleName = ""; //
@@ -197,9 +182,10 @@ class ListYourProperty extends Component {
 		}
 
 		let submitStyle = this.state.uploaded ? "uploaded" : "not-uploaded";
+		let submitValue = this.state.uploaded ? "Thank you!" : "Submit";
 
 		let submit = null;
-		if (this.state.loadingFinished &&
+		if (this.state.selectedFile &&
 			(this.state.object.forSale || this.state.object.toRent) && 
 			this.state.object.info && 
 			this.state.object.price &&
@@ -207,9 +193,9 @@ class ListYourProperty extends Component {
 			this.state.object.town &&
 			this.state.object.beds && 
 			this.state.object.name) {
-			submit = <input type="submit" className={submitStyle} value="Submit" onClick={this.uploadHanlder}/>
+			submit = <input type="submit" className={submitStyle} value={submitValue} onClick={this.uploadHanlder}/>
 		} else {
-			submit = <input type="submit" className="disable-submit" value="Submit" onClick={this.uploadHanlder}/>
+			submit = <input type="submit" className="disable-submit" value={submitValue} onClick={this.uploadHanlder}/>
 		}
 		return (
 			<div className="ListYourProperty">
@@ -263,7 +249,8 @@ class ListYourProperty extends Component {
 										  </select>
 
 										<h3>Short description</h3>
-										<input type="text" value={this.state.info} className={styleInfo} placeholder="info" onChange={this.infoHandler}/>
+										{/*<input type="text" value={this.state.info} className={styleInfo} placeholder="info" onChange={this.infoHandler}/>*/}
+										<textarea className={styleInfo} onChange={this.infoHandler}>{this.state.info}</textarea>
 
 										<h3>Image of your property</h3>
 										<input type="file" style={{display: 'none'}} ref={(input) => {this.image = input}} onChange={this.imgHandler}/>

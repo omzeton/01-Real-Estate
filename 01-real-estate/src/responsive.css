@@ -89,6 +89,7 @@
 	.List__FormContainer--input {
 		grid-template-rows: repeat(18, 1fr);
 		grid-template-columns: 1fr;
+		width:100%;
 	}
 	.List__FormContainer--input h3:nth-child(1) {
 		grid-row: 1;
@@ -335,8 +336,8 @@
 			justify-content: center;
 			grid-column:1 / span 2;
 		}
-		.List__FormContainer--input input:nth-child(14) {
-			grid-row: 8 / span 2;
+		.List__FormContainer--input textarea:nth-child(14) {
+			grid-row: 8 / span 1;
 			grid-column: 1 / span 2;
 		}
 		.List__FormContainer--input h3:nth-child(15) {
