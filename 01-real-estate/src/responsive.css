@@ -53,31 +53,59 @@
 		grid-template-rows:2.5em 1fr 2.5em;
 		grid-template-columns:1fr;
 	}
+	.Sort .Sort__Container h2 {
+		font-size: 3vw;
+	}
 /* ✓ SearchBar */
 	.SearchBar {
-		padding-top:3em;
+		padding-top:4em;
+		height: 40em;
 	}
 	.SearchBar__FormContainer {
 		width:80vw;
+		height: 40em;
+	}
+	.SearchBar__FormContainer--form {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+	}
+	.SearchBar__FormContainer--form div:nth-child(6) {
+		grid-column: 1;
+		grid-row: 6;
+		padding-top:0em;
+	}
+	.SearchBar__FormContainer--form div:nth-child(6) input {
+		width:100%;
 	}
 /* ✓ Result */
 	.Result {
 		width:80vw;
 		height:12em;
 		overflow: hidden;
-		grid-template-columns: 35% 45% 10%;
+		grid-template-columns: 50% 50% 0%;
+	}
+	.Result__Info {
+		padding:0.8em 1em;
 	}
 	.Result__Info h2 {
 		font-size: 0.9em;
 		line-height: 1.2em;
 	}
+	.Info__Category {
+		line-height: 1em !important;
+	}
 	.Result__Info h3 { font-size: 1em; }
 	.Result__Info p { font-size: 0.6em; }
-	.Result__Id h2 { font-size: 0.6em; }
+	.Result__Id h2 { font-size: 3vw; }
 	.Result__Id h3 { font-size: 1em; }
 /* ✓ ListYourProperty */
 	.List__FormContainer {
 		width:80vw;
+	}
+	.List__FormContainer--formContainer {
+		width: 80vw;
 	}
 	.List__FormContainer--title h2 {
 		font-size: 1.9em;
@@ -89,7 +117,12 @@
 	.List__FormContainer--input {
 		grid-template-rows: repeat(18, 1fr);
 		grid-template-columns: 1fr;
-		width:100%;
+		width:80vw;
+	}
+	.List__FormContainer--input input, 
+	.List__FormContainer--input select,
+	.List__FormContainer--input button {
+		width: 100%;
 	}
 	.List__FormContainer--input h3:nth-child(1) {
 		grid-row: 1;
@@ -169,6 +202,9 @@
 		height:20em;
 		margin:1em 0;
 	}
+	.Featured__Example__Info .Info--Top .Header h2 {
+		font-size: 0.8em
+	}
 /* ✓ ResultBig */
 	.ResultBig {
 		height:60em;
@@ -182,7 +218,7 @@
 	.Full--Info p { font-size: 0.9em; }
 	.Full--Info h2:nth-child(1) { font-size: 1.5em; }
 	.Full--Info h2 { font-size: 0.9em; }
-/* Header__Img */
+/* ✓ Header__Img */
 	.Header__Img h2 {
 		font-size: 3em;
 	}
@@ -245,12 +281,32 @@
 			grid-template-rows:1fr;
 			grid-template-columns: 22em 1fr 22em;
 		}
+		.Sort .Sort__Container h2 {
+			font-size: 0.8em;
+		}
 	/* ✓ SearchBar */
 		.SearchBar {
 			padding-top:0em;
+			height:25em;
 		}
 		.SearchBar__FormContainer {
 			width:40em;
+			height:auto;
+		}
+		.SearchBar__FormContainer--form {
+			position: relative;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows:1fr 1fr 1fr;
+		}
+		.SearchBar__FormContainer--form div:nth-child(6) {
+			grid-column: 2;
+			grid-row: 3;
+			padding-top:1.6em;
+		}
+		.SearchBar__FormContainer--form div:nth-child(6) input {
+			width:10em;
+			height:3em;
 		}
 	/* ✓ Result */
 		.Result {
@@ -258,8 +314,14 @@
 			height:12em;
 			grid-template-columns: 35% 50% 15%;
 		}
+		.Result__Info {
+			padding:0.8em 1.5em;
+		}
 		.Result__Info h2 {
 			font-size: 1em;
+			line-height: 0em;
+		}
+		.Info__Category {
 			line-height: 0em;
 		}
 		.Result__Info h3 { font-size: 1.2em; }
@@ -269,6 +331,15 @@
 	/* ✓ ListYourProperty */
 		.List__FormContainer {
 			width:40em;
+		}
+		.List__FormContainer--formContainer {
+			width: auto;
+		}
+		.List__FormContainer--form {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
 		}
 		.List__FormContainer--title h2 {
 			font-size: 2.5em;
@@ -280,6 +351,13 @@
 		.List__FormContainer--input {
 			grid-template-rows: repeat(11, 1fr);
 			grid-template-columns: 10em 10em;
+			margin:0 3em;
+			width: auto;
+		}
+		.List__FormContainer--input input, 
+		.List__FormContainer--input select,
+		.List__FormContainer--input button {
+			width: auto;
 		}
 		.List__FormContainer--input h3:nth-child(1) {
 			grid-row: 1;
@@ -366,6 +444,9 @@
 		.Featured__Example__Info .Info--Top .Header h2 {
 			font-size: 1.1em
 		}
+		.Featured__Example__Info .Info--Top .Header h2 {
+			font-size: 0.8em
+		}
 		.Featured__Example__Info .Info--Top .Info p {
 			font-size: 0.9em;
 		}
@@ -385,7 +466,7 @@
 		.Full--Info p { font-size: 0.9em; }
 		.Full--Info h2:nth-child(1) { font-size: 1.5em; }
 		.Full--Info h2 { font-size: 0.9em; }
-	/* Header__Img */
+	/* ✓ Header__Img */
 		.Header__Img h2 {
 			font-size: 4em;
 		}

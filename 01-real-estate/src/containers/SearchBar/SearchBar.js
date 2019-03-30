@@ -101,7 +101,7 @@ class SearchBar extends Component {
 							 	  <Link to="/properties">
 							 	  		<input 
 							 	  			type="submit" 
-							 	  			value="Submit" 
+							 	  			value="Search" 
 							 	  			onClick={ this.onClick }
 							 	  		/>
 							 	  </Link>

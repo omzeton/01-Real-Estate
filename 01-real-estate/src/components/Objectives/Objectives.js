@@ -17,9 +17,7 @@ class Objectives extends Component {
 						<div className="Objectives--toggle" onClick={this.toggleModal}></div>
 						<h2>Możesz być z siebie dumny, ale jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
 						<ul>
-							<li className="important">Galaxy Note 3 - Next in filter disappears in small widths</li>
 							<li className="important">IE11 version different from Chrome and Firefox.</li>
-							<li className="important">Website looks bad on my phone.</li>
 							<li className="not-important">CSSTransitions</li>
 							<li className="not-important">Remove es-lint exceptions</li>
 							<li className="not-important">Console warnings and errors on Properties</li>

@@ -205,7 +205,6 @@ class ListYourProperty extends Component {
 						</div>
 
 						<div className="List__FormContainer--form">
-							<div></div>
 							<div className="List__FormContainer--formContainer">
 
 									<div className="List__FormContainer--title">
@@ -258,7 +257,6 @@ class ListYourProperty extends Component {
 							 	  		{submit}
 									</div>
 							</div>
-							<div></div>
 						</div>
 					</div>
 			</div>
