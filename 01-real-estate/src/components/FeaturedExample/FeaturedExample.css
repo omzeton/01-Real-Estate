@@ -22,6 +22,7 @@
 
 .Featured__Example--Img:after {
 	content:'';
+	display: block;
 	position: absolute;
 	width:100%;
 	height: 100%;

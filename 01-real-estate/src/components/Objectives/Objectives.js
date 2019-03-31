@@ -17,11 +17,10 @@ class Objectives extends Component {
 						<div className="Objectives--toggle" onClick={this.toggleModal}></div>
 						<h2>Możesz być z siebie dumny, ale jeszcze się nie poddawaj proszę! Zostało Ci już tak niewiele!</h2>
 						<ul>
-							<li className="important">IE11 version different from Chrome and Firefox.</li>
+							<li className="important">Make every grid placement obvious for IE11.</li>
 							<li className="not-important">CSSTransitions</li>
-							<li className="not-important">Remove es-lint exceptions</li>
-							<li className="not-important">Console warnings and errors on Properties</li>
-							<li className="important">润色: Better folder structure / Code improvements / Check if some containers are still in components folder</li>
+							<li className="not-important">setState inside TopMenu render() function (switching div structure issue).</li>
+							<li className="important">润色: Better folder structure / Code improvement / Check if some containers are still in components folder</li>
 						</ul>
 						<div className="queries">
 							<div className="queries__container"><div className="red"></div><h2>&#8734; - 768</h2></div>

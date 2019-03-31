@@ -9,7 +9,6 @@ import ResultBig from '../ResultBig/ResultBig';
 import ToRent from '../ToRent/ToRent';
 import Footer from '../../components/Footer/Footer';
 import WrongRoute from '../../components/WrongRoute/WrongRoute';
-import Objectives from '../../components/Objectives/Objectives';
 
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -50,7 +49,6 @@ class RealEstate extends Component {
 						<Route component={WrongRoute}/>
 					</Switch>
 				<Footer />
-				<Objectives />
 			</div>
 		);
 	}
