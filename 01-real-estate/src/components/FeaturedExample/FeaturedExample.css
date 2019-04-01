@@ -2,14 +2,24 @@
 	width:18em;
 	height:25em;
 	background-color:#b6b6b6;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-rows: 60% 40%;
 	grid-template-rows: 60% 40%;
+	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
 	margin:0 0.5em;
 	border-radius: 0.3em;
 	overflow: hidden;
-	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
+	        box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.3);
 	cursor: pointer;
+}.FeaturedExample > *:nth-child(1) {
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}.FeaturedExample > *:nth-child(2) {
+	-ms-grid-row:2;
+	-ms-grid-column:1;
 }
 .Featured__Example--Img {
 	position: relative;
@@ -27,8 +37,7 @@
 	width:100%;
 	height: 100%;
 	background-color:#000;
-	opacity: 1;
-	mix-blend-mode: color;
+	opacity: 0.5;
 }
 
 .FeaturedExample:hover .Featured__Example--Img:after {
@@ -36,28 +45,81 @@
 }
 
 .Featured__Example__Info {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
+	-ms-grid-rows:70% 30%;
 	grid-template-rows:70% 30%;
 }
 
+.Featured__Example__Info > *:nth-child(1) {
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}
+
+.Featured__Example__Info > *:nth-child(2) {
+	-ms-grid-row:2;
+	-ms-grid-column:1;
+}
+
 .Featured__Example__Info .Info--Top {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr;
 	grid-template-columns: 1fr;
+	-ms-grid-rows:1fr 1fr;
 	grid-template-rows:1fr 1fr;
 }
 
+.Featured__Example__Info .Info--Top > *:nth-child(1) {
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}
+
+.Featured__Example__Info .Info--Top > *:nth-child(2) {
+	-ms-grid-row:2;
+	-ms-grid-column:1;
+}
+
 .Featured__Example__Info .Info--Top .Header {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
+	-ms-grid-rows:1fr;
 	grid-template-rows:1fr;
 }
 
+.Featured__Example__Info .Info--Top .Header > *:nth-child(1) {
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}
+
+.Featured__Example__Info .Info--Top .Header > *:nth-child(2) {
+	-ms-grid-row:1;
+	-ms-grid-column:2;
+}
+
+.Featured__Example__Info .Info--Top .Header > *:nth-child(3) {
+	-ms-grid-row:1;
+	-ms-grid-column:3;
+}
+
 .Featured__Example__Info .Info--Top .Header div {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 .Featured__Example__Info .Info--Top .Header h2 {
@@ -85,16 +147,43 @@
 
 .Featured__Example__Info .Info--Bottom {
 	background-color:#676767;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
+	-ms-grid-rows:1fr;
 	grid-template-rows:1fr;
 }
 
+.Featured__Example__Info .Info--Bottom > *:nth-child(1) {
+	-ms-grid-row:1;
+	-ms-grid-column:1;
+}
+
+.Featured__Example__Info .Info--Bottom > *:nth-child(2) {
+	-ms-grid-row:1;
+	-ms-grid-column:2;
+}
+
+.Featured__Example__Info .Info--Bottom > *:nth-child(3) {
+	-ms-grid-row:1;
+	-ms-grid-column:3;
+}
+
 .Featured__Example__Info .Info--Bottom .City {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 .Featured__Example__Info .Info--Bottom .City h4 {
 	font-size: 0.6em;
@@ -103,10 +192,19 @@
 	font-family: 'Asul', sans-serif;
 }
 .Featured__Example__Info .Info--Bottom .Link {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 .Featured__Example__Info .Info--Bottom .Link h4 {
 	font-size: 0.6em;
