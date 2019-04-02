@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Result from '../../../components/Result/Result';
 import { Link } from 'react-router-dom';
 import Loader from '../../../components/Loader/Loader';
-import Sort from '../Sort/Sort';
+import Sort from '../../Sort/Sort';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../store/actions/actions';
+import * as actionCreators from '../../../store/actions/actions';
 
 import './ToRent.css';
 

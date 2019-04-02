@@ -3,8 +3,8 @@ import Result from '../../../components/Result/Result';
 import Loader from '../../../components/Loader/Loader';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Sort from '../Sort/Sort';
-import * as actionCreators from '../../store/actions/actions';
+import Sort from '../../Sort/Sort';
+import * as actionCreators from '../../../store/actions/actions';
 import './ForSale.css';
 
 class ForSale extends Component {

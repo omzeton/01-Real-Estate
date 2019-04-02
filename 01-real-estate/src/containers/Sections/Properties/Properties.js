@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Sort from '../Sort/Sort';
+import Sort from '../../Sort/Sort';
 import Loader from '../../../components/Loader/Loader';
-import SearchBar from '../../containers/SearchBar/SearchBar';
+import SearchBar from '../../SearchBar/SearchBar';
 import { Link, withRouter } from 'react-router-dom';
 import Result from '../../../components/Result/Result';
-import * as actionCreators from '../../store/actions/actions';
+import * as actionCreators from '../../../store/actions/actions';
 import './Properties.css';
 
 class Properties extends Component {
