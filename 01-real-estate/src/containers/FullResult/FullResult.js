@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader/Loader'
 import * as actionCreators from '../../store/actions/actions';
-import './ResultBig.css';
+import './FullResult.css';
 
-class ResultBig extends Component {
+class FullResult extends Component {
 
 	componentDidMount () {
 		this.props.onFetchSamples();
@@ -62,7 +62,7 @@ class ResultBig extends Component {
 		}
 
 		return (
-			<div className="ResultBig">
+			<div className="FullResult">
 				{ fullResult }
 			</div>
 		);
@@ -82,4 +82,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ResultBig));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FullResult));

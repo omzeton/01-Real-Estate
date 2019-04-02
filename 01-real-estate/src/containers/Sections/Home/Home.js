@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from '../../containers/SearchBar/SearchBar';
-import Featured from '../../components/Featured/Featured';
+import Featured from '../Featured/Featured';
 import './Home.css';
 
 class Home extends Component {

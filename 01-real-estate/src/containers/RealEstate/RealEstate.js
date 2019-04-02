@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import TopMenu from '../../components/TopMenu/TopMenu';
+import TopMenu from '../TopMenu/TopMenu';
 import Home from '../Home/Home';
 import Properties from '../Properties/Properties';
-import About from '../../components/About/About';
-import ListYourProperty from '../ListYourProperty/ListYourProperty';
-import ForSale from '../ForSale/ForSale';
-import ResultBig from '../ResultBig/ResultBig';
-import ToRent from '../ToRent/ToRent';
+import about from '../../components/About/About';
+import ListYourProperty from '../Sections/ListYourProperty/ListYourProperty';
+import ForSale from '../Sections/ForSale/ForSale';
+import FullResult from '../FullResult/FullResult';
+import ToRent from '../Sections/ToRent/ToRent';
 import Footer from '../../components/Footer/Footer';
 import WrongRoute from '../../components/WrongRoute/WrongRoute';
 
@@ -38,12 +38,12 @@ class RealEstate extends Component {
 						<Route path="/properties" exact component={Properties}/>
 						<Route path="/for-sale" exact component={ForSale}/>
 						<Route path="/to-rent" exact component={ToRent}/>
-						<Route path="/about-us" exact component={About}/>
+						<Route path="/about-us" exact component={about}/>
 						<Route path="/list-your-property" exact component={ListYourProperty}/>
 
-						<Route path="/properties/:id" component={ResultBig}/>
-						<Route path="/for-sale/:id" component={ResultBig}/>
-						<Route path="/to-rent/:id" component={ResultBig}/>
+						<Route path="/properties/:id" component={FullResult}/>
+						<Route path="/for-sale/:id" component={FullResult}/>
+						<Route path="/to-rent/:id" component={FullResult}/>
 
 						<Route path="/" exact component={Home}/>
 						<Route component={WrongRoute}/>

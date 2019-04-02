@@ -1,7 +1,7 @@
 import React from 'react';
 import './WrongRoute.css';
 
-function WrongRoute(props) {
+function wrongRoute(props) {
 	return (
 		<div className="WrongRoute">
 			<div className="WrongRoute__Img">
@@ -13,4 +13,4 @@ function WrongRoute(props) {
 	)
 }
 
-export default WrongRoute;
+export default wrongRoute;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './FeaturedExample.css';
 
-function FeaturedExample(props) {
+function featuredExample(props) {
 
 	const divStyle = {
 		backgroundImage: 'url(' + props.img + ')'
@@ -35,4 +35,4 @@ function FeaturedExample(props) {
 	);
 }
 
-export default FeaturedExample;
+export default featuredExample;

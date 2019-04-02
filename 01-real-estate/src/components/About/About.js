@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-function About(props) {
+function about(props) {
 		return (
 			<div className="About">
 				<div className="About__Container">
@@ -23,4 +23,4 @@ function About(props) {
 		);
 };
 
-export default About;
+export default about;

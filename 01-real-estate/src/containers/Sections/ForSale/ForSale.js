@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Result from '../../components/Result/Result';
-import Loader from '../../components/Loader/Loader';
+import Result from '../../../components/Result/Result';
+import Loader from '../../../components/Loader/Loader';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Sort from '../Sort/Sort';

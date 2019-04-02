@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './Result.css';
 
-function Result(props) {
+function result(props) {
 
 	return (
 			<div className="Result">
@@ -23,4 +23,4 @@ function Result(props) {
 	);
 }
 
-export default withRouter(Result);
+export default withRouter(result);

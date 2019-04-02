@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Objectives.css';
 
-class Objectives extends Component {
+class objectives extends Component {
 	state = {
 		showModal: false
 	}
@@ -34,4 +34,4 @@ class Objectives extends Component {
 
 };
 
-export default Objectives;
+export default objectives;

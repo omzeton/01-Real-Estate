@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-function Footer(props) {
+function footer(props) {
 	return(
 		<div className="Footer">
 			<div className="Footer__Copyright">
@@ -12,4 +12,4 @@ function Footer(props) {
 	);
 }
 
-export default Footer;
+export default footer;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import FeaturedExample from '../FeaturedExample/FeaturedExample';
+import FeaturedExample from '../../components/FeaturedExample/FeaturedExample';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Loader from '../Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 import * as actionCreators from '../../store/actions/actions';
 import './Featured.css';
 
