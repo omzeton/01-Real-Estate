@@ -21,7 +21,8 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F01.jpg?alt=media&token=1bbceea1-0087-4337-a9ee-84c64aab9774');
+	/*background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F01.jpg?alt=media&token=1bbceea1-0087-4337-a9ee-84c64aab9774');*/
+	background-image: url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2Falt.jpg?alt=media&token=cfaf6224-ad8f-4e1a-96b7-9fcff07f214b');
 }
 .Home__ImgArea--Img:after {
 	content:'';

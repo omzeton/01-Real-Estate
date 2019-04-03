@@ -5,8 +5,7 @@ import './TopMenu.css';
 
 class TopMenu extends Component { 
 	state = {
-		open: false,
-		smallDevice: true
+		open: false
 	}
 
 	navHanlder = () => {
@@ -21,27 +20,25 @@ class TopMenu extends Component {
 
 	render() {
 
+		let smallDevice;
+
 		// Check window's inner width when Loading the page first time
 		if( window.innerWidth > 768 ) {
-			if ( this.state.smallDevice ) {
-				this.setState({smallDevice: false});
-			}
+			smallDevice = false;
 		} else {
-			if ( !this.state.smallDevice ) {
-				this.setState({smallDevice: true});
-			}
+			smallDevice = true;
 		}
 
 		// Check window's inner width when Resizing the page
 		window.addEventListener('resize', () => {
 			if( window.innerWidth > 768 ) {
-				if ( this.state.smallDevice ) {
-					this.setState({smallDevice: false});
-				}
+				console.log('big screen');
+				smallDevice = false;
+				console.log(smallDevice);
 			} else {
-				if ( !this.state.smallDevice ) {
-					this.setState({smallDevice: true});
-				}
+				console.log('small screen');
+				smallDevice = true;
+				console.log(smallDevice);
 			}
 		});
 
@@ -69,6 +66,7 @@ class TopMenu extends Component {
 						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/list-your-property">List Your Property</NavLink></div>
 				</div>
 			</div>;
+
 		const bigMenu = <div className="TopMenu">
 							<div></div>
 							<div className="TopMenu__Bottom--Logo"></div>
@@ -86,7 +84,13 @@ class TopMenu extends Component {
 							<div></div>
 					</div>;
 
-		const responsiveMenu = this.state.smallDevice ? smallMenu : bigMenu;
+		let responsiveMenu;
+
+		if ( smallDevice ) {
+			responsiveMenu = smallMenu;
+		} else {
+			responsiveMenu = bigMenu;
+		}
 
 
 		return (
