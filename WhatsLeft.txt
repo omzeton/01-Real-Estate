@@ -1,0 +1,11 @@
+Project is not finished in 100%. I'd say it's up somewhere in 80-90%, but there are still things that need to be addressed (just not so urgently, we're gonna fix them when we know how). Here are the main issues and improvements to consider:
+
+01. - IE11 - works very good except grid and flex, even when there are -ms prefixes. It works when -ms is left without non prefix styling, but then it doesn't work on all other browsers like Chrome of course.
+
+02. - DESIGN! - The way it looks now is not that bad but it could be way way better. Re-style the FullResult page, filtering, searchbar, submit form and responsive nav menu.
+
+03. - React Hooks - Convert as many state-full components into state-less components with the newest feature of React - React Hooks! I heard it's very easy to use!
+
+04. - ? Login / Register system ? - So only a registered user can submit a property and delete their ones. Admin can delete any property. Unregistered visitors won't access the ListYourProperty route. Just an idea!
+
+This note was written on August 4th 2019, 20:04. Let's fix all of this when we know how! :D
