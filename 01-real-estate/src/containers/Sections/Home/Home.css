@@ -7,7 +7,6 @@
 	position: relative;
 	width:100%;
 	height: 75vh;
-	/*height: 20em;*/
 }
 .Home__ImgArea--Img {
 	position: relative;
@@ -21,29 +20,18 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	/*background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F01.jpg?alt=media&token=1bbceea1-0087-4337-a9ee-84c64aab9774');*/
-	background-image: url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2Falt.jpg?alt=media&token=cfaf6224-ad8f-4e1a-96b7-9fcff07f214b');
-}
-.Home__ImgArea--Img:after {
-	content:'';
-	position: absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height: 100%;
-	background-color:#000;
-	opacity: 0.2;
+	background-image: url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F03_2.jpg?alt=media&token=34594e4e-168f-4779-9000-ca8aead52d91');
 }
 .Home__ImgArea--Img h2 {
 	font-family: 'Chivo', sans-serif;
-	color:#fff;
+	color:#000000;
 	font-size: 3em;
 	z-index: 9999;
 	padding:1em;
 }
 
 .Home__ImgArea--Img h2 span {
-	color:#000;
+	color:#fff;
 }
 .Home__InfoArea {
 	width:100%;
@@ -70,7 +58,7 @@
 	position: absolute;
 	width:5em;
 	height: 0.05em;
-	background-color:#000;
+	background-color:#FFD23F;
 	left:50%;
 	transform:translateX(-50%);
 	margin-top:0.7em;

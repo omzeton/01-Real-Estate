@@ -15,8 +15,8 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: 20% 80%;
 	padding:1.5em;
-	background-color:#b6b6b6;
-	border: 2px solid #fff;
+	background-color:#f9f9f9;
+	border: 2px solid #494949;
 	border-radius: 0.3em;
 	overflow: hidden;
 	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
@@ -29,7 +29,7 @@
 .SearchBar__FormContainer--header h2 {
 	line-height: 0em;
 	font-size: 2em;
-	color:#000;
+	color:#494949;
 	font-family: 'Chivo', sans-serif;
 	font-weight: 900;
 }
@@ -43,11 +43,18 @@
 	text-decoration: none;
 	font-size: 0.6em;
 	line-height: 0em;
-	color:#000;
+	color:#FFD23F;
 	font-family: 'Asul', sans-serif;
 	text-transform: uppercase;
 	margin-top:2em;
 }
+
+select,
+input {
+	background-color: transparent;
+	border:1px solid #494949;
+}
+
 .SearchBar__FormContainer--form div select {
 	width: 100%;
 	line-height: 0em;
@@ -80,6 +87,11 @@
 .SearchBar__FormContainer--form div:nth-child(6) input {
 	width:10em;
 	height:3em;
-	background-color:#fff;
+	background-color: #FFD23F;
+	transition:background-color .5s;
+	cursor: pointer;
 }
 
+.SearchBar__FormContainer--form div:nth-child(6) input:hover {
+	background-color: transparent;
+}

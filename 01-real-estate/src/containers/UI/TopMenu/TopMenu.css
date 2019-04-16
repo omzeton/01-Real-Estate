@@ -34,9 +34,9 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	background-image:url('http://localhost:3000/./assets/icons/browser-logo.png');
+	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2Flogo.png?alt=media&token=df0db362-6b82-415d-befc-ffc21724555c');
 	background-position: center;
-	background-size: 70%;
+	background-size: 40%;
 	background-repeat: no-repeat;
 }
 
@@ -68,12 +68,12 @@
 }
 
 .Responsive-TopMenu__Bottom--Btn a.active {
-	color:#494949;
+	color:#FFD23F;
 	pointer-events: none;
 }
 
 .TopMenu {
-	background-color: #b6b6b6;
+	background-color: #f9f9f9;
 	width:100%;
 	height:80px;
 	position: relative;
@@ -89,9 +89,9 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	background-image:url('http://localhost:3000/./assets/icons/browser-logo.png');
+	background-image:url('http://localhost:3000/assets/logo.png');
 	background-position: center;
-	background-size: 80%;
+	background-size: 40%;
 	background-repeat: no-repeat;
 }
 
@@ -117,18 +117,18 @@
 .TopMenu__Bottom__BtnContainer--Btn a {
 	position: relative;
 	text-decoration: none;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	color:#494949;
 	font-family: 'Asul', sans-serif;
 	white-space: nowrap;
 }
 
 .TopMenu__Bottom__BtnContainer--Btn a:hover {
-	color:#ffffff;
+	color:#FFD23F;
 }
 
 .TopMenu__Bottom__BtnContainer--Btn a.active {
-	color:#ffffff;
+	color:#FFD23F;
 }
 
 .TopMenu__Bottom__BtnContainer--Btn a.active:after {

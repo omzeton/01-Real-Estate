@@ -18,6 +18,7 @@
 	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.1);
 	overflow: hidden;
 	border-radius: 0.3em;
+	border: 2px solid #494949;
 }
 .Full__Container__Row--Up {
 	display: grid;
@@ -40,21 +41,21 @@
 	font-family: 'Chivo', sans-serif;
 	font-weight: 900;
 	position: relative;
+	color:#000000;
 }
 .Full--Info h2:after {
 	content:'';
 	position: absolute;
 	width:50%;
 	top:110%;
-	opacity: 0.2;
-	background-color:#000;
+	background-color:#FFD23F;
 	height: 0.1em;
 	left:50%;
 	transform:translateX(-50%);
 }
 
 .Full--Info h2 span {
-	color:#999;
+	color:#494949;
 }
 
 .Full--Info p {

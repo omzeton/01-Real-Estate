@@ -209,7 +209,7 @@ class ListYourProperty extends Component {
 
 									<div className="List__FormContainer--title">
 										<h2>List your <span>property</span></h2>
-										<p>Please fill our form to see your property on the website.</p>
+										<p>Please fill the form below to see your property in our list.</p>
 									</div>
 									<div className="List__FormContainer--input">
 

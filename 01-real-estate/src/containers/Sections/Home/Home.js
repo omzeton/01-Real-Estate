@@ -14,7 +14,7 @@ class Home extends Component {
 
 				<div className="Home__ImgArea">
 					<div className="Home__ImgArea--Img">
-						<h2>Meet your new <span>home</span>.</h2>
+						<h2>Meet <span>your</span> new home.</h2>
 					</div>
 				</div>
 

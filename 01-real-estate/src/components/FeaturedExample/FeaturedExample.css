@@ -1,7 +1,7 @@
 .FeaturedExample {
 	width:18em;
 	height:25em;
-	background-color:#b6b6b6;
+	background-color:#E0E0E0;
 	display: -ms-grid;
 	display: grid;
 	-ms-grid-rows: 60% 40%;
@@ -37,7 +37,7 @@
 	width:100%;
 	height: 100%;
 	background-color:#000;
-	opacity: 0.5;
+	opacity: 0.1;
 }
 
 .FeaturedExample:hover .Featured__Example--Img:after {
@@ -133,7 +133,7 @@
 .Featured__Example__Info .Info--Top .Header p {
 	font-size: 0.8em;
 	line-height: 0em;
-	color:#fff;
+	color:#494949;
 	font-family: 'Chivo', sans-serif;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .Featured__Example__Info .Info--Bottom {
-	background-color:#676767;
+	background-color:#FFD23F;
 	display: -ms-grid;
 	display: grid;
 	-ms-grid-columns: 1fr 1fr 1fr;

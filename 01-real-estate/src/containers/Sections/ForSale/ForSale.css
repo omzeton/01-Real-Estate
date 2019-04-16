@@ -12,6 +12,7 @@
 	align-items: center;
 	justify-content: center;
 	line-height: 0;
+	background-color: #FFD23F;
 }
 .Header__Img {
 	position: relative;

@@ -10,8 +10,8 @@
 	transform:translateX(-50%);
 	height: 100%;
 	position: relative;
-	background-color:#b6b6b6;
-	border: 2px solid #fff;
+	background-color:#FFD23F !important;
+	border: 2px solid red;
 	box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
 	display: grid;
 	grid-template-rows:1fr;
@@ -46,7 +46,11 @@
 	cursor: pointer;
 }
 .Sort .Sort__Container h2 span:hover {
-	color:#fff;
+	color:#FFD23F;
+}
+
+.Sort__Select {
+	background-color: #fff !important;
 }
 
 .disabled {
