@@ -33,7 +33,7 @@ class SearchBar extends Component {
 			<div className="SearchBar">
 				<div className="SearchBar__FormContainer" style={style}>
 						<div className="SearchBar__FormContainer--header">
-							<h2>Start browsing</h2>
+							<h2><i>Start browsing</i></h2>
 						</div>
 
 						<div className="SearchBar__FormContainer--form">

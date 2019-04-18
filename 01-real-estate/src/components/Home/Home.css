@@ -1,0 +1,75 @@
+.Home {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.Home__ImgArea {
+	position: relative;
+	width:100%;
+	height: 75vh;
+}
+.Home__ImgArea--Img {
+	position: relative;
+	width:100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-image: url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F03_3.jpg?alt=media&token=80088f09-f0f3-426d-b1e4-07315622eeaf');
+}
+.Home__ImgArea--Img h2 {
+	font-family: 'Chivo', sans-serif;
+	color:#000000;
+	font-size: 3em;
+	z-index: 9999;
+	padding:1em;
+	white-space: nowrap;
+}
+
+.Home__ImgArea--Img h2 span {
+	color:#fff;
+}
+.Home__InfoArea {
+	width:100%;
+	height: 15em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.Home__InfoArea h2 {
+	position: relative;
+	font-family: 'Chivo', sans-serif;
+	color:#000;
+	font-size: 3em;
+	font-weight: 900;
+	line-height: 0em;
+	z-index: 999;
+	text-align: center;
+}
+
+.Home__InfoArea h2:after {
+	content: '';
+	position: absolute;
+	width:5em;
+	height: 0.05em;
+	background-color:#FFD23F;
+	left:50%;
+	transform:translateX(-50%);
+	margin-top:0.7em;
+}
+
+.Home__InfoArea p {
+	width:50em;
+	font-family: 'Asul', sans-serif;
+	font-weight: 400;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	text-align: center;
+}

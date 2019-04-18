@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TopMenu from '../UI/TopMenu/TopMenu';
-import Home from '../Sections/Home/Home';
+import TopMenu from '../TopMenu/TopMenu';
+import Home from '../../components/Home/Home';
 import Properties from '../Sections/Properties/Properties';
 import about from '../../components/About/About';
 import ListYourProperty from '../Sections/ListYourProperty/ListYourProperty';

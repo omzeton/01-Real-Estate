@@ -21,7 +21,7 @@
 }
 .Form__FormContainer--img {
 	width: 100%;
-	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F02_2.jpg?alt=media&token=296bf80c-fc37-4e24-a4e1-76c649506495');
+	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F02_3.jpg?alt=media&token=06e4bf0d-6032-4eb8-8456-4e08c738b730');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 80%;
@@ -86,6 +86,7 @@
 	border:0.1em solid #000;
 	box-sizing: border-box;
 	transition: background-color 0.2s linear;
+	cursor: pointer;
 }
 .disable-submit {
 	opacity: 0.2 !important;
@@ -101,7 +102,7 @@
 .List__FormContainer--input button:focus {
 	background-color:#fff;
 	outline:0;
-	border:0.1em solid green;
+	border:0.1em solid #FFD23F;
 }
 .List__FormContainer--input select,
 .List__FormContainer--input button {
@@ -109,10 +110,10 @@
 }
 
 .pass {
-	border:0.1em solid green !important;
+	border:0.1em solid #FFD23F !important;
 }
 .nopass {
-	border:0.1em solid red !important;
+	border:0.1em solid #494949 !important;
 }
 .uploaded {
 	background-color: #FFD23F !important;

@@ -5,15 +5,6 @@ import firebase from '@firebase/app';
 import { storage } from '@firebase/storage';
 // eslint-disable-next-line
 import { database } from '@firebase/database';
-var config = {
-    apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
-    authDomain: "real-estate-d9a1e.firebaseapp.com",
-    databaseURL: "https://real-estate-d9a1e.firebaseio.com",
-    projectId: "real-estate-d9a1e",
-    storageBucket: "real-estate-d9a1e.appspot.com",
-    messagingSenderId: "1095628041476"
-};
-firebase.initializeApp(config);
 
 class ListYourProperty extends Component {
 
@@ -113,19 +104,19 @@ class ListYourProperty extends Component {
 	render() {
 
 		const check = {
-			"forSale" : this.state.object.forSale, //
-			"info" : this.state.object.info, //
-			"price" : this.state.object.price, //
-			"type" : this.state.object.type, //
-			"town" : this.state.object.town, //
-			"toRent" : this.state.object.toRent, //
-			"beds" : this.state.object.beds, //
-			"name" : this.state.object.name, //
+			"forSale" : this.state.object.forSale,
+			"info" : this.state.object.info,
+			"price" : this.state.object.price,
+			"type" : this.state.object.type,
+			"town" : this.state.object.town,
+			"toRent" : this.state.object.toRent,
+			"beds" : this.state.object.beds,
+			"name" : this.state.object.name,
 			"img" : this.state.selectedFile
 		};
 
-		let styleName = ""; //
-		let styleTown = ""; //
+		let styleName = "";
+		let styleTown = "";
 		let stylePrice = "";
 		let styleInfo = "";
 		let styleStatus = "";
