@@ -1,0 +1,246 @@
+.ListYourProperty {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.List__FormContainer {
+	background-color: #ddd;
+	margin:5em 0;
+	width:50em;
+	height: auto;
+	border: 2px solid #fff;
+	-webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.2);
+	display: -ms-grid;
+	-ms-grid-columns: 1fr;
+	-ms-grid-rows: 18em 1fr;
+	overflow: hidden;
+}
+.List__FormContainer > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+.List__FormContainer > *:nth-child(2) {
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+}
+.Form__FormContainer--img {
+	width: 100%;
+	background-image:url('https://firebasestorage.googleapis.com/v0/b/real-estate-d9a1e.appspot.com/o/home-screen-slideshow%2F02_3.jpg?alt=media&token=06e4bf0d-6032-4eb8-8456-4e08c738b730');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 80%;
+}
+.List__FormContainer--form {
+	width:100%;
+	height: auto;
+	display: -ms-grid;
+	-ms-grid-columns: 1fr 20em 1fr;
+	-ms-grid-rows: 1fr;
+}
+.List__FormContainer--form > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--form > *:nth-child(2) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--form > *:nth-child(3) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 3;
+}
+.List__FormContainer--title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+}
+.List__FormContainer--title h2 {
+	text-align: center;
+	font-family: 'Chivo', sans-serif;
+	font-size: 2.5em;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 1em;
+}
+.List__FormContainer--title h2 span {
+	color:#fff;
+}
+.List__FormContainer--title p {
+	text-align: center;
+	font-family: 'Asul', sans-serif;
+	font-size: 1.1em;
+	font-weight: 400;
+	line-height: 1em;
+	margin-top:-1.5em;
+	margin-bottom: 2em;
+}
+.List__FormContainer--form h3 {
+	text-align: center;
+	font-family: 'Asul', sans-serif;
+	font-size: 0.8em;
+	font-weight: 900;
+}
+.List__FormContainer--input {
+	display: -ms-grid;
+	-ms-grid-rows: (1fr)[11];
+	-ms-grid-columns: 10em 10em;
+}
+.List__FormContainer--input > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(2) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(3) {
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(4) {
+	-ms-grid-row: 2;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(5) {
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(6) {
+	-ms-grid-row: 3;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(7) {
+	-ms-grid-row: 4;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(8) {
+	-ms-grid-row: 4;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(9) {
+	-ms-grid-row: 5;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(10) {
+	-ms-grid-row: 5;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(11) {
+	-ms-grid-row: 6;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(12) {
+	-ms-grid-row: 6;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(13) {
+	-ms-grid-row: 7;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(14) {
+	-ms-grid-row: 7;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(15) {
+	-ms-grid-row: 8;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(16) {
+	-ms-grid-row: 8;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(17) {
+	-ms-grid-row: 9;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(18) {
+	-ms-grid-row: 9;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(19) {
+	-ms-grid-row: 10;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(20) {
+	-ms-grid-row: 10;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input > *:nth-child(21) {
+	-ms-grid-row: 11;
+	-ms-grid-column: 1;
+}
+.List__FormContainer--input > *:nth-child(22) {
+	-ms-grid-row: 11;
+	-ms-grid-column: 2;
+}
+.List__FormContainer--input input[type=submit] {
+	-ms-grid-column: 1;
+	    grid-column-start: 1;
+	-ms-grid-column-span: 2;
+	grid-column-end: 3;
+}
+.List__FormContainer--input input, 
+.List__FormContainer--input select,
+.List__FormContainer--input button {
+	background-color:#C6C6C6;
+	font-family: 'Asul', sans-serif;
+	font-size: 0.8em;
+	font-weight: 900;
+	padding:1em 0;
+	margin-bottom: 1em;
+	border:0.1em solid #000;
+	-webkit-box-sizing: border-box;
+	-webkit-transition: background-color 0.2s linear;
+	-o-transition: background-color 0.2s linear;
+	transition: background-color 0.2s linear;
+	cursor: pointer;
+}
+.disable-submit {
+	opacity: 0.2 !important;
+	pointer-events: none;
+}
+.List__FormContainer--input input:hover, 
+.List__FormContainer--input select:hover,
+.List__FormContainer--input button:hover {
+	background-color:#fff;
+}
+.List__FormContainer--input input:focus, 
+.List__FormContainer--input select:focus,
+.List__FormContainer--input button:focus {
+	background-color:#fff;
+	outline:0;
+	border:0.1em solid #FFD23F;
+}
+.List__FormContainer--input select,
+.List__FormContainer--input button {
+	cursor: pointer;
+}
+
+.pass {
+	border:0.1em solid #FFD23F !important;
+}
+.nopass {
+	border:0.1em solid #494949 !important;
+}
+.uploaded {
+	background-color: #FFD23F !important;
+}
+.not-uploaded {
+	background-color:#C6C6C6 !important;
+}

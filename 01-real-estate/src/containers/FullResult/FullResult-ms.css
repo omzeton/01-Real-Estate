@@ -1,0 +1,128 @@
+.FullResult {
+	position: relative;
+	width:100%;
+	height:50em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+}
+
+.Full__Container {
+	width:53em;
+	height:40em;
+	display: -ms-grid;
+	-ms-grid-rows:1fr;
+	-ms-grid-columns: 1fr 1fr;
+	background-color: #D8D8D8;
+	-webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.1);
+	overflow: hidden;
+	border-radius: 0.3em;
+	border: 2px solid #494949;
+}
+
+.Full__Container > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+
+.Full__Container > *:nth-child(2) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+}
+.Full__Container__Row--Up {
+	display: -ms-grid;
+	-ms-grid-columns: 55% 45%;
+	-ms-grid-rows: 1fr;
+}
+.Full__Container__Row--Up > *:nth-child(1) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+}
+.Full__Container__Row--Up > *:nth-child(2) {
+	-ms-grid-row: 1;
+	-ms-grid-column: 2;
+}
+
+.Full__Column--Left {
+	margin:1em 2em;
+}
+
+.Full--Info h2 {
+	font-size: 1em;
+	font-family: 'Chivo', sans-serif;
+	font-weight: 400;
+}
+
+.Full--Info h2:nth-child(1) {
+	font-size: 2em;
+	font-family: 'Chivo', sans-serif;
+	font-weight: 900;
+	position: relative;
+	color:#000000;
+}
+.Full--Info h2:after {
+	content:'';
+	position: absolute;
+	width:50%;
+	top:110%;
+	background-color:#FFD23F;
+	height: 0.1em;
+	left:50%;
+	-webkit-transform:translateX(-50%);
+	    -ms-transform:translateX(-50%);
+}
+
+.Full--Info h2 span {
+	color:#494949;
+}
+
+.Full--Info p {
+	text-align: justify;
+	font-family: 'Asul', sans-serif;
+	font-size: 1em;
+	line-height: 1.3em;
+	font-weight: 400;
+	padding:2em 0;
+}
+
+.Full--Img {
+	position: relative;
+	width:100%;
+	height:100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.Full--Header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+}
+
+.Full--Header h2 {
+	color:#000;
+	font-family: 'Chivo', sans-serif;
+	font-weight: 900;
+	font-size: 2em;
+}
+
+.Full__Container__Row--Down {
+	margin:1em 2em;
+}
+
+.Full__Container__Row--Down p span {
+	color:#999;
+}

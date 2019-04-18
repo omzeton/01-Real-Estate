@@ -6,6 +6,12 @@ import { storage } from '@firebase/storage';
 // eslint-disable-next-line
 import { database } from '@firebase/database';
 
+if(window.msCrypto) {
+  import('./ListYourProperty-ms.css');
+} else {
+  import('./ListYourProperty.css');
+}
+
 class ListYourProperty extends Component {
 
 	state = {

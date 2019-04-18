@@ -1,5 +1,10 @@
 import React from 'react';
-import './FeaturedExample.css';
+
+if(window.msCrypto) {
+  import('./FeaturedExample-ms.css');
+} else {
+  import('./FeaturedExample.css');
+}
 
 function featuredExample(props) {
 

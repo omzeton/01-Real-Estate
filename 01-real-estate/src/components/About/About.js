@@ -1,5 +1,10 @@
 import React from 'react';
-import './About.css';
+
+if(window.msCrypto) {
+  import('./About-ms.css');
+} else {
+  import('./About.css');
+}
 
 function about(props) {
 		return (

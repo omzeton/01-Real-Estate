@@ -3,7 +3,12 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader/Loader'
 import * as actionCreators from '../../store/actions/actions';
-import './FullResult.css';
+
+if(window.msCrypto) {
+	import('./FullResult-ms.css');
+} else {
+	import('./FullResult.css');
+}
 
 class FullResult extends Component {
 

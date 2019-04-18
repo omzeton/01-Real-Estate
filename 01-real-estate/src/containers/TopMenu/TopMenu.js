@@ -1,55 +1,67 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../hamburgers.css';
-import './TopMenu.css';
 
-class TopMenu extends Component { 
-	state = {
-		open: false
+if(window.msCrypto) {
+	import('./TopMenu-ms.css');
+} else {
+	import('./TopMenu.css');
+}
+
+const topMenu = props => { 
+
+	const [modalState, setModalState] = useState({open: false});
+	const [resState, setResState] = useState({smallDevice: false});
+
+	const navHanlder = () => {
+		let toggle = modalState.open;
+		setModalState({open: !toggle});
 	}
 
-	navHanlder = () => {
-		let toggle = this.state.open;
-		this.setState({open: !toggle});
+	const closeNav = () => {
+		let toggle = modalState.open;
+		setModalState({open: !toggle});
 	}
 
-	closeNav = () => {
-		let toggle = this.state.open;
-		this.setState({open: !toggle});
-	}
+		let containerWidth = window.innerWidth,
+			responsive;
 
-	render() {
 
-		let smallDevice;
-
-		// Check window's inner width when Loading the page first time
+		// Check window's inner width on first load
 		if( window.innerWidth > 768 ) {
-			smallDevice = false;
+			responsive = false;	
 		} else {
-			smallDevice = true;
+			responsive = true;
 		}
 
 		// Check window's inner width when Resizing the page
 		window.addEventListener('resize', () => {
-			if( window.innerWidth > 768 ) {
-				console.log('big screen');
-				smallDevice = false;
-				console.log(smallDevice);
+			containerWidth = window.innerWidth;
+			if (containerWidth > 768) {
+				responsive = false;
 			} else {
-				console.log('small screen');
-				smallDevice = true;
-				console.log(smallDevice);
+				responsive = true;
 			}
 		});
 
-		const style = this.state.open ? { height: '70vh' } : { height: '4em' }
-		const burgerStyle = this.state.open ? ['hamburger', 'hamburger--squeeze', 'is-active'].join(' ') : ['hamburger', 'hamburger--squeeze'].join(' ');
+		if( responsive ) {
+			if (!resState.smallDevice) {
+				setResState({smallDevice: true});
+			}	
+		} else {
+			if (resState.smallDevice) {
+				setResState({smallDevice: false});
+			}
+		}
+
+		const style = modalState.open ? { height: '70vh' } : { height: '4em' }
+		const burgerStyle = modalState.open ? ['hamburger', 'hamburger--squeeze', 'is-active'].join(' ') : ['hamburger', 'hamburger--squeeze'].join(' ');
 
 		const smallMenu = <div className="Responsive-TopMenu" style={style}>
 				<div className="Responsive-TopMenu__Top">
 					<div className="Responsive-TopMenu__Top--Logo"></div>
 					<div></div>
-					<div className="Responsive-TopMenu__Top--Burger" onClick={this.navHanlder}>
+					<div className="Responsive-TopMenu__Top--Burger" onClick={navHanlder}>
 						<button className={burgerStyle} type="button">
 						  <span className="hamburger-box">
 						    <span className="hamburger-inner"></span>
@@ -58,12 +70,12 @@ class TopMenu extends Component {
 					</div>
 				</div>
 				<div className="Responsive-TopMenu__Bottom">
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/" exact>Home</NavLink></div>
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/properties">Properties</NavLink></div>
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/for-sale">For sale</NavLink></div>
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/to-rent">To rent</NavLink></div>
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/about-us">About us</NavLink></div>
-						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={this.closeNav} to="/list-your-property">List Your Property</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/" exact>Home</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/properties">Properties</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/for-sale">For sale</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/to-rent">To rent</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/about-us">About us</NavLink></div>
+						<div className="Responsive-TopMenu__Bottom--Btn"><NavLink onClick={closeNav} to="/list-your-property">List Your Property</NavLink></div>
 				</div>
 			</div>;
 
@@ -86,7 +98,7 @@ class TopMenu extends Component {
 
 		let responsiveMenu;
 
-		if ( smallDevice ) {
+		if ( resState.smallDevice ) {
 			responsiveMenu = smallMenu;
 		} else {
 			responsiveMenu = bigMenu;
@@ -98,7 +110,6 @@ class TopMenu extends Component {
 				{responsiveMenu}
 			</div>
 		);
-	}		
 };
 
-export default TopMenu;
+export default topMenu;

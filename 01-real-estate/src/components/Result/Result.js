@@ -2,6 +2,12 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './Result.css';
 
+if(window.msCrypto) {
+  import('./Result-ms.css');
+} else {
+  import('./Result.css');
+}
+
 function result(props) {
 
 	return (

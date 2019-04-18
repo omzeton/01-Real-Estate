@@ -4,7 +4,12 @@ import RealEstate from './containers/RealEstate/RealEstate';
 import firebase from '@firebase/app';
 
 import './App.css';
-import './responsive.css';
+
+if(window.msCrypto) {
+  import('./responsive-ms.css');
+} else {
+  import('./responsive.css');
+}
 
 var config = {
     apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
@@ -15,6 +20,8 @@ var config = {
     messagingSenderId: "1095628041476"
 };
 firebase.initializeApp(config);
+
+if(window.msCrypto) { console.log('ie11') };
 
 class App extends Component {
   render() {
