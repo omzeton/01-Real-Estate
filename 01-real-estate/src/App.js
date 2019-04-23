@@ -5,30 +5,30 @@ import firebase from '@firebase/app';
 
 import './App.css';
 
-if(window.msCrypto) {
+if (window.msCrypto) {
   import('./responsive-ms.css');
 } else {
   import('./responsive.css');
 }
 
 var config = {
-    apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
-    authDomain: "real-estate-d9a1e.firebaseapp.com",
-    databaseURL: "https://real-estate-d9a1e.firebaseio.com",
-    projectId: "real-estate-d9a1e",
-    storageBucket: "real-estate-d9a1e.appspot.com",
-    messagingSenderId: "1095628041476"
+  apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
+  authDomain: "real-estate-d9a1e.firebaseapp.com",
+  databaseURL: "https://real-estate-d9a1e.firebaseio.com",
+  projectId: "real-estate-d9a1e",
+  storageBucket: "real-estate-d9a1e.appspot.com",
+  messagingSenderId: "1095628041476"
 };
 firebase.initializeApp(config);
 
-if(window.msCrypto) { console.log('ie11') };
+if (window.msCrypto) { console.log('ie11') };
 
 class App extends Component {
   render() {
     return (
-    	<BrowserRouter>
-       		 <RealEstate />
-        </BrowserRouter>
+      <BrowserRouter>
+        <RealEstate />
+      </BrowserRouter>
     );
   }
 }

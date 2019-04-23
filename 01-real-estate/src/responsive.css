@@ -1,6 +1,10 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+.noMatches__Text {
+	font-size:4vw;
+}
+
 /* ✓ Home */
 	.Home__ImgArea--Img h2 {
 		font-size: 2em;
@@ -115,7 +119,7 @@
 		width:15em;
 	}
 	.List__FormContainer--input {
-		grid-template-rows: repeat(18, 1fr);
+		grid-template-rows: repeat(13, 1fr) 5em repeat(3, 1fr);
 		grid-template-columns: 1fr;
 		width:80vw;
 	}
@@ -225,6 +229,9 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+	.noMatches__Text {
+		font-size:1.3em;
+	}
 	/* ✓ TopMenu */
 		.TopMenu__Bottom__BtnContainer--Btn {
 			display: block;
@@ -349,7 +356,7 @@
 			width:auto;
 		}
 		.List__FormContainer--input {
-			grid-template-rows: repeat(11, 1fr);
+			grid-template-rows: repeat(7, 1fr) 5em repeat(2, 1fr);
 			grid-template-columns: 10em 10em;
 			margin:0 3em;
 			width: auto;
