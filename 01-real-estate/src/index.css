@@ -16,7 +16,7 @@
   z-index: 99999 !important;
 }
 ::-webkit-scrollbar-thumb {
-  background:#999;
+  background:#FFD23F;
 }
 ::-webkit-scrollbar-thumb:hover {
   background:#777;
