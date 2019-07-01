@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import RealEstate from './containers/RealEstate/RealEstate';
 import firebase from '@firebase/app';
+import firebaseConfig from './firebaseConfig';
 
 import './App.css';
 
@@ -11,15 +12,7 @@ if (window.msCrypto) {
   import('./responsive.css');
 }
 
-var config = {
-  apiKey: "AIzaSyCeygcoPpSZ6ruHn45l63U80L8K-UQcR60",
-  authDomain: "real-estate-d9a1e.firebaseapp.com",
-  databaseURL: "https://real-estate-d9a1e.firebaseio.com",
-  projectId: "real-estate-d9a1e",
-  storageBucket: "real-estate-d9a1e.appspot.com",
-  messagingSenderId: "1095628041476"
-};
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 if (window.msCrypto) { console.log('ie11') };
 
